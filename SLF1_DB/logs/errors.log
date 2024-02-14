@@ -572,3 +572,67 @@ System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documen
    at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
    at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
    at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-14 18:11:27.194 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-14 18:15:54.253 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-14 18:22:20.908 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-14 18:29:30.525 +01:00 [ERR] Render
+System.IO.InvalidDataException: Empty drivers list in the render data
+   at RacingLeagueTools.Renderer.BaseRenderer`1.Render(TData data, String fileName)
+   at RacingLeagueTools.Renderer.Renderer.Render[T](RenderTheme theme, String fileName, T data)
+   at RacingLeagueTools.Renderer.Renderer.<>c__DisplayClass1_0`1.<RenderAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.Renderer.Renderer.RenderAsync[T](RenderTheme theme, String fileName, T data)
+   at _e82aquemmXMy50oTasGF0iM4gDS._HiUFcodJE4ibwhwePJ9NbKFnelH[,](Boolean , Object )
+2024-02-14 18:29:59.211 +01:00 [ERR] Rendering
+System.ArgumentOutOfRangeException: Non-negative number required. (Parameter 'index')
+   at System.Collections.Generic.List`1.GetRange(Int32 index, Int32 count)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ItemStackOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-14 18:50:56.391 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user font 'formula1-white' was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetFont(TextOptions textOptions)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TextOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-14 19:17:47.512 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Cannot resolve empty expression
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext, Object& resolveObject)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveInt(Object obj, BlockDataContext blockDataContext, Boolean isStrict)
+   at RacingLeagueTools.FlexRenderer.ValueExtensions.ResolveInt(Object obj, Block block)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ItemStackOptions.PreresolveProperties(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ItemStackOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()

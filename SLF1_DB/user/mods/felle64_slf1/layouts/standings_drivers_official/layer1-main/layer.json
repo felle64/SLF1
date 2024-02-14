@@ -40,7 +40,7 @@
                                             },
                                             {
                                                 "Property": "Foreground",
-                                                "Value": "000000"
+                                                "Value": "FFFFFF"
                                             }
                                         ]
                                     },
@@ -77,7 +77,7 @@
                             "Source": "[POINTS AFTER THE]",                            
                             "FontName": "{Formula1-Regular}",
                             "FontSize": 25,
-                            "Foreground": "000000",
+                            "Foreground": "FFFFFF",
                             "Triggers": [
         {
             "Condition": "{DarkOfficialRenders}",
@@ -93,7 +93,7 @@
                             "Source": "{GPName, Converter=StringToUpperString} GP",                            
                             "FontName": "{Formula1-Bold}",
                             "FontSize": 25,
-                            "Foreground": "000000",
+                            "Foreground": "FFFFFF",
                             "Triggers": [
         {
             "Condition": "{DarkOfficialRenders}",

@@ -18,7 +18,7 @@
             {
                 "BlockType" : "image",
                 "RenderIf": "{DarkOfficialRenders, Converter=BoolReverse}",
-                "Source" : "bg_cal_light.png",
+                "Source" : "bg_cal_dark.png",
                 "Triggers": [
                    {
                        "Condition": "{PlainBackground}",

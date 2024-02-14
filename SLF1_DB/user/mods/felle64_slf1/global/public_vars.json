@@ -5,7 +5,7 @@
   "TeamsOnDriversStandings": true,
   "DriverNameOnLineUp": false,
   "RenderInGameNameOnLineUps": true,
-  "NotF1SeasonOrCustomTeams": true,
+  "NotF1SeasonOrCustomTeams": false,
   "RenderTeamColours": true,
   "RealNameOnRenders": false,
   "InGameNameOnRenders": false,

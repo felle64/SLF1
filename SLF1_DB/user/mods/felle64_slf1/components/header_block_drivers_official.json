@@ -58,7 +58,7 @@
                             "Source": " [DRIVER]",                            
                             "FontName": "{Formula1-Black}",
                             "FontSize": 57,
-                            "Foreground": "000000",
+                            "Foreground": "FFFFFF",
                             "Triggers": [
         {
             "Condition": "{DarkOfficialRenders}",
@@ -82,7 +82,7 @@
                             "Source": "[STANDINGS]",                            
                             "FontName": "{Formula1-Black}",
                             "FontSize": 57,
-                            "Foreground": "000000",
+                            "Foreground": "FFFFFF",
                             "Triggers": [
         {
             "Condition": "{DarkOfficialRenders}",

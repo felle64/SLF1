@@ -30,22 +30,8 @@
                             }
                         }
                         
-                    },
-                    {
-                        "BlockType" : "itemstack",
-                        "RenderIf": "{SecondCalendarEventsInColumn, Converter=NumberGreater, Parameter=0}",
-                        "Orientation" : "Vertical",
-                        "ItemStackOptions" : {
-                            "ItemSource" : "{Events.Events}",
-                            "Limit" : "{SecondCalendarEventsInColumn}",
-                            "IndexStart" : "{SecondCalendarEventsInColumn}",
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "event_calendar"
-                            }
-                        }
-                        
                     }
+                    
                 ]
             }
         ]

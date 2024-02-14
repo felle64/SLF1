@@ -62,7 +62,7 @@
                                                     "BlockType": "text",
                                                     //"MinWidth": 400,
                                                     "MarginLeft": 4,
-                                                    "Source": " {Item.Line0.Driver.Name, Converter=StringToUpperString}",
+                                                    "Source": " ",
                                                     "HorizontalAlignment": "Left",
                                                     "VerticalAlignment": "Center",
                                                     "FontName": "{Formula1-Italic}",
@@ -73,7 +73,7 @@
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
-                                                            "Value": "{Item.Line0.Driver.RealName, Converter=StringToUpperString}"
+                                                            "Value": "{Item.Line0.Driver.Name, Converter=StringToUpperString}"
                                                         },  
                                                     ]
                                                 }
@@ -90,7 +90,7 @@
                                             "Items": [
                                         {
                                             "BlockType": "text",
-                                            "Source": " {Item.Line0.Driver.RealName, Converter=StringToUpperString}",
+                                            "Source": " {Item.Line0.Driver.Name, Converter=StringToUpperString}",
                                             "HorizontalAlignment": "Left",
                                             "VerticalAlignment": "Center",
                                             "FontName": "{Magistral-BoldItalic}",
@@ -436,7 +436,7 @@
                                                     "BlockType": "text",
                                                     //"MinWidth": 400,
                                                     "MarginLeft": 2,
-                                                    "Source": " {Item.Line1.Driver.Name, Converter=StringToUpperString}",
+                                                    "Source": "",
                                                     "HorizontalAlignment": "Left",
                                                     "VerticalAlignment": "Center",
                                                     "FontName": "{Formula1-Italic}",
@@ -448,7 +448,7 @@
                                                     "Setters": [
                                                         {
                                                             "Property": "Source",
-                                                            "Value": "{Item.Line1.Driver.RealName, Converter=StringToUpperString}"
+                                                            "Value": "{Item.Line1.Driver.Name, Converter=StringToUpperString"
                                                         },  
                                                     ]
                                                 }
@@ -465,7 +465,7 @@
                                             "Items": [
                                         {
                                             "BlockType": "text",
-                                            "Source": " {Item.Line1.Driver.RealName, Converter=StringToUpperString}",
+                                            "Source": " {Item.Line1.Driver.Name, Converter=StringToUpperString}",
                                             "HorizontalAlignment": "Left",
                                             "VerticalAlignment": "Center",
                                             "FontName": "{Magistral-BoldItalic}",

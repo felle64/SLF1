@@ -74,7 +74,7 @@
                         {
                             "Name": "leagueLogo",
                             "BlockType": "text",
-                            "Foreground": "000000",
+                            "Foreground": "FFFFFF",
                             "FontSize": 110,
                             "FontName": "Formula1-Black",
                             "Source": "[CALENDAR]",
