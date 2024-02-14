@@ -1,0 +1,195 @@
+{
+    "BlockType": "stack",
+    "Witdh": "*",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "BackgroundImage": "images/Modern/Row/rowlightlong.png",
+            "Padding": "10, 10, 10, 10",
+            "Triggers": [
+                {
+                    "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                    "Property": "BackgroundImage",
+                    "Value": "images/Modern/Row/rowdarklong.png"
+                }
+            ],
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //flag
+                        {
+                            "BlockType": "image",
+                            "RenderIf":"{ShowCountryFlagsForDrivers}",
+                            "Height": 48,
+                            "MarginRight": 12,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "{Item.Driver.Nationality.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        //name
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 600,
+                            "MarginLeft": 8,
+                            "Source": "{Item.Driver.RealName} {Item.Driver.Name}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundGrey}",
+                            "FontSize": 26,
+                            "Triggers": [
+                                {
+                                    "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                    "Property": "Foreground",
+                                    "Value": "{Foregroundwhithe}"
+                                }
+                            ],
+                        },
+                        //icon badges
+                        {
+                            "BlockType": "itemstack",
+                            "Spacing": 4,
+                            "MarginLeft": 6,
+                            "MarginTop": 4,
+                            "VerticalAlignment": "Center",
+                            "ItemStackOptions": {
+                                "ItemSource": "{Item.Driver.BadgeImages}",
+                                "Template": {
+                                    "BlockType": "image",
+                                    "Height": 24,
+                                    "Source": "{Item}"
+                                }
+                            }
+                        },
+                        //text badge
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 400,
+                            "MarginLeft": 8,
+                            "MarginTop": 8,
+                            "Source": "{Item.Driver.BadgeText}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundGrey}",
+                            "FontSize": 16
+                        }
+                    ]
+                },
+                //right part
+                {
+                    "BlockType": "stack",
+                    "Height": "*",
+                    "MarginLeft": 82,
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //teams block
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "Spacing": 8,
+                            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                            "Items": [
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "Source": "{Item.Team.Name}",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.IsReserve}",
+                                            "Property": "Source",
+                                            "Value": "QRL Racing"
+                                        }
+                                    ],
+                                    //"MarginRight": 4,
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 22,
+                                    "TextOptions": {
+                                        "VerticalAlignment": "Center"
+                                        
+                                    },
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                            "Property": "Foreground",
+                                            "Value": "{Foregroundwhithe}"
+                                        }
+                                    ],
+
+                                },
+                                //logo
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf" :"{Item.Team.Name, Converter=StringNotEquals, Parameter=AlphaTauri}",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //logo alpha
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf" :"{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Modern/logo/alphatauri.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        //cars block
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "Spacing": 8,
+                            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                            "Items": [
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "Source": "{Item.Car.Name}",
+                                    "MarginRight": 8,
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 22,
+                                    "TextOptions": {
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //logo
+                                {
+                                    "BlockType": "image",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Car.Vendor.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "BlockType" : "stack",
+    "Width" : 15,
+    "Height" : 70,
+    "BackgroundImage" : "images/BgForQuali/bg_finish.png",
+    "ColorizeBackground": {
+        "Enabled" : true,
+        "Color": "{RightPartEffectColor}",
+        "BlendPercentage": 100
+    },
+    "Items" : [
+        {
+            "BlockType" : "stack",
+            "Width" : 15,
+            "Height" : 70,
+            "BackgroundImage" : "images/BgForQuali/bg_finish_effect.png",
+            "Items" : [
+                {
+                    "BlockType" : "shape",
+                    "Width" : 15,
+                    "Height" : 70,
+                    "ShapeOptions" : {
+                        "ShapeType" : "Rectangle",
+                        "Fill" : "#00000000"
+                    }
+                }
+            ]
+        }
+    ]
+}

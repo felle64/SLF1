@@ -1,0 +1,116 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "HorizontalAlignment" : "Center",
+    "VerticalAlginment":"Center",
+    "Height" : 70,
+    "Width" : 248,
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_penalties.png",
+            "Height" : 70,
+            "Width" : 248,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColor}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsOdd}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_penalties_effect.png",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 248,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Foreground" : "#000000",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "FontSize" : "{TableCellFontSize}",
+                            "Width" : 248,
+                            "Height" : 62,
+                            "MarginTop" : "{TableCellFontMarginTop}",
+                            "Source" : "+ {Item.PenaltyTimeTotal} s",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "FontName" : "{TW-Sb}"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                    "Property" : "Source",
+                                    "Value" : "-"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_penalties.png",
+            "Height" : 70,
+            "Width" : 248,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColorOdd}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsEven}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_penalties_effect.png",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 248,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Foreground" : "#000000",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "FontSize" : "{TableCellFontSize}",
+                            "Width" : 248,
+                            "Height" : 62,
+                            "MarginTop" : "{TableCellFontMarginTop}",
+                            "Source" : "+ {Item.PenaltyTimeTotal} s",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "FontName" : "{TW-Sb}"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                    "Property" : "Source",
+                                    "Value" : "-"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

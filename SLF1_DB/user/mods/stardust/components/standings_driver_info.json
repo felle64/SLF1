@@ -1,0 +1,458 @@
+{
+    "BlockType" : "stack",
+    "Height" : 1718,
+    "Width" : 958,
+    "BackgroundImage" : "images/Standing/bg_info_driver.png",
+    "Orientation" : "Vertical",
+    "Items" : [
+        {
+            "BlockType" : "text",
+            "HorizontalAlignment" : "Center",
+            "MarginTop" : 20,
+            "Source" : "Driver Standing",
+            "TextOptions" : {
+                "HorizontalAlignment" : "Center",
+                "FontSize" : 70,
+                "Foreground" : "#ffffff",
+                "FontName" : "{TW-Bo}"
+            }
+        },
+        {
+            "BlockType" : "image",
+            "MarginTop" : 30,
+            "HorizontalAlignment" : "Center",
+            "Source" : "images/Standing/driver_cup.png"
+        },
+        {
+            "BlockType" : "text",
+            "Source" : "Leader:",
+            "FontSize" : 60,
+            "HorizontalAlignment" : "Center",
+            "TextOptions" : {
+                "Foreground" : "{ForeWhite}",
+                "FontName" : "{TW-Sb}",
+                "HorizontalAlignment" : "Center"
+            }
+        },
+        {
+            "BlockType":"itemstack",
+            "HorizontalAlignment" : "Center",
+            "ItemStackOptions" : {
+                "ItemSource" : "{Standings.Drivers}",
+                "Limit" : 1,
+                "Template" : {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Driver.Name}",
+                    "FontSize" : 90,
+                    "HorizontalAlignment" : "Center",
+                    "TextOptions" : {
+                        "Foreground" : "{ForeWhite}",
+                        "FontName" : "{TW-Bo}",
+                        "HorizontalAlignment" : "Center"
+                    }
+                }
+            }
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 15,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Round ",
+                            "FontSize" : 50,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
+                            "FontSize" : 50,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Right",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Season progress",
+                            "FontSize" : 50,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Season.SeasonProgressPercent}%",
+                            "FontSize" : 50,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }                      
+            ]
+        },
+        {
+            "BlockType" : "text",
+            "HorizontalAlignment" : "Center",
+            "MarginTop" : 30,
+            "Source" : "Season Info",
+            "TextOptions" : {
+                "HorizontalAlignment" : "Center",
+                "FontSize" : 70,
+                "Foreground" : "#ffffff",
+                "FontName" : "{TW-Bo}"
+            }
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most Win: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{CountP1}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.CountP1}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most Pole: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{CountQualP1}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.CountQualP1}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most Fastest Lap: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{RaceFastestLapCount}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.RaceFastestLapCount}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most Driver of Day: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{RaceDriverDayCount}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.RaceDriverDayCount}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most Penalties: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{PenaltyPoints}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.PenaltyPoints}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : "{MostOfMarginTop}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Most DNF: ",
+                            "FontSize" : "{MostOfFontSize}",
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "table",
+                            "TableOptions" : {
+                                "ItemsSource" : "{Standings.Drivers}",
+                                "Limit" : "1",
+                                "OrderByDescending" : "{CountDnf}",
+                                "HeaderTemplate" : {
+                                    "BlockType" : "text",
+                                    "FontName" : "{TW-Li}",
+                                    "FontSize" : 35,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment" : "Center"
+                                },
+                                "Columns" : [
+                                    {
+                                        "Header" : "",
+                                        "Name" : "MostOf",
+                                        "Template" : {
+                                            "BlockType" : "text",
+                                            "Source" : " {Item.Driver.Name} - {Item.CountDnf}",
+                                            "FontSize" : "{MostOfFontSize}",
+                                            "TextOptions" : {
+                                                "Foreground" : "{ForeWhite}",
+                                                "FontName" : "{TW-Boi}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

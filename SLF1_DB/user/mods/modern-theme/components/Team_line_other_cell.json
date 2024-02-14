@@ -1,0 +1,136 @@
+{
+    "BlockType": "stack",
+    "Witdh": "*",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/rowdrivers.png",
+            //"Padding": "5, 25, 20, 5",
+            "Width": 1160,
+            "Height": 60,
+            "MarginTop": 5,
+            "MarginBottom": 5,
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //left part number
+                        {
+                            "BlockType": "text",
+                            "Width": 40,
+                            "MarginLeft": 20,
+                            "Source": "{Item.Position}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 20
+                        },
+                        //right part
+                        {
+                            "BlockType": "stack",
+                            "MarginRight": 16,
+                            "HorizontalAlignment": "Right",
+                            "VerticalAlignment": "Center",
+                            "Items": [
+                                //color
+                                {
+                                    "BlockType": "shape",
+                                    "VerticalAlignment": "Center",
+                                    "Width": 6,
+                                    "Height": 42,
+                                    "Opacity": 100,
+                                    "ShapeOptions": {
+                                        "Type": "Rectangle",
+                                        "Fill": "{Item.Team.Color}"
+                                    }
+                                }
+                            ]
+                        },
+                        // name
+                        {
+                            "BlockType": "text",
+                            "MarginLeft": 8,
+                            "Source": "{Item.Team.FullName}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 20
+                        },
+                        //logo if not alphatauri
+                        {
+                            "BlockType": "image",
+                            "RenderIf": "{Item.Team.Name, Converter=StringNotEquals, Parameter=AlphaTauri}",
+                            "HorizontalAlignment": "Left",
+                            "Height": 40,
+                            "MarginLeft": 20,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "{Item.Team.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        //logo if  alphatauri
+                        {
+                            "BlockType": "image",
+                            "RenderIf": "{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                            "HorizontalAlignment": "Left",
+                            "Height": 40,
+                            "MarginLeft": 20,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "images/Modern/logo/alphatauri.png",
+                                "VerticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                },
+                //right part
+                {
+                    "BlockType": "stack",
+                    "Height": "*",
+                    "HorizontalAlignment": "Right",
+                    "MarginRight": 10,
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //teams block
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "Spacing": 8,
+                            "Items": [
+                                //points
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Left",
+                                    "MarginRight": 10,
+                                    "VerticalAlignment": "Center",
+                                    "Source": "{Item.Points}",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 22,
+                                    "TextOptions": {
+                                        "VerticalAlignment": "Center"
+                                    },
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.Points, Converter=EmptyObjectToTrue}",
+                                            "Property": "Source",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

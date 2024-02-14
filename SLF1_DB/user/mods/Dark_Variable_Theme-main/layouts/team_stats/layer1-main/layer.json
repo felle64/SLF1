@@ -1,0 +1,600 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {               
+                "BlockType": "component",
+                "ComponentName": "header_block",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header" : "Team standings"
+                    }
+                }               
+            },
+
+            //separator
+            {
+                "Name": "separator",
+                "BlockType": "image",
+                "MarginTop": 16,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "MarginRight" : 200,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Teams}",
+                    "RowSpacing": 16,
+                    "ColSpacing": 4,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell_stats",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.Position}"
+                                    }
+                                }                           
+                            }
+                        },
+
+                        //team line
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,                            
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell_stats"   
+                            }
+                        },                        
+                        //points
+                        {
+                            "Header": "Points",
+                            "MarginLeft" : 20,
+                            "Template": {
+                                
+                                "BlockType": "dock",
+                                "PaddingLeft" : 24,
+                                "PaddingRight" : 24,
+                                "Background": "{BackgroundDefault}",
+                                "ColorizeBackground": {
+                                    "Enabled": true,
+                                    "Color": "{DNFText}",
+                                    "BlendPercentage": 75
+                                },                                                       
+                                "Items": [                                    
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points}",
+                                        "HorizontalAlignment": "Right",
+                                        "VerticalAlignment": "Center",
+                                        "Foreground" : "{WhiteText}",
+                                        "TextOptionsExtern": "primaryNumber",
+                                        "Triggers":
+                                        [
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                "Property": "FontSize",
+                                                "ConditionAnd": "{RenderP1Colors}",
+                                                "Value": 60
+                                            },
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                                "ConditionAnd": "{RenderP2Colors}",
+                                                "Property": "FontSize",
+                                                "Value": 55
+                                            },
+                                            {
+                                                "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                                "ConditionAnd": "{RenderP3Colors}",
+                                                "Property": "FontSize",
+                                                "Value": 50
+                                            },
+                                        ]
+                                    }
+                                ],
+                            }
+                        },
+
+                         //pts gap
+                         {
+                            "Header": "",
+                            "PaddingLeft" : 0,
+                            "MarginLeft" : -4,
+                            "MarginTop": 10,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "PaddingLeft" : 0,                               
+                                "PaddingRight" : 12,
+                                "ComponentName" : "points_gap"    
+                            }
+                        },
+                        //podiums
+                        //{
+                            //"Header" : "Races",
+                           // "MarginLeft" : 12,
+                          //  "Template":{
+                           //     "BlockType" : "text",
+                            //    "Padding": "24, 0",
+                            //    "Background": "{CellBG}",
+                                //"Source" : "{Item.RacesCount, Converter=NumberZeroToEmpty}",                                
+                               // "TextOptionsExtern" : "primaryNumber",
+                               // "Foreground":"{WhiteText}",
+                              //  "FontSize":40,
+                              //  "Triggers":
+                              //  [
+                                   // {
+                                       // "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                       // "Property": "FontSize",
+                                       // "ConditionAnd": "{RenderP1Colors}",
+                                       // "Value": 60
+                                   // },
+                                   // {
+                                      //  "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                       // "ConditionAnd": "{RenderP2Colors}",
+                                       // "Property": "FontSize",
+                                       // "Value": 55
+                                   // },
+                                    //{
+                                        //"Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                       // "ConditionAnd": "{RenderP3Colors}",
+                                       // "Property": "FontSize",
+                                       // "Value": 50
+                                    //},
+                                //]
+                            //}
+                        //},
+
+                        {
+                            "Header" : "Wins",
+                            "MarginLeft" : 12,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{P1Foreground}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "2nd",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{P2Foreground}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "3rd",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{P3Foreground}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Best Finish",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.BestPos, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WhiteText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+
+                        //Finish Stats
+                        {
+                            "Header" : "Top 3s",
+                            "MarginLeft" : 12,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountTop3, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WhiteText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Top 5s",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountTop5, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WhiteText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "Top 10s",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountTop10, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WhiteText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "DNFs",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountDnf, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{#F62039}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "DNSs",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.CountDns, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{DNFText}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+
+                        //stats
+                        {
+                            "Header" : "FL",
+                            "MarginLeft" : 12,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{FastestLap}",
+                                "FontSize":40,
+                                "TextOptionsExtern" : "primaryNumber",
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "DoD",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Source" : "{Item.RaceDriverDayCount, Converter=NumberZeroToEmpty}",
+                                "Foreground" : "{WilliamsSecondary}",
+                                "TextOptionsExtern" : "primaryNumber",
+                                "FontSize":40,
+                                "Triggers":
+                                [
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                        "Property": "FontSize",
+                                        "ConditionAnd": "{RenderP1Colors}",
+                                        "Value": 60
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                        "ConditionAnd": "{RenderP2Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 55
+                                    },
+                                    {
+                                        "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                        "ConditionAnd": "{RenderP3Colors}",
+                                        "Property": "FontSize",
+                                        "Value": 50
+                                    },
+                                ]
+                            }
+                        },  
+                        {
+                            "Header": "Penalty Pts",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Padding": "24, 0",
+                                "Background": "{CellBG}",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "RenderForce": true, 
+                                        "TextOptions": {
+                                                        "FontName": "{FontNameDefault}",
+                                                        "FontSize":40,
+                                                        "Foreground": "{#F62039}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "TextOptionsExtern" : "primaryNumber",
+                                            },
+                                            "Triggers":
+                                            [
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                                                    "Property": "FontSize",
+                                                    "ConditionAnd": "{RenderP1Colors}",
+                                                    "Value": 60
+                                                },
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                                                    "ConditionAnd": "{RenderP2Colors}",
+                                                    "Property": "FontSize",
+                                                    "Value": 55
+                                                },
+                                                {
+                                                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                                                    "ConditionAnd": "{RenderP3Colors}",
+                                                    "Property": "FontSize",
+                                                    "Value": 50
+                                                },
+                                            ]
+                                        },                                        
+                                    ]
+                                },
+                            },                
+                    ]
+                }
+            }
+        ]
+    }
+}

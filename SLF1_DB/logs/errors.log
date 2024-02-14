@@ -1,0 +1,511 @@
+2023-11-14 15:43:02.695 +01:00 [ERR] Rendering
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+   at _UfS200Wr9rvm6qSeosXtpvYzdLg._lK8lNkN70fXFBQptuQudvqErLI(SessionType )
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._qdObvF73MJR0sTA1F63R27vLSeg(RenderType , Object )
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-14 15:48:23.823 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\downloads\racingleaguetools_v093_portable\theme_default\images\separator.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:02:04.474 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:02:29.192 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:02:52.996 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:03:14.347 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:03:29.283 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:03:39.038 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:04:38.445 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:04:57.067 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:07:06.628 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:08:09.286 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:08:58.468 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:09:02.690 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1 league shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:12:56.738 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1_shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:13:23.728 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1_shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:13:23.830 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\pictures\slf1\slf1_shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:14:49.931 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\desktop\slf1_shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:15:34.392 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\desktop\slf1_shit\theme_default\images\position_bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>g__ProcessRow|2(Int32 rowIndex)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TableOptions.<>c__DisplayClass154_0.<Init>b__1(Int32 i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 16:40:52.155 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\desktop\slf1_shit\theme_default\images\weather\weather_clear.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-14 17:09:17.569 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Required user image \\mac\home\desktop\slf1_shit\theme_default\images\bg.png was not found
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.TryImageLoad(String path)
+   at RacingLeagueTools.FlexRenderer.Services.AssetProvider.GetImage(String imageName, String layoutDirectory, Boolean isRequired)
+   at RacingLeagueTools.FlexRenderer.RenderHelpers.GetImage(String path)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.ImageOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2023-11-21 15:19:09.460 +01:00 [ERR] Rendering
+System.InvalidOperationException: Cannot find component 'lineup_block_lineup'
+   at RacingLeagueTools.FlexRenderer.Services.BlockLoader.LoadComponent(String componentName)
+   at RacingLeagueTools.FlexRenderer.Models.Block.ResolveComponent()
+   at RacingLeagueTools.FlexRenderer.Models.Block.InitOtions()
+   at RacingLeagueTools.FlexRenderer.Models.Block.InitOtions()
+   at RacingLeagueTools.FlexRenderer.Models.Layer.Render()
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Render()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-21 15:37:34.548 +01:00 [ERR] Rendering
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Felkan1\Desktop\SLF1_shit\theme_default\layouts\driver_standings'.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerableFactory.DirectoryInfos(String directory, String expression, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetDirectories()
+   at RacingLeagueTools.SharedLibrary.PathManager.GetRendererLayersList(String layoutDirectoryName)
+   at RacingLeagueTools.FlexRenderer.Services.LayoutLoader.GetLayerNames(String layoutDirectory)
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Init()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-21 15:37:42.055 +01:00 [ERR] Rendering
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Felkan1\Desktop\SLF1_shit\theme_default\layouts\driver_standings'.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerableFactory.DirectoryInfos(String directory, String expression, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetDirectories()
+   at RacingLeagueTools.SharedLibrary.PathManager.GetRendererLayersList(String layoutDirectoryName)
+   at RacingLeagueTools.FlexRenderer.Services.LayoutLoader.GetLayerNames(String layoutDirectory)
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Init()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-21 15:39:04.334 +01:00 [ERR] Rendering
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Felkan1\Desktop\SLF1_shit\theme_default\layouts\team_standings'.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerableFactory.DirectoryInfos(String directory, String expression, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetDirectories()
+   at RacingLeagueTools.SharedLibrary.PathManager.GetRendererLayersList(String layoutDirectoryName)
+   at RacingLeagueTools.FlexRenderer.Services.LayoutLoader.GetLayerNames(String layoutDirectory)
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Init()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-21 15:39:13.849 +01:00 [ERR] Rendering
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Felkan1\Desktop\SLF1_shit\theme_default\layouts\team_standings'.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerableFactory.DirectoryInfos(String directory, String expression, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetDirectories()
+   at RacingLeagueTools.SharedLibrary.PathManager.GetRendererLayersList(String layoutDirectoryName)
+   at RacingLeagueTools.FlexRenderer.Services.LayoutLoader.GetLayerNames(String layoutDirectory)
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Init()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2023-11-21 15:39:24.171 +01:00 [ERR] Rendering
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\Users\Felkan1\Desktop\SLF1_shit\theme_default\layouts\lineup'.
+   at System.IO.Enumeration.FileSystemEnumerator`1.CreateDirectoryHandle(String path, Boolean ignoreNotFound)
+   at System.IO.Enumeration.FileSystemEnumerator`1.Init()
+   at System.IO.Enumeration.FileSystemEnumerableFactory.DirectoryInfos(String directory, String expression, EnumerationOptions options, Boolean isNormalized)
+   at System.IO.DirectoryInfo.InternalEnumerateInfos(String path, String searchPattern, SearchTarget searchTarget, EnumerationOptions options)
+   at System.IO.DirectoryInfo.GetDirectories()
+   at RacingLeagueTools.SharedLibrary.PathManager.GetRendererLayersList(String layoutDirectoryName)
+   at RacingLeagueTools.FlexRenderer.Services.LayoutLoader.GetLayerNames(String layoutDirectory)
+   at RacingLeagueTools.FlexRenderer.Models.Layout.Init()
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.Render(LayoutDescription layoutDescription, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFile(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.<>c__DisplayClass8_0.<RenderToFileAsync>b__0()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at RacingLeagueTools.FlexRenderer.RenderServices.RenderProcessor.RenderToFileAsync(LayoutDescription layoutDescription, String filePath, RenderOptions renderOptions, Object[] dataObjects)
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2024-02-13 14:55:48.837 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Data object 'Race' while attempting resolving expression 'Race.Name' not found
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveUsingDataObjects(String expression, BlockDataContext blockDataContext, Boolean isStrict)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext, Object& resolveObject)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(Object obj, BlockDataContext blockDataContext, Boolean resolveExpressions, Boolean resolveLocalizaton)
+   at RacingLeagueTools.FlexRenderer.ValueExtensions.ResolveString(Object obj, Block block, Boolean isResolveExpressions, Boolean isResolveLocalization)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TextOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-13 15:06:11.063 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: No data or forbidden access
+   at _ZaNdif7EXnYwDAdB1qiRIt3tWhu._TPyiZ4vR2NuJfTCTp2GEdy5VBLE(SessionResultObject , RenderDataType )
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._RUiczeuiohcqmR1RLBu8cKwo9mj(IList`1 , LayoutRenderInfo )
+   at _gTaD2eaT1cLYy6XQc82oXv1TjsE._sRG30a2cgMOtld2i1dUP0VhjgI(LayoutRenderInfo , Boolean , Object )
+2024-02-13 15:09:30.774 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Data object 'Session' while attempting resolving expression 'Session.SessionType' not found
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveUsingDataObjects(String expression, BlockDataContext blockDataContext, Boolean isStrict)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext, Object& resolveObject)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(Object obj, BlockDataContext blockDataContext, Boolean resolveExpressions, Boolean resolveLocalizaton)
+   at RacingLeagueTools.FlexRenderer.ValueExtensions.ResolveString(Object obj, Block block, Boolean isResolveExpressions, Boolean isResolveLocalization)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TextOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-13 15:13:37.376 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Data object 'Round Season' while attempting resolving expression 'Round Season.SeasonCurrentNumberEvent' not found
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveUsingDataObjects(String expression, BlockDataContext blockDataContext, Boolean isStrict)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext, Object& resolveObject)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(Object obj, BlockDataContext blockDataContext, Boolean resolveExpressions, Boolean resolveLocalizaton)
+   at RacingLeagueTools.FlexRenderer.ValueExtensions.ResolveString(Object obj, Block block, Boolean isResolveExpressions, Boolean isResolveLocalization)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TextOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-13 15:13:43.707 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: Data object 'Round Season' while attempting resolving expression 'Round Season.SeasonCurrentNumberEvent' not found
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveUsingDataObjects(String expression, BlockDataContext blockDataContext, Boolean isStrict)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext, Object& resolveObject)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(String value, BlockDataContext blockDataContext)
+   at RacingLeagueTools.FlexRenderer.Services.DataResolver.ResolveString(Object obj, BlockDataContext blockDataContext, Boolean resolveExpressions, Boolean resolveLocalizaton)
+   at RacingLeagueTools.FlexRenderer.ValueExtensions.ResolveString(Object obj, Block block, Boolean isResolveExpressions, Boolean isResolveLocalization)
+   at RacingLeagueTools.FlexRenderer.Models.BlockOptions.TextOptions.Init(Block block)
+   at RacingLeagueTools.FlexRenderer.Models.Block.Init()
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>g__InitChild|426_1(Block child)
+   at RacingLeagueTools.FlexRenderer.Models.Block.<Init>b__426_0(Block i)
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+   at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-14 12:12:53.114 +01:00 [ERR] database loading
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: s.CompletedStatus'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._Vrpv1a6aMRxFsFrRdr1m5CjXrls()
+   at _YNBpd8M6lN7xxURqAz8LCAUAAEC._QOx5pdvyj4eBtf3CIwA7hOgb4GaA()
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._4N4dW7UPPp5XK2ZJW6rmB9bEjmV()
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._Y7jeIWgejrjuwRojf9x101kReq()
+   at _TzFhlQCYLkbl0H74kCkffjvbL9k._YZyELTm6P8566TzsN1E4B3HzMVc()
+   at _Lmzc6fVBeaQsjGd4kKTmwtiVatPA._CSBssSMnpnudBwhj8Fl3uoaXymU()
+2024-02-14 12:12:54.523 +01:00 [ERR] database loading
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: s.CompletedStatus'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._Vrpv1a6aMRxFsFrRdr1m5CjXrls()
+   at _YNBpd8M6lN7xxURqAz8LCAUAAEC._QOx5pdvyj4eBtf3CIwA7hOgb4GaA()
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._4N4dW7UPPp5XK2ZJW6rmB9bEjmV()
+   at _WZnbM8tEfzUVtusrqTnZxBQ33Ay._Y7jeIWgejrjuwRojf9x101kReq()
+   at _TzFhlQCYLkbl0H74kCkffjvbL9k._YZyELTm6P8566TzsN1E4B3HzMVc()
+   at _Lmzc6fVBeaQsjGd4kKTmwtiVatPA._CSBssSMnpnudBwhj8Fl3uoaXymU()
+2024-02-14 12:13:58.648 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-14 12:14:04.012 +01:00 [ERR] database loading
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such column: p.IsAutoCancelPenaltyActionAfterRemoving'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at _wa2ItTg0957eCBykPIpLpTm7bsR._oiderGs53ooGfc2N3gAq1MAjEMk()
+   at _wa2ItTg0957eCBykPIpLpTm7bsR._SplT9mWC5DNWP5DFexqKLSJOE18()
+   at _wa2ItTg0957eCBykPIpLpTm7bsR._dZOuoSTnKdyuTLTIj5FOal0yLDe()
+   at _b1SjW49Sm9e6VcEW3OsvJc9bl6e._zQj7aYb4hdNy7clLHv9w7WjCrUB()
+   at _an4yCNYeoXFfaspiNS84uat7QB4._fZJtphH42MlVDHnc71nJwdYARGv()
+2024-02-14 12:14:04.505 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)

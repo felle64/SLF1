@@ -1,0 +1,122 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "HorizontalAlignment": "Left",
+            "Items": [
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "VerticalAlignment" : "Center",
+                    "Items" :
+                    [
+                         {                            
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString} {Season.Name, Converter=StringToUpperString} {Session.Track.CountryName, Converter=StringToUpperString}",                            
+                            "FontName": "{Formula1-Black}",
+                            "FontSize": 40,
+                            "Foreground": "FFFFFF"
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "Source": "",                            
+                            "FontName": "{FontNameBlack}",
+                            "FontSize": 40,
+                            "Foreground": "{ForegroundDefault}",
+                        }]
+                },
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Spacing": 8,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "[{Statistics.Header, Converter=StringToUpperString}]",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 70,
+                            "Foreground": "{Foregroundwhithe}"
+                        },
+
+                        {
+                            "Name": "LocationName",
+                            "BlockType": "text",
+                            //"MarginLeft": 12,
+                            //"MarginTop": 2,
+                            "VerticalAlignment": "Center",
+                            "Source": "",
+                            "FontName": "{FontNameBold}",                            
+                            "FontSize": 18,
+                            "Foreground": "{Foregroundwhithe}"
+                        }
+                    ]
+                },       
+
+                //main header
+                {
+                    "Name": "headerMainContent",
+                    "BlockType": "stack",
+                    "Spacing": 8,
+                    "Items": [
+                        // {                           
+                        //     "BlockType": "image",
+                        //     "Height": 36,
+                        //     "Source": ""
+                        // },
+
+                        {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "",
+                                    "FontName": "{FontNameWide}",                                   
+                                    "FontSize": 18
+                                },
+
+                        {                            
+                            "BlockType": "text",
+                            "VerticalAlignment": "Center",
+                            "Source": "",
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 30
+                        }
+                    ]
+                }
+            ]
+        },
+
+         //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft" : 20,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "image",
+                            "Height": "{LogoSize}",
+                            "Margin": "0, 0, 0, 0",
+                            "Source": "{Season.LeagueInfo.LeagueLogo}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

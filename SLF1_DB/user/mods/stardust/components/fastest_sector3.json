@@ -1,0 +1,13 @@
+{
+    "BlockType" : "itemstack",
+    "ItemStackOptions" : {
+        "ItemSource" : "{Session.Drivers}",
+        "Limit" : 1,
+        "OrderBy" : "{Item.IsOverallFastestSector3}",
+        "Template" : 
+        {
+            "BlockType" : "text",
+            "Source" : "{Item.Driver.Name}, {Item.IsOverallFastestSector3}, {Item.FastestLapSector3}"
+        }
+    }
+}

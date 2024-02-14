@@ -1,0 +1,17 @@
+{
+  "NotF1SeasonOrCustomTeams": true,
+  "ShowCountryFlagsForDrivers": true,
+  "ShowPenaltyPointsInStandings": true,
+  "ShowWinnerInCalendar": true,
+  "ShowTrackIconInCalendar": true,
+  "ShowCountryFlagsIconInCalendar": true,
+  "RenderReserveDriver": false,
+  "RenderPodiumColors": true,
+  "RenderPenaltySeparator": false,
+  "RenderPenaltyVerdict": true,
+  "SeasonFormForDriverPos": 5,
+  "SecondCalendarEventsInColumn": 12,
+  "ReserveDriverMax": 0,
+  "TeamNumberToCompare": 9,
+  "StewardReportType": "Report"
+}

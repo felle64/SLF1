@@ -1,0 +1,84 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "24, 24, 24, 24",
+
+        "Orientation": "Vertical",
+        "Items": [
+            //driver line
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    //flag
+                    {
+                        "BlockType": "image",
+                        "Height": 48,
+                        "MarginRight": 12,
+                        "VerticalAlignment": "Center",
+                        "ImageOptions": {
+                            "Path": "{DriverInfo.Driver.Nationality.LogoPath}",
+                            "VerticalAlignment": "Center"
+                        }
+                    },
+
+                    //name
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 600,
+                        "MarginLeft": 8,
+                        "Source": "{DriverInfo.Driver.Name}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 56
+                    },
+
+                    //icon badges
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 4,
+                        "MarginLeft": 6,
+                        "MarginTop": 4,
+                        "ItemStackOptions": {
+                            "ItemSource": "{DriverInfo.Driver.BadgeImages}",
+                            "Template": {
+                                "BlockType": "image",
+                                "Height": 24,
+                                "Source": "{Item}"
+                            }
+                        }
+                    },
+
+                    //text badge
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 400,
+                        "MarginLeft": 8,
+                        "MarginTop": 8,
+                        "Source": "{DriverInfo.Driver.BadgeText}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 16
+                    },
+
+                    //race number
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 600,
+                        "MarginLeft": 16,
+                        "Source": "#{DriverInfo.Driver.RaceNumber}",
+                        "Foreground": "#444444",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 56
+                    }
+                ]
+            }            
+        ]
+    }
+}

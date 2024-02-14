@@ -1,0 +1,164 @@
+{
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "Width": 580,
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/{Item.Team.Name}_light.png",
+            "Width": 575,
+            "Height": 86,
+            "MarginTop": 0,
+            "MarginBottom": 5,
+            "Items": [
+                //left part number
+                {
+                    "BlockType": "text",
+                    "Width": 40,
+                    "MarginLeft": 20,
+                    "Source": "{Item.Position}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{ForegroundBlack}",
+                    "FontSize": 36
+                },
+                {
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Width": 10,
+                    "Height": 55,
+                    "Opacity": 100,
+                    "ImageOptions": {
+                        "Path": "images/Modern/Shape/{Item.Team.Name}.png"
+                    }
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "VerticalAlignment": "Center",
+                    "Height": 70,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //Real name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "Source": "{Item.Driver.RealName}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 24
+                                },
+                                //Clear
+                                {
+                                    "BlockType": "image",
+                                    "Height": 22,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Clear.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //flag
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf":"{ShowCountryFlagsForDrivers}",
+                                    "Height": 22,
+                                    "MarginLeft": 5,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "MarginTop": -5,
+                            "Items": [
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "Source": "{Item.Driver.Name}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 22
+                                },
+                                //icon badges
+                                {
+                                    "BlockType": "itemstack",
+                                    "MarginLeft": 6,
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Driver.BadgeImages}",
+                                        "Template": {
+                                            "BlockType": "image",
+                                            "Height": 20,
+                                            "Source": "{Item}"
+                                        }
+                                    }
+                                },
+                                //text badge
+                                {
+                                    "BlockType": "text",
+                                    "MaxWidth": 100,
+                                    "MarginLeft": 8,
+                                    "Source": "{Item.Driver.BadgeText}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Top",
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 14
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //Team name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "Source": "{Item.Team.FullName}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 12
+                                }
+                            ]
+                        }
+                    ]
+                },
+                //points
+                {
+                    "BlockType": "Dock",
+                    "Orientation": "Horizontal",
+                    "HorizontalAlignment": "Center",
+                    "MarginLeft":135,
+                    "MarginTop":47,
+                    "TextAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Orientation": "Horizontal",
+                            "Source": "{Item.Points}",
+                            "HorizontalAlignment": "Center",
+                            "TextAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 25
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "Background": "{CellBG}",
+    "Items": [
+        //Left part
+        {
+            "BlockType": "stack",           
+            "MarginRight": 16,
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //color
+                {                    
+                    "BlockType": "shape",
+                    "VerticalAlignment": "Center",
+                    "Width" : 10,
+                    "Height": 48,
+                    "Opacity" : 45,
+                    "ShapeOptions" : 
+                    {
+                        "Type" : "Rectangle",
+                        "Fill" : "{Item.Team.Color}"
+                    }                    
+                }                
+            ]
+        },
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "Foreground": "{Item.Team.Color}",
+                    "FontSize": 42,
+                }               
+            ]
+        },
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+    ]
+}

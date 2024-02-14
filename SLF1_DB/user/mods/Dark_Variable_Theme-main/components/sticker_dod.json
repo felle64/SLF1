@@ -1,0 +1,37 @@
+{
+    "Name" : "sticker_fl",
+    "BlockType" : "dock",
+    "Orientation" : "Horizontal",
+    "Height" : 73,
+    "Width" : 765,
+    "BackgroundImage": "<bg>",
+    "VerticalAlignment" : "Center",   
+    "Spacing" : 1,
+    "Items" :
+    [
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Left",
+            "PaddingBottom" : 30,
+            "MarginLeft" : 50,
+            "FontName" : "{FontNameDefault}",
+            "FontSize" : 27,
+            "Foreground" : "#ffffff"
+        },
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<data>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Left",
+            "FontName" : "{FontNameBold}",
+            "FontSize" : 35,
+            "PaddingBottom" : 30,
+            "MarginLeft" : 40,
+            "Foreground" : "#ffffff"
+        },
+    ]
+}

@@ -1,0 +1,569 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",     
+        "Padding" : "24,12,24,12", 
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_pre"
+            },
+
+            //separator
+            {
+                "Name" : "separator",
+                "BlockType": "image",
+                "MarginTop": 16,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+
+            //Preview Information
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Width" : "{FIAMarginDetailsArea}", 
+                "Items": [
+                    //Left
+                    {
+                        "BlockType": "Itemstack",
+                        "Orientation":"Vertical",
+                        "Spacing": 12,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "IndexStart" : "{Season.SeasonCurrentNumberEvent}",
+                            "Limit": 1,
+                            "Template" : {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "HorizontalAlignment" : "Left",
+                                "MarginTop": 75,
+                                "Items" : [
+                                    //RD
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation":"Horizontal",
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Round]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Item.Position}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                                },
+                                        ],
+                                    },
+                                    //Circuit
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Circuit]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Item.Track.CircuitFullName}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //Country
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Country]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Item.Track.CountryName}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //Length
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Length]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Item.Track.Length, Converter=NumberGroupWithSeparator, Parameter=.}km",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //Laps
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Laps]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Laps}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //Turns
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Turns]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{Item.Track.NumberTurns}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //DRS
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[DRS Zones]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{DRSZones}",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                            },
+                                        ]
+                                    },
+                                    //Lap Record
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Lap Record]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            "TextOptions" : 
+                                            {
+                                                "Wrap" : true,
+                                            }
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation":"Vertical",
+                                                "Items":[                                            
+                                                   { 
+                                                        "BlockType": "stack",
+                                                        "Orientation":"Horizontal",
+                                                        "Items":[                                            
+                                                            {
+                                                                "BlockType":"text",
+                                                                "Source": "{Item.Track.RaceLapRecordDriverName}",
+                                                                "FontName": "{FIAFont}",
+                                                                "Foreground" : "{FIAText}",                                     
+                                                                "FontSize": "30",
+                                                                "Triggers":
+                                                                [
+                                                                    {
+                                                                        "Condition" : "{Item.Track.RaceLapRecordDriverName, Converter=EmptyObjectToTrue}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : "N/A"
+                                                                    },
+                                                                ]
+                                                            },
+                                                            {
+                                                                "BlockType":"text",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": " ({LapRecordYear})",
+                                                                "FontName": "{FIAFont}",
+                                                                "Foreground" : "{FIAText}",                                     
+                                                                "FontSize": "25",
+                                                                "Triggers":
+                                                                [
+                                                                    {
+                                                                        "Condition" : "{Item.Track.RaceLapRecordDriverName, Converter=EmptyObjectToTrue}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : "N/A"
+                                                                    },
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType":"text",
+                                                        "MarginTop": 5,
+                                                        "Source": "{Item.Track.RaceLapRecordTime}",
+                                                        "FontName": "{FIAFontBold}",
+                                                        "Foreground" : "{FIAText}",                                     
+                                                        "FontSize": "25",
+                                                        "Triggers":
+                                                        [
+                                                            {
+                                                                "Condition" : "{Item.Track.RaceLapRecordTime, Converter=EmptyObjectToTrue}",
+                                                                "Property" : "Source",
+                                                                "Value" : ""
+                                                            },
+                                                        ]
+                                                    },
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    //Previous Winner
+                                    {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Orientation":"Horizontal",
+                                        "MarginTop": 5,
+                                        "Items": [
+                                            {
+                                            "BlockType":"text",
+                                            "Source": "[Previous Winner]",
+                                            "Width": "{PreviewWidth}",
+                                            "FontName": "{FIAFontBold}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "30",
+                                            "TextOptions" : 
+                                            {
+                                                "Wrap" : true,
+                                                "TextAlignment": "Center",
+                                            }
+                                            },
+                                            {
+                                                "BlockType":"text",
+                                                "Source": "{PreviousWinner}",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FIAFont}",
+                                                "Foreground" : "{FIAText}",                                     
+                                                "FontSize": "30",
+                                                "Triggers":
+                                                [
+                                                    {
+                                                        "Condition" : "{PreviousWinner, Converter=EmptyObjectToTrue}",
+                                                        "Property" : "Source",
+                                                        "Value" : "N/A"
+                                                    },
+                                                ]
+                                            },
+                                        ]
+                                    },
+                                ]
+                            }
+                        }
+                    },
+                    //Left
+                    {
+                        "BlockType": "Itemstack",
+                        "Orientation":"Vertical",
+                        "Spacing": 12,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "IndexStart" : "{Season.SeasonCurrentNumberEvent}",
+                            "Limit": 1,
+                            "Template" : {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "HorizontalAlignment" : "Left",
+                                "Items" : [                                
+                                        {
+                                            "BlockType" : "stack",
+                                            "Orientation" : "Horizontal",
+                                            "HorizontalAlignment" : "Left",
+                                            "Items":
+                                            [                                               
+                                                    //Tyres
+                                                    {
+                                                    "BlockType" : "stack",
+                                                    "Orientation" : "Vertical",
+                                                    "HorizontalAlignment" : "Center",
+                                                    "Items":[
+                                                        {
+                                                            "BlockType":"text",
+                                                            "Source": "[Available Compounds]",
+                                                            "Width": 500,
+                                                            "VerticalAlignment": "Center",
+                                                            "HorizontalAlignment" : "Center",
+                                                            "MarginLeft": 100,
+                                                            "FontName": "{FIAFont}",
+                                                            "Foreground" : "{FIAText}",                                     
+                                                            "FontSize": "30",
+                                                        },
+                                                        {
+                                                            "BlockType" : "stack",
+                                                            "Orientation" : "Horizontal",
+                                                            "HorizontalAlignment" : "Center",
+                                                            "Items":[
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "MarginTop": 10,
+                                                                    "MarginLeft": 75,
+                                                                    //"Width": 100,
+                                                                    "Height": 50,
+                                                                    "Opacity": 100,
+                                                                    "Source": "images/pit/pit_soft.png"
+                                                                },
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "MarginTop": 10,
+                                                                    "MarginLeft": 50,
+                                                                    //"Width": 100,
+                                                                    "Height": 50,
+                                                                    "Opacity": 100,
+                                                                    "Source": "images/pit/pit_medium.png"
+                                                                },
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "MarginTop": 10,
+                                                                    "MarginLeft": 50,
+                                                                    //"Width": 100,
+                                                                    "Height": 50,
+                                                                    "Opacity": 100,
+                                                                    "Source": "images/pit/pit_hard.png"
+                                                                },
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "MarginTop": 10,
+                                                                    "MarginLeft": 50,
+                                                                    //"Width": 100,
+                                                                    "Height": 50,
+                                                                    "Opacity": 100,
+                                                                    "Source": "images/pit/pit_intermediate.png"
+                                                                },
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "MarginTop": 10,
+                                                                    "MarginLeft": 50,
+                                                                    //"Width": 100,
+                                                                    "Height": 50,
+                                                                    "Opacity": 100,
+                                                                    "Source": "images/pit/pit_wet.png"
+                                                                }
+                                                            ],
+                                                            "RenderIf": "{RenderAllCompounds}"
+                                                    },
+                                                    {
+                                                        "BlockType" : "stack",
+                                                        "Orientation" : "Horizontal",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Items":[
+                                                            {
+                                                                "BlockType": "image",
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center",
+                                                                "MarginTop": 10,
+                                                                "MarginLeft": 50,
+                                                                //"Width": 100,
+                                                                "Height": 50,
+                                                                "Opacity": 100,
+                                                                "Source": "images/pit/pit_soft.png"
+                                                            },
+                                                            {
+                                                                "BlockType": "image",
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center",
+                                                                "MarginTop": 10,
+                                                                "MarginLeft": 50,
+                                                                //"Width": 100,
+                                                                "Height": 50,
+                                                                "Opacity": 100,
+                                                                "Source": "images/pit/pit_medium.png"
+                                                            },
+                                                            {
+                                                                "BlockType": "image",
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center",
+                                                                "MarginTop": 10,
+                                                                "MarginLeft": 50,
+                                                                //"Width": 100,
+                                                                "Height": 50,
+                                                                "Opacity": 100,
+                                                                "Source": "images/pit/pit_hard.png"
+                                                            },
+                                                        ],
+                                                        "RenderIf": "{RenderDry}"
+                                                    },
+                                                    {
+                                                        "BlockType" : "stack",
+                                                        "Orientation" : "Horizontal",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Items":[
+                                                            {
+                                                                "BlockType": "image",
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center",
+                                                                "MarginTop": 10,
+                                                                "MarginLeft": 50,
+                                                                //"Width": 100,
+                                                                "Height": 50,
+                                                                "Opacity": 100,
+                                                                "Source": "images/pit/pit_intermediate.png"
+                                                            },
+                                                            {
+                                                                "BlockType": "image",
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center",
+                                                                "MarginTop": 10,
+                                                                "MarginLeft": 50,
+                                                                //"Width": 100,
+                                                                "Height": 50,
+                                                                "Opacity": 100,
+                                                                "Source": "images/pit/pit_wet.png"
+                                                            }
+                                                        ],
+                                                        "RenderIf": "{RenderWet}"
+                                                    }
+                                                ]
+                                            },
+                                             //forecast
+                                            {
+                                                "BlockType" : "stack",
+                                                "Orientation" : "Vertical",
+                                                "HorizontalAlignment" : "Center",
+                                                "Items":[
+                                                    {
+                                                        "BlockType":"text",
+                                                        "Source": "[Forecast]",
+                                                        "Width": "200",
+                                                        "VerticalAlignment": "Center",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "MarginLeft": 75,
+                                                        "FontName": "{FIAFont}",
+                                                        "Foreground" : "{FIAText}",                                     
+                                                        "FontSize": "30",
+                                                    },
+                                                    {
+                                                    "BlockType": "image",
+                                                    "VerticalAlignment": "Center",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginTop": 20,
+                                                    "MarginLeft": 55,
+                                                    //"Width": 100,
+                                                    "Height": 50,
+                                                    "Opacity": 100,
+                                                    "Source": "images/forecast/forecast_{ForecastWeather}.png"
+                                                    },
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    //Track Image
+                                    {
+                                            "BlockType": "image",
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Center",
+                                            "MarginTop": 20,
+                                            "MarginLeft": 50,
+                                            //"Width": 100,
+                                            "Height": 500,
+                                            "Opacity": 100,
+                                            "Source": "images/layout/layout_{Item.Track.CircuitName}.png"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+        ]
+    }
+}

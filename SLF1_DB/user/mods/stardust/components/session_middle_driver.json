@@ -1,0 +1,110 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "HorizontalAlignment" : "Center",
+    "VerticalAlginment":"Center",
+    "Height" : 70,
+    "Width" : 70,
+    "MarginRight" : 10,
+    "Triggers" : [
+        {
+            "Condition" : "{F1Mode}",
+            "Property" : "Width",
+            "Value" : "126"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_driver.png",
+            "Height" : 70,
+            "Width" : 70,
+            "Triggers" : [
+                {
+                    "Condition" : "{F1Mode}",
+                    "Setters" : [
+                        {
+                            "Property" : "Width",
+                            "Value" : "126"
+                        },
+                        {
+                            "Property" : "BackgroundImage",
+                            "Value" : "images/BgForRace/bg_driver_f1.png"
+                        }
+                    ]
+                    
+                }
+            ],
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "#ffffff",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_driver_effect.png",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 70,
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Width",
+                                    "Value" : "126"
+                                },
+                                {
+                                    "Property" : "BackgroundImage",
+                                    "Value" : "images/BgForRace/bg_driver_f1_effect.png"
+                                }
+                            ]
+                            
+                        }
+                    ],
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Foreground" : "{Item.Team.Color}",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "FontSize" : "{TableCellFontSize}",
+                            "Width" : 70,
+                            "Height" : 62,
+                            "MarginTop" : "{TableCellFontMarginTop}",
+                            "Source" : "<data>",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "FontName" : "{TW-Bo}"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{F1Mode}",
+                                    "Property" : "Width",
+                                    "Value" : "63"
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "image",
+                            "Source" : "images/f1drivers/{Item.Team.Name}_{Item.SeatPosition}.png",
+                            "RenderIf" : false,
+                            "Width" : 63,
+                            "MarginTop" : 7,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{F1Mode}",
+                                    "Property" : "RenderIf",
+                                    "Value" : "true"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

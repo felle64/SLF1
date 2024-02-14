@@ -1,0 +1,266 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "Padding": "0, 0",
+            "HorizontalAlignment": "Left",
+            "Items": [
+
+                //league name
+                    {
+                        
+                            "BlockType": "text",
+                            "Source": "{Season.LeagueInfo.LeagueName}",                            
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 40,
+                            "Foreground" : "{WhiteText}"
+                    },
+                    {                            
+                            "BlockType": "text",
+                            "Source": "{Season.Name}",
+                            "VerticalAlignment" : "Center",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 36,
+                            "Foreground" : "{WhiteText}"
+                    },
+                
+                
+                //session
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Spacing": 8,
+                    "Items": [
+                       
+
+                        {
+                            "Name": "CountryName",
+                            "BlockType": "text",
+                            "MarginLeft": 0,
+                            "VerticalAlignment": "Center",
+                            "Source": "{Session.Track.CountryName}",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 36,
+                            "Foreground" : "{WhiteText}",
+                        },
+                        {
+                            "Name": "CountryFlag",
+                            "BlockType": "image",
+                            "VerticalAlignment": "Center",
+                            "Height": 48,
+                            "Source": "{Session.Track.Nation.LogoPath}"
+                        },
+                    ]
+                },
+                        {
+                            "Name": "LocationName",
+                            "BlockType": "text",
+                            //"MarginLeft": 12,
+                            //"MarginTop": 2,
+                            "VerticalAlignment": "Center",
+                            "Source": "{Session.Track.CircuitName}",
+                            "FontName": "{FontNameBold}",                            
+                            "FontSize": 34,
+                            "Foreground" : "{WhiteText}",
+                            "RenderIf" : "{RenderTrackName}"
+                        },
+                        {
+                            "Name": "LocationName",
+                            "BlockType": "text",
+                            //"MarginLeft": 12,
+                            //"MarginTop": 2,
+                            "VerticalAlignment": "Center",
+                            "Source": "{Session.Track.CircuitFullName}",
+                            "FontName": "{FontNameBold}",                            
+                            "FontSize": 34,
+                            "Foreground" : "{WhiteText}",
+                            "RenderIf": "{RenderTrackNameFull}"
+                        },
+                        //SC Count
+                        {
+                            "Name": "SC Count",
+                            "BlockType": "text",
+                            "MarginLeft": 0,
+                            "VerticalAlignment": "Center",
+                            "Source": "# of SCs - {Session.SafetyCarCount}",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{GreyText}",
+                            "FontSize": 34,
+                        },
+                                                  
+                 //{
+                   // "BlockType": "text",
+                    //"Source": "{Session.Track.Length}",
+                    //"FontName": "{FontNameBold}",
+                    //"FontSize": 20,
+                    //"Foreground" : "{WhiteText}"
+                // },
+            ]
+        },
+            //headerCenter
+                {
+                    "Name": "headerCenterPart",
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "Spacing": 12,
+                    "Padding": "0, 0",
+                    "HorizontalAlignment": "Center",
+                    "Items": [
+                        //TrackImage
+                        
+                        {
+                            "BlockType" : "image",
+                            "Height": 350,
+                            "VerticalAlignment": "Top",
+                            "ImageOptions": {
+                                "Path": "images/tracks/track_{Session.Track.CircuitName}.png"
+                            }
+                        },
+                    ],
+                    "RenderIf": "{RenderTrackImage}",
+                },
+
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft" : 56,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "Spacing": 8,
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
+                                    "FontName": "{FontNameBold}",
+                                    "FontSize": 38,
+                                    "Foreground" : "{WhiteText}"
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "HorizontalAlignment": "Right",
+                                    "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "Source": "[{Session.SessionType}]",
+                                            "FontName": "{FontNameBold}",
+                                            "FontSize": 36,
+                                            "Foreground" : "{WhiteText}",
+
+                                        },
+                                        //race duration
+                                        {
+                                            "BlockType": "text",                                            
+                                            "RenderIf": false,
+                                            "Source": " • {Session.TotalLaps} [laps]",
+                                            "FontName": "{FontNameBold}",
+                                            "FontSize": 36,
+                                            "Foreground" : "{WhiteText}",
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        },
+                                        //qual, practice duration
+                                        {
+                                            "BlockType": "text",                                                                                  
+                                            "RenderIf": false,
+                                            "Source": " • {Session.SessionDurationMinutes} [min].",
+                                            "FontName": "{FontNameBold}",
+                                            "FontSize": 36,
+                                            "Foreground" : "{WhiteText}",
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringNotEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "RenderIf": "{Session.IsLiveData}",
+                                    "HorizontalAlignment": "Right",
+                                    "Spacing": 4,
+                                    "Items": [
+                                        {
+                                            "BlockType": "image",
+                                            "Height": 75,
+                                            "VerticalAlignment": "Center",
+                                            "Source": "weather_{Session.WeatherType}.png"
+                                        },
+                                        {
+                                            "BlockType": "text",
+                                            "VerticalAlignment": "Center",
+                                            "FontName": "{FontNameBold}",
+                                            "FontSize": 36,
+                                            "Foreground" : "{WhiteText}",
+                                            "Source": "{Session.WeatherType}"
+                                        },
+                                        
+                                    ]
+                                },
+                                {
+                                    "BlockType": "stack",
+                                    "RenderIf": "{Session.IsLiveData}",
+                                    "HorizontalAlignment": "Right",
+                                    "Spacing": 4,
+                                    "Items": [                                        
+                                        {
+                                            "BlockType": "text",
+                                            "VerticalAlignment": "Center",
+                                            "Source": "[+]{Session.AirTemperature, converter=TemperatureCelciusToFahrenheit} [°F /] {Session.AirTemperature} [°C Air Temp]",
+                                            "FontName": "{FontNameBold}",
+                                            "FontSize": 36,
+                                            "Foreground" : "{WhiteText}"
+                                        },                                          
+                                    ],
+                                    "RenderIf":"{RenderAirTemp}",
+                                },
+                                //VSC
+                                {
+                                    "Name": "VSC Count",
+                                    "BlockType": "text",
+                                    "MarginLeft": 0,
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment":"Right",
+                                    "Source": "# of VSCs - {Session.VirtualSafetyCarCount}",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{GreyText}",
+                                    "FontSize": 36,
+                                },
+                            ]
+                        },
+                    ]
+                }
+            ]
+        }
+    ]
+}

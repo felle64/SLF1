@@ -1,0 +1,109 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "UseBackgroundCrop" : false,
+    "Height" : 73,
+    "Items": [
+        {
+            "BlockType": "text",
+            "MaxWidth": 90,
+            "MarginLeft": 0,
+            "MarginBottom" : 7,
+            "Width" : 50,
+            "Source": "{Item.PositionString}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "FontName" : "{FontNameBold}",
+            "FontSize" : 37,
+            "Foreground" : "#ffffff",
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                    "Property" : "Foreground",
+                    "Value" : "#ffffff"
+                },
+                {
+                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                    "Property" : "Foreground",
+                    "Value" : "#ffffff"
+                },
+                {
+                    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                    "Property" : "Foreground",
+                    "Value" : "#ffffff"
+                }
+            ],
+            "TextOptions" : {
+                "HorizontalAlignment" : "Center"
+            }
+        },
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Driver.Name}",
+                    "VerticalAlignment": "Bottom",
+                    "MarginLeft" : 100,
+                    "PaddingBottom": 20,
+                    "FontName" : "{FontNameDefault}",
+                    "FontSize" : 30,
+                    "Foreground" : "#ffffff",
+                    "TextOptions": {
+                        "HorizontalAlignment": "Right",
+                    }
+                },
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "Reserve Driver",
+                    "VerticalAlignment": "Bottom",
+                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                    "PaddingBottom": 20,
+                    "MarginRight" : 150,
+                    "TextOptionsExtern" : "tableCellDefault",
+                    "Triggers" : [{
+                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                        "Property" : "Foreground",
+                        "Value" : "#ffffff"
+                    }],
+                    "TextOptions": {
+                        "HorizontalAlignment": "Center",
+                    }
+                }
+            ]
+        },
+        {
+            "BlockType": "stack",           
+            "MarginRight": 16,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Source" : "images/cars/{Item.Team.Name}.png",
+                    "MarginLeft" : 12,
+                    "Height": 73,
+                    "PaddingBottom" : -5,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Bottom",
+                    "ImageOptions": {
+                        "VerticalAlignment": "Center"
+                    },
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.LogoPath}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

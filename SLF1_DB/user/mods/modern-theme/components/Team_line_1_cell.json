@@ -1,0 +1,102 @@
+{
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/{Item.Team.Name}_dark.png",
+            //"Padding": "5, 25, 20, 5",
+            "Width": 1170,
+            "Height": 172,
+            "MarginTop": 0,
+            "MarginBottom": 5,
+            "Items": [
+                //left part number
+                {
+                    "BlockType": "text",
+                    "Width": 40,
+                    //"Background": "#cecece",
+                    "MarginLeft": 30,
+                    "Source": "{Item.Position}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{Foregroundwhithe}",
+                    "FontSize": 42
+                },
+                {
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Width": 10,
+                    "Height": 75,
+                    "Opacity": 100,
+                    "ImageOptions": {
+                        "Path": "images/Modern/Shape/{Item.Team.Name}.png"
+                    }
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Height": 150,
+                    "Width": 620,
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //Team name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "MarginTop": 45,
+                                    "Source": "{Item.Team.FullName}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{Foregroundwhithe}",
+                                    "FontSize": 42
+                                },
+                                //Logo
+                                {
+                                    "BlockType": "image",
+                                    "Height": 48,
+                                    "MarginLeft": 5,
+                                    "MarginTop": 20,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        //"Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                //points
+                {
+                    "BlockType": "Dock",
+                    "Orientation": "Horizontal",
+                    "HorizontalAlignment": "Center",
+                    "MarginLeft": 270,
+                    "MarginTop": 112,
+                    "TextAlignment": "Center",
+                    "Width": 50,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Orientation": "Horizontal",
+                            "Source": "{Item.Points}",
+                            "HorizontalAlignment": "Center",
+                            "TextAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 35
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

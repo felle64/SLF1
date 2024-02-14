@@ -1,0 +1,34 @@
+{
+    "BlockType": "dock",
+    "MarginRight": "<MarginRight>",
+    "VerticalAlignment" : "Center",
+    "Items": [
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 5,
+                    "Height": 35,
+                    "MarginRight": 10,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                    "RenderIf" : "<RenderIf>"
+                },
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "TextOptionsExtern": "teamCell" 
+                }               
+            ]
+        }
+    ]
+}

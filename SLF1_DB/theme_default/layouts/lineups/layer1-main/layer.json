@@ -1,0 +1,253 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "0, 0, 0, 4",
+
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "dock",
+                "VerticalAlignment": "Center",
+                "Margin": "0, 0, 0, 8",
+                "Padding": "42, 24, 24, 8",
+                "Items": [
+                    //league name
+                    {
+                        "BlockType": "stack",
+                        "VerticalAlignment": "Center",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Left",
+                        "Spacing": 12,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Opacity": 75,
+                                "Source": "{Season.LeagueInfo.LeagueName}",
+                                "FontName": "{FontNameWide}",
+                                "Foreground": "#FFCCCCCC",
+                                "FontSize": 28
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{Season.Name} · Lineups",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameWide}",
+                                "FontSize": 20,
+                                "Foreground": "{ForegroundDarker}"
+                            }
+                        ]
+                    },
+
+                    {
+                        "Name": "leagueLogo",
+                        "MarginLeft": 36,
+                        "MarginRight": 0,
+                        "PaddingRight": 4,
+                        "Height": 72,
+                        "BlockType": "image",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}"
+                    }
+                ]
+            },
+
+            //separator
+            {
+                "Name": "separator",
+                "BlockType": "image",
+                "MarginTop": 0,
+                "MarginLeft": 24,
+                "MarginRight": 24,
+                "MarginBottom": 8,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+
+            //lines
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Margin": "18, 12, 18, 24",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Lineups}",
+                    "Template": {
+                        "BlockType": "stack",
+                        "Margin": "0,0,0,4",
+                        "Width": 1082,
+                        "Height": 68,
+                        "Orientation": "Horizontal",
+                        "VerticalAlignment": "Center",
+                        "Background": "#151515",
+                        "ColorizeBackground": {
+                            "Enabled": true,
+                            "Color": "{Item.Team.Color}",
+                            "BlendPercentage": 9
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{Item.IsNextTeam}",
+                                "Setters": [
+                                    {
+                                        "Property": "MarginTop",
+                                        "Value": 16
+                                    }
+                                ]
+                            }
+                        ],
+                        "Items": [
+
+                            //team
+                            {
+                                "BlockType": "stack",
+                                "Width": 336,
+                                "Margin": "36, 0, 0, 12",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Horizontal",
+                                "Spacing": 8,
+                                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                                "Items": [
+                                    //logo
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 36,
+                                        "MarginRight": 0,
+                                        "VerticalAlignment": "Center",
+                                        "ImageOptions": {
+                                            "Path": "{Item.Team.LogoPath}",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+
+                                    //name
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Item.Team.Name}",
+                                        "FontSize": 28
+                                    }
+                                ]
+                            },
+
+                            //car
+                            {
+                                "BlockType": "stack",
+                                "Width": 560,
+                                "Margin": "36, 0, 0, 12",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Horizontal",
+                                "Spacing": 12,
+                                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                "Items": [
+                                    //logo
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 36,
+                                        "MarginRight": 0,
+                                        "VerticalAlignment": "Center",
+                                        "ImageOptions": {
+                                            "Path": "{Item.Car.Vendor.LogoPath}",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+
+                                    //name
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Item.Car.Name}",
+                                        "FontSize": 28
+                                    }
+                                ]
+                            },
+
+                            //driver stack
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    //driver 1
+                                    {
+                                        "BlockType": "dock",
+                                        "PaddingLeft": 24,
+                                        "PaddingRight": 12,
+                                        "Width": 580,
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "Items": [
+                                                    //flag
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Height": 48,
+                                                        "MarginRight": 12,
+                                                        "VerticalAlignment": "Center",
+                                                        "ImageOptions": {
+                                                            "Path": "{Item.Driver.Nationality.LogoPath}",
+                                                            "VerticalAlignment": "Center"
+                                                        }
+                                                    },
+
+                                                    //name
+                                                    {
+                                                        "BlockType": "text",
+                                                        "MaxWidth": 520,
+                                                        "MarginLeft": 8,
+                                                        "Source": "{Item.Driver.Name}",
+                                                        "HorizontalAlignment": "Left",
+                                                        "VerticalAlignment": "Center",
+                                                        "FontName": "{FontNameDefault}",
+                                                        "FontSize": 40
+                                                    },
+
+                                                    //icon badges
+                                                    {
+                                                        "BlockType": "itemstack",
+                                                        "Spacing": 4,
+                                                        "MarginLeft": 6,
+                                                        "MarginTop": 4,
+                                                        "ItemStackOptions": {
+                                                            "ItemSource": "{Item.Driver.BadgeImages}",
+                                                            "Template": {
+                                                                "BlockType": "image",
+                                                                "Height": 24,
+                                                                "Source": "{Item}"
+                                                            }
+                                                        }
+                                                    },
+
+                                                    //text badge
+                                                    {
+                                                        "BlockType": "text",
+                                                        "MaxWidth": 400,
+                                                        "MarginLeft": 8,
+                                                        "MarginTop": 8,
+                                                        "Source": "{Item.Driver.BadgeText}",
+                                                        "HorizontalAlignment": "Left",
+                                                        "VerticalAlignment": "Top",
+                                                        "FontName": "{FontNameDefault}",
+                                                        "FontSize": 16
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

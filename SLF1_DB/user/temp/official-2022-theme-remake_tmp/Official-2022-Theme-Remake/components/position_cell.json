@@ -1,0 +1,13 @@
+{
+    "BlockType": "text",
+    "Source": "<position>",
+    "Width": 25,
+    "Height": 30,
+    "MarginRight" : 10,
+    "PaddingBottom" : 5,
+    "TextOptionsExtern": "positionCell",
+    "RenderIf": "{Item.ClassificationPosition, Converter=NumberNotEquals, Parameter=-1}",
+    "TextOptions": {
+        "HorizontalAlignment": "Center"       
+    }
+}

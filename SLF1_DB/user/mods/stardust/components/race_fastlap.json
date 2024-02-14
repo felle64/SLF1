@@ -1,0 +1,176 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "HorizontalAlignment" : "Center",
+    "VerticalAlginment":"Center",
+    "Height" : 70,
+    "Width" : 300,
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_fastlap.png",
+            "Height" : 70,
+            "Width" : 300,
+            
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColor}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsOdd}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_fastlap_effect.png",
+                    "Orientation" : "Horizontal",
+                    "RenderIf" : "{Item.IsRaceFastestLap, Converter=BoolReverse}",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 300,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Foreground" : "#000000",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "FontSize" : 40,
+                            "Width" : 300,
+                            "Height" : 62,
+                            "MarginTop" : 4,
+                            "Source" : "{Item.FastestLapTime}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "FontName" : "{TW-Sb}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_purple.png",
+                    "Height" : 70,
+                    "Width" : 300,
+                    "RenderIf" : "{Item.IsRaceFastestLap}",
+                    "Items" : [
+                        {
+                            "BlockType" : "stack",
+                            "BackgroundImage" : "images/BgForRace/bg_fastlap_effect.png",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "Height" : 70,
+                            "Width" : 300,
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Foreground" : "#000000",
+                                    "HorizontalAlignment" : "Center",
+                                    "VerticalAlginment":"Center",
+                                    "FontSize" : 40,
+                                    "Width" : 300,
+                                    "Height" : 62,
+                                    "MarginTop" : 4,
+                                    "Source" : "{Item.FastestLapTime}",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Center",
+                                        "FontName" : "{TW-Sb}"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_fastlap.png",
+            "Height" : 70,
+            "Width" : 300,
+            
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColorOdd}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsEven}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_fastlap_effect.png",
+                    "Orientation" : "Horizontal",
+                    "RenderIf" : "{Item.IsRaceFastestLap, Converter=BoolReverse}",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 300,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Foreground" : "#000000",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "FontSize" : 40,
+                            "Width" : 300,
+                            "Height" : 62,
+                            "MarginTop" : 4,
+                            "Source" : "{Item.FastestLapTime}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "FontName" : "{TW-Sb}"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_purple.png",
+                    "Height" : 70,
+                    "Width" : 300,
+                    "RenderIf" : "{Item.IsRaceFastestLap}",
+                    "Items" : [
+                        {
+                            "BlockType" : "stack",
+                            "BackgroundImage" : "images/BgForRace/bg_fastlap_effect.png",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "Height" : 70,
+                            "Width" : 300,
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Foreground" : "#000000",
+                                    "HorizontalAlignment" : "Center",
+                                    "VerticalAlginment":"Center",
+                                    "FontSize" : 40,
+                                    "Width" : 300,
+                                    "Height" : 62,
+                                    "MarginTop" : 4,
+                                    "Source" : "{Item.FastestLapTime}",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Center",
+                                        "FontName" : "{TW-Sb}"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

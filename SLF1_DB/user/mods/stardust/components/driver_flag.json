@@ -1,0 +1,31 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Vertical",
+    "Items" : [
+        {
+            "BlockType" : "dock",
+            "VerticalAlignment" : "Center",
+            "Height" : 30,
+            "Orientation" : "Vertical",
+            "Items" : [
+                {
+                    "BlockType" : "image",
+                    "Background" : "#000000",
+                    "Height" : 25,
+                    "Width" : 32,
+                    "VerticalAlignment" : "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Driver.Nationality.LogoPath}"
+                    }
+                }
+            ]
+        }
+    ],
+    "Triggers" : [
+        {
+            "Condition" : "{Item.Index, Converter=NumberIsEven}",
+            "Property" : "Background",
+            "Value" : "{GrayBG}"
+        }
+    ]
+}

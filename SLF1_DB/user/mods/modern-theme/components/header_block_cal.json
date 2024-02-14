@@ -1,0 +1,51 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Vertical",
+    "Background": "{HeaderDefault}",
+    "Width": "*",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "VerticalAlignment": "Center",
+            "Margin": "0, 0, 0, 8",
+            "Padding": "42, 16, 42, 16",
+            "Items": [
+                //league name
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Left",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "{Season.LeagueInfo.LeagueName}",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 20,
+                            "Foreground": "{Foregroundwhithe}"
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": " · {Season.Name}",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 16,
+                            "Foreground": "{Foregroundwhithe}"
+                        }
+                    ]
+                },
+                {
+                    "Name": "leagueLogo",
+                    "MarginLeft": 36,
+                    "MarginRight": 0,
+                    "Height": 56,
+                    "BlockType": "image",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Source": "{Season.LeagueInfo.LeagueLogo}"
+                }
+            ]
+        }
+    ]
+}

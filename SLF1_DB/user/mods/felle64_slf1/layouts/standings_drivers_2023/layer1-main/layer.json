@@ -1,0 +1,169 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {               
+                "BlockType": "component",
+                "ComponentName": "header_block_drivers_standings",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header" : "Driver Standings"
+                    }
+                }               
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "MarginRight" : 60,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Drivers}",
+                    "Limit": "{DriverLimit}",
+                    "IndexStart": "{StartPositionsFrom}",
+                    "RowSpacing": 30,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 12,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }                           
+                            }
+                        },
+
+                        {
+                            "Header": "",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "position_jump_cell"    
+                            }
+                        },                        
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,                            
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "driver_line_cell"   
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,                            
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell"   
+                            }
+                        },                        
+
+                        //points
+                        {
+                            "Header": "[POINTS]",
+                            "MarginLeft" : 0,
+                            "Template": {
+                                
+                                "BlockType": "dock",
+                                "PaddingLeft" : 12,
+                                "PaddingRight" : 12,
+                                "Background": "{BackgroundDefault}",
+                                "ColorizeBackground": {
+                                       "Enabled": false,
+                                       "Color": "#ffffff",
+                                       "BlendPercentage": 100
+                                },                                
+                                "Items": [                                    
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "FontName": "{Formula1-Italic}",
+                                        "Foreground" : "{ForegroundDefault}",
+                                        "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        }
+    ],
+                                        "TextOptionsExtern": "primaryNumber"
+                                    }
+                                ],
+                                "Triggers" :
+                                [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        },
+                                    {
+                                        "Condition" : "{Standings.IsPositionJumpForDriversExists}",
+                                        "Property" : "PaddingRight",
+                                        "Value" : 4
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "[GAP]",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "40, 0",
+                                "FontName": "{Formula1-Italic}",
+                                "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#ffffff",
+        "BlendPercentage": 100
+    },
+    "Triggers": [
+         {
+            "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+            "Property": "Source",
+            "Value": "",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        }
+    ],
+                                "Source" : "+{Item.PointsToLeaderDiff}",
+                                "Foreground" : "{ForegroundDefault}",
+                                "TextOptionsExtern" : "primaryNumber"
+                            }
+                        },
+                    ]
+                }
+            }
+        ]
+    }
+}

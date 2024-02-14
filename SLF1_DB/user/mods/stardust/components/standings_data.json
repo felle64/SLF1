@@ -1,0 +1,119 @@
+{
+    "BlockType" : "stack",
+    "Items" : [
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Center",
+            "VerticalAlginment":"Center",
+            "Height" : 70,
+            "Width" : "<width>",
+            "Items": [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/Standing/bg_data.png",
+                    "Height" : 70,
+                    "Width" : "<width>",
+                    "ColorizeBackground": {
+                        "Enabled" : true,
+                        "Color": "{RightPartEffectColor}",
+                        "BlendPercentage": 100
+                    },
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "BackgroundImage" : "images/Standing/bg_data_effect.png",
+                                "Orientation" : "Horizontal",
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlginment":"Center",
+                                "Height" : 70,
+                                "Width" : "<width>",
+                                "Items" : [
+                                    {
+                                        "BlockType" : "text",
+                                        "Foreground" : "<fore>",
+                                        "HorizontalAlignment" : "Center",
+                                        
+                                        "VerticalAlginment":"Center",
+                                        "FontSize" : "{TableCellFontSize}",
+                                        "Width" : "<width>",
+                                        "Height" : 62,
+                                        "MarginTop" : "{TableCellFontMarginTop}",
+                                        "Source" : "<data>",
+                                        "FontName" : "{TW-Bo}",
+                                        "TextOptions" : {
+                                            "HorizontalAlignment" : "Center"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                }
+            ],
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsOdd}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Center",
+            "VerticalAlginment":"Center",
+            "Height" : 70,
+            "Width" : "<width>",
+            "Items": [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/Standing/bg_data.png",
+                    "Height" : 70,
+                    "Width" : "<width>",
+                    "ColorizeBackground": {
+                        "Enabled" : true,
+                        "Color": "{RightPartEffectColorOdd}",
+                        "BlendPercentage": 100
+                    },
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "BackgroundImage" : "images/Standing/bg_data_effect.png",
+                                "Orientation" : "Horizontal",
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlginment":"Center",
+                                "Height" : 70,
+                                "Width" : "<width>",
+                                "Items" : [
+                                    {
+                                        "BlockType" : "text",
+                                        "Foreground" : "<fore>",
+                                        "HorizontalAlignment" : "Center",
+                                        
+                                        "VerticalAlginment":"Center",
+                                        "FontSize" : "{TableCellFontSize}",
+                                        "Width" : "<width>",
+                                        "Height" : 62,
+                                        "MarginTop" : "{TableCellFontMarginTop}",
+                                        "Source" : "<data>",
+                                        "FontName" : "{TW-Bo}",
+                                        "TextOptions" : {
+                                            "HorizontalAlignment" : "Center"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                }
+            ],
+            "Triggers" : [
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsEven}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+v.0.6.2
+- added option to change display of DNS races in Season Progress Position layout
+- minor fixes
+
+v.0.6.1
+- added second Lineup layout made by QRL Joker
+- added combined qual results layout
+- added commentator field sticker to race results render - editable by theme options
+- minor fixes
+
+v.0.6.0
+- added support for layout templates: driver_session_statistics and driver_season_statistics (premium statistics renders and more)
+- translation ready at most of strings - copy /localizations/english.json, to your language file and just translate values. (Translation statistics headers and descriptions not available yet)
+
+v.0.5.6
+- enabled display time of quali winner in time/gap column
+- added placeholder when driver not set time - in time columns
+- added column with ingame position penalty in quali result
+- added column with fastest lap in race result layout
+- disabled UseDefaultLayouts to prevent interferences during render default layouts
+- all strings ready to translate
+
+
+v.0.5.5
+- added second layout for calendar render. IMPORTANT: need to define number of events in first column by fill required option in theme options
+
+v.0.5.4
+- added all hashtags for race headers
+- removed unused fonts
+- disabled laps column on qual results if not live data
+- minor fixes
+
+v.0.5.3
+- reogranized components
+- moved text options from layouts to file text_options
+- fixed alignment of driver flag
+- added 3 more public_vars visible on theme options window
+- removed event description from calendar layout
+- other minor cosmetic changes
+
+v.0.5.2
+- removed unused global variables
+- merged text block options from headers to defined TextOptionsExtern
+- removed 5 header components - merged to one universal with options
+- added 2 image components for header images - component nesting was used
+- added option render points on race session layouts
+- other minor cosmetic changes 
+
+v.0.5.1
+- enabled display league logotype (if exists) instead F1 logotype
+- added trigger to pit column in race session layout - disable source on zero value
+
+v.0.5
+- moved render options to public_vars.json - ability to change options in GUI
+- added lineup layout
+- added team season progress (points)
+- minor changes related to public_vars usage
+- minor changes in driver/team cell components
+
+v.0.4.1
+- fixed driver/team cells in race and quali layout
+
+v.0.4
+- removed stints header in race layout
+- fixed header when sprint/main race
+- merged header component for season progress layouts
+- added layout for Season progress for quali
+- added team marks on driver standings
+- added stickers to Race layout
+- another minor changes
+
+v.0.3
+- fixed render race results when data not from live
+- fixed colour of country codes in progress layouts
+
+v.0.2
+- changed pit stops/laps margins
+- changed position number alignment
+- added layout for Calendar
+- added layout for Driver Standings
+- added layout for Team Standings
+- added layout for Season Progress (Pos and PTS)
+
+
+
+
+ToDo:
+- tyre compound usage details (waiting for telemetry gathering update)

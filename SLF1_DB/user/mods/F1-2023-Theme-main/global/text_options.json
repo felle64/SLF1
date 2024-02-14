@@ -1,0 +1,17 @@
+[
+    {
+        "Name" : "Num1",
+        "FontSize": 30,
+        "HorizontalAlignment" : "Center"        
+    },
+        {
+        "Name" : "tableColumnHeader",
+        "FontName": "{FontNameDefault}",
+        "FontSize": 30,
+        "Foreground": "{White}"     
+    },
+    {
+        "Name" : "Num0",
+        "HorizontalAlignment" : "Center"  
+    },
+]

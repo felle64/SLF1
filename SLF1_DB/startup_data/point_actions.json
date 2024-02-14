@@ -1,0 +1,712 @@
+[
+  {
+    "ActionType": "P1",
+    "DriverPoints": 250,
+    "TeamPoints": 250,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 180,
+    "TeamPoints": 180,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 150,
+    "TeamPoints": 150,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 120,
+    "TeamPoints": 120,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 100,
+    "TeamPoints": 100,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "SessionType": "Race"
+  },
+
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2020",
+    "SessionType": "Race",
+    "RaceType": "Main"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Main"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Main"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Main"
+  },
+
+  {
+    "ActionType": "P1",
+    "DriverPoints": 30,
+    "TeamPoints": 30,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 70,
+    "TeamPoints": 70,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 50,
+    "TeamPoints": 50,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 30,
+    "TeamPoints": 30,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 70,
+    "TeamPoints": 70,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 50,
+    "TeamPoints": 50,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 30,
+    "TeamPoints": 30,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f1.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2020",
+    "SessionType": "Qualification"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2020",
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 150,
+    "TeamPoints": 150,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 120,
+    "TeamPoints": 120,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 100,
+    "TeamPoints": 100,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2020",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2021",
+    "SessionType": "Qualification"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2021",
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 150,
+    "TeamPoints": 150,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 120,
+    "TeamPoints": 120,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 100,
+    "TeamPoints": 100,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2021",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2022",
+    "SessionType": "Qualification"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2022",
+    "SessionType": "Race"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 100,
+    "TeamPoints": 100,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 50,
+    "TeamPoints": 50,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 30,
+    "TeamPoints": 30,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2022",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 100,
+    "TeamPoints": 100,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P2",
+    "DriverPoints": 80,
+    "TeamPoints": 80,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P3",
+    "DriverPoints": 60,
+    "TeamPoints": 60,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P4",
+    "DriverPoints": 50,
+    "TeamPoints": 50,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P5",
+    "DriverPoints": 40,
+    "TeamPoints": 40,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P6",
+    "DriverPoints": 30,
+    "TeamPoints": 30,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P7",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P8",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P9",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P10",
+    "DriverPoints": 0,
+    "TeamPoints": 0,
+    "Championship": "f2.2023",
+    "SessionType": "Race",
+    "RaceType": "Sprint"
+  },
+  {
+    "ActionType": "P1",
+    "DriverPoints": 20,
+    "TeamPoints": 20,
+    "Championship": "f2.2023",
+    "SessionType": "Qualification"
+  },
+  {
+    "ActionType": "FastestLap",
+    "DriverPoints": 10,
+    "TeamPoints": 10,
+    "Championship": "f2.2023",
+    "SessionType": "Race"
+  }
+]

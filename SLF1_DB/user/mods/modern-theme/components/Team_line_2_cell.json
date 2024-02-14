@@ -1,0 +1,115 @@
+{
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "Width": 580,
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/{Item.Team.Name}_light.png",
+            "Triggers": [
+                {
+                    "Condition": "{NotF1SeasonOrCustomTeams}",
+                    "Property": "BackgroundImage",
+                    "Value": "images/Modern/Row/reserve_light.png"
+                }
+            ],
+            "Width": 575,
+            "Height": 86,
+            "MarginTop": 0,
+            "MarginBottom": 5,
+            "Items": [
+                //left part number
+                {
+                    "BlockType": "text",
+                    "Width": 40,
+                    "MarginLeft": 20,
+                    "Source": "{Item.Position}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{ForegroundBlack}",
+                    "FontSize": 36
+                },
+                {
+                    "BlockType": "image",
+                    "VerticalAlignment": "Center",
+                    "Width": 10,
+                    "Height": 55,
+                    "Opacity": 100,
+                    "ImageOptions": {
+                        "Path": "images/Modern/Shape/{Item.Team.Name}.png"
+                    }
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "VerticalAlignment": "Center",
+                    "Height": 70,
+                    "Width": "330",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //Real name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "MarginTop":20,
+                                    "Source": "{Item.Team.Name}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 26
+                                }
+                            ]
+                        }
+                    ]
+                },
+                //points
+                {
+                    "BlockType": "Stack",
+                    "Orientation": "Horizontal",
+                    "MarginTop":0,
+                    "Width": "*",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Center",
+                            "MarginLeft":0,
+                            "MarginTop": 50,
+                            "Orientation": "Horizontal",
+                            "Source": "{Item.Points}",
+                            "TextAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 22,
+                            "Triggers": [
+                                {
+                                    //not working api must been set to int ! must fixed later
+                                    "Condition": "{Item.Points, Converter=NumberGreater, Parameter=99}",
+                                    "Property": "MarginLeft",
+                                    "Value": "1"
+                                }
+                            ],
+                        },
+                        
+                        //logo
+                        {
+                            "BlockType": "image",
+                            "RenderIf" :"{NotF1SeasonOrCustomTeams}",
+                            "Height": 75,
+                            "MarginTop":5,
+                            "MarginLeft": 25, 
+                            "ImageOptions": {
+                                "Path": "{Item.Team.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

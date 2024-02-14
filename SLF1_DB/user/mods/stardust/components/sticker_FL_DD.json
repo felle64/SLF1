@@ -1,0 +1,39 @@
+{
+    "BlockType" : "stack",
+    "Width" : 718,
+    "Height" : 72,
+    "BackgroundImage" : "images/bg_<bg>.png",
+    "HorizontalAlignment" : "Center",
+    "Orientation" : "Horizontal",
+    "Items" : [
+        {
+            "BlockType" : "dock",
+            "HorizontalAlignment" : "Center",
+            "Orientation" : "Horizontal",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "HorizontalAlignment" : "Center",
+                    "Orientation" : "Horizontal",
+                    "MarginTop" : 10,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<title> - ",
+                            "Foreground" : "#ffffff",
+                            "FontSize" : 35,
+                            "FontName" : "{TW-Bo}"
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " <content>",
+                            "Foreground" : "#ffffff",
+                            "FontSize" : 35,
+                            "FontName" : "{TW-Boi}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

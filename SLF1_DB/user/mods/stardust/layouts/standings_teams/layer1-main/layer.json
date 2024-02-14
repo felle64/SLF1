@@ -1,0 +1,233 @@
+{
+    "BlockRoot" : {
+        "BlockType" : "stack",
+        "Orientation" : "Vertical",
+        "BackgroundImage" : "images/Background/bg.png",
+        "Items" : [
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Vertical",
+                "BackgroundImage" : "images/Background/bg_category.png",
+                "ColorizeBackground": {
+                    "Enabled" : true,
+                    "Color": "{Season.MainLeagueCategory.Color}",
+                    "BlendPercentage": 100
+                },
+                "Items" : [
+                    {
+                        "BlockType" : "stack",
+                        "Orientation" : "Vertical",
+                        "BackgroundImage" : "images/Background/bg_effect.png",
+                        "ColorizeBackground": {
+                            "Enabled" : false,
+                            "Color": "{Season.MainLeagueCategory.Color}",
+                            "BlendPercentage": 100
+                        },
+                        "Items" : [
+                            {
+                                "BlockType" : "component",
+                                "ComponentOptions" : {
+                                    "ComponentName" : "race_header"
+                                }
+                            },
+                            {
+                                "BlockType" : "stack",
+                                "MarginTop" : 75,
+                                "MarginBottom" : 75,
+                                "Orientation" : "Horizontal",
+                                "HorizontalAlignment" : "Center",
+                                "Items" : [
+                                    {
+                                        "BlockType" : "stack",
+                                        "Orientation" : "Vertical",
+                                        "MarginTop" : 50,
+                                        "MarginLeft" : 75,
+                                        "Items" : [
+                                            {
+                                                "BlockType" : "component",
+                                                "MarginBottom" : 50,
+                                                "ComponentOptions" : {
+                                                    "ComponentName" : "standings_team_info"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType" : "table",
+                                        "HorizontalAlignment" : "Center",
+                                        "MarginRight" : 75,
+                                        "MarginLeft" : 75,
+                                        "TableOptions" : {
+                                            "ItemsSource" : "{Standings.Teams}",
+                                            "RowSpacing" : "{TeamStandingsRowSpacing}",
+                                            "HeaderTemplate" : {
+                                                "BlockType" : "text",
+                                                "FontName" : "{TW-Li}",
+                                                "FontSize" : 35,
+                                                "Foreground" : "#ffffff",
+                                                "HorizontalAlignment" : "Center"
+                                            },
+                                            "Columns" : [
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "position",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_position"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Team",
+                                                    "Name" : "team",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "standings_middle_team"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "team",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "standings_middle_car"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Pts",
+                                                    "Name" : "Points",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "standings_points"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "Jump",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "position_jump"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "Standings-start",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data_start"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Wins",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.CountP1}",
+                                                                "fore" : "#D2B200",
+                                                                "width" : "71"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "2nd",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.CountP2}",
+                                                                "fore" : "#000000",
+                                                                "width" : "71"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "3rd",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.CountP3}",
+                                                                "fore" : "#000000",
+                                                                "width" : "71"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "FL",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.RaceFastestLapCount}",
+                                                                "fore" : "#DB2AC6",
+                                                                "width" : "71"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Pole",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.CountQualP1}",
+                                                                "fore" : "#9F2AC6",
+                                                                "width" : "71"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Event",
+                                                    "Name" : "Data",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data" : "{Item.EventsCount}",
+                                                                "fore" : "#000000",
+                                                                "width" : "85"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "Standings-finish",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "standings_data_finish"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "BlockType": "dock",
+    "BackgroundImage": "images/Modern/Row/rowlightleft.png",
+    "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "BackgroundImage",
+            "Value": "images/Modern/Row/rowdarkleft.png"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "dock",
+            "PaddingLeft": 24,
+            "PaddingRight": 24,
+            "PaddingTop":20,
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Points}",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Foreground": "{StandingsPointsForeground}",
+                    "TextOptionsExtern": "primaryNumber"
+                }
+            ],
+            "Triggers": [
+                {
+                    "Condition": "{Standings.IsPositionJumpForDriversExists}",
+                    "Property": "PaddingRight",
+                    "Value": 4
+                }
+            ]
+        }
+
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,
+    "Items": [
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Height": 19,
+                    "MarginRight": 12,
+                    "PaddingBottom" : 4,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Driver.Nationality.LogoPath}"
+                    },
+                    "RenderIf": "{RenderDriverFlags}"
+                    
+                },
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 300,
+                    "MarginRight": 150,
+                    "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "TextOptionsExtern": "driverCell"
+                }
+            ]
+        },
+        {
+            "BlockType": "stack",
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "Spacing": 8,
+            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "TextOptionsExtern": "teamCell", 
+                    "TextOptions": {
+                        "VerticalAlignment": "Center"
+                    }
+                },
+                {
+                    "BlockType": "image",
+                    "Height": 40,
+                    "MarginRight": 0,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                }
+            ]
+        }
+    ]
+}

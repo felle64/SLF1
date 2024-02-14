@@ -1,0 +1,14 @@
+{
+    "BlockRoot": {
+        "Name": "root",
+        "BlockType": "dock",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "Name": "bg",
+                "BlockType": "image", 
+                "Source": "bg.png"
+            }
+        ]
+    }
+}

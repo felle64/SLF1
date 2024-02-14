@@ -1,0 +1,72 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "HorizontalAlignment" : "Center",
+    "VerticalAlginment":"Center",
+    "Height" : 70,
+    "Width" : 300,
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_gap.png",
+            "Height" : 70,
+            "Width" : 300,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{Item.Team.Color}",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "BackgroundImage" : "images/BgForRace/bg_gap_second_color.png",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlginment":"Center",
+                    "Height" : 70,
+                    "Width" : 300,
+                    "ColorizeBackground": {
+                        "Enabled" : true,
+                        "Color": "{Item.Team.SecondaryColor}",
+                        "BlendPercentage": 100
+                    },
+                    "Items" : [
+                        {
+                            "BlockType" : "stack",
+                            "BackgroundImage" : "images/BgForRace/bg_gap_effect.png",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Center",
+                            "VerticalAlginment":"Center",
+                            "Height" : 70,
+                            "Width" : 300,
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Foreground" : "#000000",
+                                    "HorizontalAlignment" : "Center",
+                                    "VerticalAlginment":"Center",
+                                    "FontSize" : "{TableCellFontSize}",
+                                    "Width" : 300,
+                                    "Height" : 62,
+                                    "MarginTop" : "{TableCellFontMarginTop}",
+                                    "Source" : "{Item.IntervalRace}",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Center",
+                                        "FontName" : "{TW-Bo}"
+                                    },
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{Session.SessionType, Converter=StringEquals, Parameter=Qualification}",
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Time}"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
