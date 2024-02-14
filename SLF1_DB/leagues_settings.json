@@ -4,12 +4,12 @@
       "LeagueId": "73907ba8-8886-43b2-8695-e99cb36f5ac9",
       "LeagueName": "SLF1",
       "DatabaseFile": "C:\\Users\\Felkan1\\Documents\\1privatedev\\SLF1\\SLF1_DB\\user\\databases\\SLF1.db",
-      "CurrentSeasonId": 1,
+      "CurrentSeasonId": 2,
       "CloudConfig": {
         "IsCloudAutoSynch": true,
         "LeagueMainRoleRaw": 0
       },
-      "LastUsing": "2024-02-14T12:18:48.2280056Z",
+      "LastUsing": "2024-02-14T12:24:34.9493625Z",
       "IsAutoAddLeagueCategory": true,
       "IsRestrictDriverChoiceByCategory": false,
       "IsSetActualLeagueCategory": true,
