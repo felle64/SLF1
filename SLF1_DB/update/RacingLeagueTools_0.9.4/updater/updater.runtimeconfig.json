@@ -1,0 +1,17 @@
+﻿{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "..//bin"
+    ],
+    "configProperties": {
+      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false
+    },
+    "includedFrameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "7.0.7"
+      }
+    ],
+    "tfm": "net7.0"
+  }
+}

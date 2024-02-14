@@ -1,0 +1,227 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "0, 0, 0, 12",
+
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "dock",
+                "VerticalAlignment": "Center",
+                "Margin": "0, 0, 0, 8",
+                //"Background": "{BackgroundDefault}",
+                "Padding": "42, 16, 42, 16",
+                "Items": [
+                    //league name
+                    {
+                        "BlockType": "stack",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Opacity" : 75,
+                                "Source": "{Season.LeagueInfo.LeagueName}",
+                                "FontName": "{FontNameWide}",
+                                "FontSize": 20
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": " · {Season.Name}",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameWide}",
+                                "FontSize": 16,
+                                "Foreground": "{ForegroundDarker}"
+                            }
+                        ]
+                    },
+
+                    {
+                        "Name": "leagueLogo",
+                        "MarginLeft": 36,
+                        "MarginRight": 0,
+                        "Height": 56,
+                        "BlockType": "image",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}"
+                    }
+                ]
+            },            
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "MarginRight": 0,                
+                "TableOptions": {
+                    "ItemsSource": "{Events.Events}",
+                    "RowSpacing": 8,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //number
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 48,
+                                "Source": "{Item.Position}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground": "#555555",
+                                "FontSize": 20,
+                                "Background": "{BackgroundDefault}",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+
+                        {
+                            "Template": {
+                                "BlockType": "stack",
+                                "PaddingLeft": 32,
+                                "PaddingRight": 4,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "Background": "{BackgroundDefault}",
+                                "Items": [
+                                    //flag
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 56,
+                                        //"Padding" : "0, 8",
+                                        "PaddingTop": 8,
+                                        "PaddingBottom": 8,
+                                        "MarginRight": 20,
+                                        "VerticalAlignment": "Center",
+                                        "ImageOptions": {
+                                            "Path": "{Item.Track.Nation.LogoPath}",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+
+                                    //country
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Track.Nation.Code}",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "FontName": "{FontNameDefault}",
+                                        "Foreground": "#B0B0B0",
+                                        "FontSize": 20,
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                                "Property": "Foreground",
+                                                "Value": "#757575"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+
+                        //location
+                        {
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 24,
+                                "PaddingRight": 56,
+                                "Source": "{Item.Track.CircuitName}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground": "#A9A9A9",
+                                "FontSize": 32,
+                                "Background": "{BackgroundDefault}",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                        "Property": "Foreground",
+                                        "Value": "#757575"
+                                    }
+                                ]
+                            }
+                        },
+
+                        //date
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Background": "#56051a0d",
+                                "Source": "{Item.Date, Converter=DateToDayOfMonth} {Item.Date, Converter=DateToMonthInWords}",
+                                "FontSize": 24,
+                                "Foreground": "#a9a9a9",
+                                "TextOptions": {
+                                    "HorizontalAlignment": "Center"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                        "Property": "Foreground",
+                                        "Value": "#757575"
+                                    }
+                                ]
+                            }
+                        },
+
+                        //description
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "RenderIf": "{ShowEventDescriptionInCalendar}",
+                                "MaxWidth": 480,
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Source": "{Item.Description}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground": "#95C2C2C2",
+                                "FontSize": 20,
+                                "Background": "{BackgroundDefault}",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.CompletedStatus, Converter=StringEquals, Parameter=Completed}",
+                                        "Property": "Foreground",
+                                        "Value": "#757575"
+                                    }
+                                ]
+                            }
+                        },
+
+                        //winner
+                        {
+                            "Template": {
+                                "BlockType": "text",
+                                "RenderIf": "{ShowWinnerInCalendar}",
+                                "MaxWidth": 320,
+                                "PaddingLeft": 48,
+                                "PaddingRight": 48,
+                                "Source": "{Item.WinnerString}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground": "#CCD2B200",
+                                "FontSize": 20,
+                                "Background": "{BackgroundDefault}"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
