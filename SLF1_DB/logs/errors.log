@@ -636,3 +636,8 @@ System.IO.InvalidDataException: Cannot resolve empty expression
 --- End of stack trace from previous location ---
    at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
    at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+2024-02-15 14:17:05.950 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
