@@ -641,3 +641,8 @@ System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documen
    at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
    at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
    at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-15 18:01:48.396 +01:00 [ERR] extract mod archive official-2022-theme-remake.zip
+System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documents\1privatedev\SLF1\SLF1_DB\user\mods\official-2022-theme-remake\.gitignore' is denied.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
+   at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
