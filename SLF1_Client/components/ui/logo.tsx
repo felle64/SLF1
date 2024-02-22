@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import SLF1 from '../../public/images/slf1.png'
+import SLF1 from '../../public/images/SLF1.png'
 
 export default function Logo() {
   return (
