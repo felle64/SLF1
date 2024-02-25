@@ -666,3 +666,29 @@ System.UnauthorizedAccessException: Access to the path 'C:\Users\Felkan1\Documen
    at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
    at RacingLeagueTools.SharedLibrary.PathManager.CopyFiles(String origDirectory, String targetDirectory)
    at RacingLeagueTools.SharedLibrary.Managers.ModManager.ExtractModArchive(String fileName)
+2024-02-25 19:53:38.631 +01:00 [ERR] udp init
+System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at _nsUwArkzq02DVcqXotqQnwfwevB._6qoC1ewMAegPOt5WR28WxbhGIbh()
+2024-02-25 22:02:27.883 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: No data or forbidden access
+   at _UN4C0hnGdhskVDVWkqB1RGXXk9A._qxaCIjuHJBhXrDayQb1m0BA1eyi(_RwpCZB5vYQyziCWV1hJoLPc4z8b , RenderDataType )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._7pO1sAFspdKGMfl9LHrzfgdI65B(IList`1 , LayoutRenderInfo )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._iD3CqrCM2bvQQhKLbCv3DA39x0K(LayoutRenderInfo , Boolean , Object )
+2024-02-25 22:03:48.755 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: No data or forbidden access
+   at _UN4C0hnGdhskVDVWkqB1RGXXk9A._qxaCIjuHJBhXrDayQb1m0BA1eyi(_RwpCZB5vYQyziCWV1hJoLPc4z8b , RenderDataType )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._7pO1sAFspdKGMfl9LHrzfgdI65B(IList`1 , LayoutRenderInfo )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._iD3CqrCM2bvQQhKLbCv3DA39x0K(LayoutRenderInfo , Boolean , Object )
+2024-02-25 22:04:13.020 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: No data or forbidden access
+   at _UN4C0hnGdhskVDVWkqB1RGXXk9A._qxaCIjuHJBhXrDayQb1m0BA1eyi(_RwpCZB5vYQyziCWV1hJoLPc4z8b , RenderDataType )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._7pO1sAFspdKGMfl9LHrzfgdI65B(IList`1 , LayoutRenderInfo )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._iD3CqrCM2bvQQhKLbCv3DA39x0K(LayoutRenderInfo , Boolean , Object )
+2024-02-25 22:04:21.217 +01:00 [ERR] Rendering
+System.IO.InvalidDataException: No data or forbidden access
+   at _UN4C0hnGdhskVDVWkqB1RGXXk9A._qxaCIjuHJBhXrDayQb1m0BA1eyi(_RwpCZB5vYQyziCWV1hJoLPc4z8b , RenderDataType )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._7pO1sAFspdKGMfl9LHrzfgdI65B(IList`1 , LayoutRenderInfo )
+   at _r5d6yhTSGura7zaaQolA4LJo7hx._iD3CqrCM2bvQQhKLbCv3DA39x0K(LayoutRenderInfo , Boolean , Object )
