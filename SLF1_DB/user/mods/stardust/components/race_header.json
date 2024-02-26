@@ -1,0 +1,52 @@
+{
+    "BlockType" : "dock",
+    "Orientation" : "Horizontal",
+    "Items" : [
+        {
+            "BlockType" : "stack",
+            "HorizontalAlignment" : "left",
+            "MarginLeft" : 80,
+            "MarginTop" : 30,
+            "Items" : [
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Season.MainLeagueCategory.Name} - ",
+                    "FontName" : "{TW-Bo}",
+                    "Foreground" : "#ffffff",
+                    "FontSize" : 90,
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Season.MainLeagueCategory.Name, Converter=StringEquals, Parameter=<no category>}",
+                            "Property" : "RenderIf",
+                            "Value" : "false"
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Season.LeagueInfo.LeagueFullName}",
+                    "FontName" : "{TW-Boi}",
+                    "Foreground" : "#ffffff",
+                    "FontSize" : 90
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "HorizontalAlignment" : "Right",
+            "MarginRight" : 80,
+            "MarginTop" : 30,
+            "Items" : [
+
+                {
+                    "BlockType" : "image",
+                    "Source" : "{Season.LeagueInfo.LeagueLogo}",
+                    "FontName" : "{TW-Boi}",
+                    "Foreground" : "#ffffff",
+                    "Height" : 90,
+                    "MarginTop" : 30
+                }
+            ]
+        }
+    ]
+}

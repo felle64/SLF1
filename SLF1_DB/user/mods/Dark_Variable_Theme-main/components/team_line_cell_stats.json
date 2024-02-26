@@ -1,0 +1,59 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "Background": "{CellBG}",
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "Foreground":"{WhiteText}",
+                    "FontSize": 42,
+                }
+            ]
+        },
+        //Car
+        {
+            "BlockType": "image",
+            "Height": 100,
+            "MarginRight": 0,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",
+            "ImageOptions": {
+                "Path": "images/cars/{Item.Team.Name}.png",
+                "VerticalAlignment": "Center"
+            },
+            "Triggers":[
+                {
+                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                    "Property" : "Source",
+                    "Value" : "images/cars/Default.png"
+                },
+            ] 
+        },
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "BlockType": "text",
+    "Source": "<position>",
+    "Width": 65,
+    "Height": 68,
+    "BackgroundImage": "position_bg.png",
+    "Background": "{CellBG}",
+    "FontName": "{FontNameDefault}",
+    "FontSize": 40,
+    "Foreground": "{WhiteText}",
+    "TextOptions": {
+        "HorizontalAlignment": "Center"    
+    },
+    "Triggers" : [ 
+        {
+            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+            "ConditionAnd": "{RenderP1Colors}",
+            "Property": "Foreground",
+            "Value": "{P1Foreground}"
+        },
+        {
+            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=2}",
+            "ConditionAnd": "{RenderP2Colors}",
+            "Property": "Foreground",
+            "Value": "{P2Foreground}"
+        },
+        {
+            "Condition": "{Item.Position, Converter=NumberEquals, Parameter=3}",
+            "ConditionAnd": "{RenderP3Colors}",
+            "Property": "Foreground",
+            "Value": "{P3Foreground}"
+        },
+        {
+            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+            "ConditionAnd": "{RenderDNFText}",
+            "Property": "Foreground",
+            "Value": "{DNFText}"
+        },
+        
+    ],
+}

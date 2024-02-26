@@ -1,0 +1,298 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "component",
+                "ComponentName": "header_block_drivers_standings"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "MarginRight" : 0,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Drivers}",
+                    "Limit": "{DriverLimit}",
+                    "IndexStart": "{StartPositionsFrom}",
+                    "RowSpacing": 30,
+                    "ColSpacing": 0,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern": "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_cell",
+                                "PaddingRight": 0,
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_jump_cell"
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "MarginRight": 0,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "driver_line_cell"
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "RenderIf": "{TeamsOnDriversStandings}",
+                                "ComponentName": "team_line_cell"
+                            }
+                        },
+
+                        //points
+                        {
+                            "Header": "[POINTS]",
+                            "MarginLeft": 0,
+                            "Template": {
+
+                                "BlockType": "dock",
+                                "PaddingLeft": 12,
+                                "PaddingRight": 12,
+                                "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#ffffff",
+        "BlendPercentage": 100
+    },
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Triggers": [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        }
+    ],
+                                        "Source": "{Item.Points}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "FontName": "{Formula1-Italic}",
+                                        "Foreground": "{StandingsPointsForeground}",
+                                        "TextOptionsExtern": "primaryNumber"
+                                    }
+                                ],
+                                "Triggers": [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        },
+                                    {
+                                        "Condition": "{Standings.IsPositionJumpForDriversExists}",
+                                        "Property": "PaddingRight",
+                                        "Value": 4
+                                    }
+                                ]
+                            }
+                        },
+//points to leader
+{
+                            "Header": "",
+                            "MarginLeft": 0,
+                            "Template": {
+                                 "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#ffffff",
+        "BlendPercentage": 100
+    },
+                                "BlockType": "dock",
+                                "PaddingLeft": 12,
+                                "PaddingRight": 12,
+                                "Background": "{BackgroundDefault}",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Triggers": [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        },
+        {
+            "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+            "Property": "Source",
+            "Value": "",
+        },
+    ],
+                                        "Source": "+{Item.PointsToLeaderDiff}",
+                                        "HorizontalAlignment": "center",
+                                        "VerticalAlignment": "Center",
+                                        "FontName": "{Formula1-Italic}",
+                                        "Foreground": "{StandingsPointsForeground}",
+                                        "FontSize": 30,
+                                        "TextOptionsExtern": "primaryNumber"
+                                    }
+                                ],
+                                "Triggers": [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        },
+                                    {
+                                        "Condition": "{Standings.IsPositionJumpForDriversExists}",
+                                        "Property": "PaddingRight",
+                                        "Value": 4
+                                    }
+                                ]
+                            }
+                        },
+
+                        //events
+                        {
+                            "MarginLeft": 24,
+                            "MultiColumnHeadersSource": "{Standings.Events}",
+                            "MultiColumnItemsSource": "{Item.Events}",
+                            "MultiColumnHeaderTemplate": {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Spacing": 4,
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{Item.Track.Nation.LogoPath}",
+                                        "HorizontalAlignment": "Center",
+                                        "Width": 68,
+                                        "Height": 68
+                                    }
+                                ]
+                            },
+                            "Width": "90",
+                            "Template": {
+                                "Padding": "0, 0",
+                                "BlockType": "text",
+                                "Source": "{Item.PointsString}",
+                                "HorizontalAlignment": "Left",
+                                "Background": "{BackgroundDefault}",
+                                "TextOptions": {
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 30,
+                                    "HorizontalAlignment": "Center",
+                                    "Foreground": "{SeasonProgressPointsForeground}"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
+                                        "Setters": [
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 25
+                                            },
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{StandingsPointsForeground}"
+                                            },
+                                            {
+                                                "Property": "Source",
+                                                "Value": "DNF"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.IsRaceMajorParticipied, Converter=BoolReverse}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            },
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 25
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{Standings1stCountForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=2}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{Standings2ndCountForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=3}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{Standings3rdCountForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Season.Points, Converter=NumberEquals, Parameter=0}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPointsZeroForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.IsMajorRaceFastestLap}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPointsFastestLapForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.IsMajorQualPole}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.PointsString}*"
+                                            },
+                                        ]
+                                    },
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+        ]
+    }
+}

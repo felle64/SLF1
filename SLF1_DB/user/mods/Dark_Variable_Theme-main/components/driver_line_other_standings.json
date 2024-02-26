@@ -1,0 +1,235 @@
+{
+    "BlockType": "stack",
+    "Witdh": "*",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/rowdarklong.png",
+            //"Padding": "5, 25, 20, 5",
+            "Width": 1160,
+            "Height": 60,
+            "MarginTop": 5,
+            "MarginBottom": 5,
+            "Items": [
+                //left part
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //left part number
+                        {
+                            "BlockType": "text",
+                            "Width": 40,
+                            "MarginLeft": 20,
+                            "Source": "{Item.Position}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 20
+                        },
+                        {
+                            "BlockType": "shape",
+                            "RenderIf":"{Item.IsReserve}",
+                            "VerticalAlignment": "Center",
+                            "Width": 1,
+                            "Height": 40,
+                            "Opacity": 100,
+                            "ShapeOptions": {
+                                "Type": "Rectangle",
+                                "Fill": "{Item.Team.Color}"
+                            }
+                        },
+                        {
+                            "BlockType": "shape",
+                            "VerticalAlignment": "Center",
+                            "Width": 5,
+                            "Height": 40,
+                            "Opacity": 100,
+                            "ShapeOptions": {
+                                "Type": "Rectangle",
+                                "Fill": "{Item.Team.Color}"
+                            }
+                        },
+                        //Real name
+                        {
+                            "BlockType": "text",
+                            "MarginLeft": 8,
+                            "Source": "{Item.Driver.RealName}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 20
+                        },
+                        //name
+                        {
+                            "BlockType": "text",
+                            "MarginLeft": 8,
+                            "Source": "{Item.Driver.Name}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 20
+                        },
+                        //flag
+                        {
+                            "BlockType": "image",
+                            "RenderIf":"{ShowCountryFlagsForDrivers}",
+                            "Height": 30,
+                            "MarginLeft": 10,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "{Item.Driver.Nationality.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                                //platform
+                                {
+                                    "BlockType": "image",
+                                    "MarginLeft": 12,
+                                    "MarginTop": 13,
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "Height": 20,
+                                            "VerticalAlignment": "Top",
+                                            "ImageOptions": {
+                                                "Path": "images/logo_{Item.Driver.GamePlatform}.png",
+                                            },
+                                },
+                        //icon badges
+                        {
+                            "BlockType": "itemstack",
+                            "Spacing": 4,
+                            "MarginLeft": 6,
+                            "MarginTop": 4,
+                            "ItemStackOptions": {
+                                "ItemSource": "{Item.Driver.BadgeImages}",
+                                "Template": {
+                                    "BlockType": "image",
+                                    "Height": 24,
+                                    "Source": "{Item}"
+                                }
+                            }
+                        },
+                        //text badge
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 400,
+                            "MarginLeft": 8,
+                            "MarginTop": 8,
+                            "Source": "{Item.Driver.BadgeText}",
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundGrey}",
+                            "FontSize": 16
+                        }
+                    ]
+                },
+                //right part
+                {
+                    "BlockType": "stack",
+                    "Height": "*",
+                    "HorizontalAlignment": "Right",
+                    "MarginRight":10,
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        //teams block
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "Spacing": 8,
+                            "Items": [
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "Source": "{Item.Team.Name}",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.IsReserve}",
+                                            "Property": "Source",
+                                            "Value": "Reserve"
+                                        }
+                                    ],
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Center",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 18,
+                                    "TextOptions": {
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //logo if not alphatauri
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf" :"{Item.Team.Name, Converter=StringNotEquals, Parameter=AlphaTauri}",
+                                    "HorizontalAlignment": "Left",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //logo if  alphatauri
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf" :"{Item.Team.Name, Converter=StringEquals, Parameter=AlphaTauri}",
+                                    "HorizontalAlignment": "Left",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Modern/logo/alphatauri.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //logo if reserve
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf" :"{Item.IsReserve}",
+                                    "HorizontalAlignment": "Left",
+                                    "Height": 40,
+                                    "MarginRight": 0,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Modern/logo/qrl.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //points
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Left",
+                                    "MarginRight": 10,
+                                    "VerticalAlignment": "Center",
+                                    "Source": "{Item.Points}",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{ForegroundBlack}",
+                                    "FontSize": 22,
+                                    "TextOptions": {
+                                        "VerticalAlignment": "Center"
+                                    },
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.Points, Converter=EmptyObjectToTrue}",
+                                            "Property": "Source",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

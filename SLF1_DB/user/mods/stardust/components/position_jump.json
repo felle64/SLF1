@@ -1,0 +1,55 @@
+{
+    "BlockType" : "stack",
+    "MarginLeft" : 10,
+    "Width" : 126,
+    "Items":
+    [
+        {                                
+                
+            "BlockType" : "stack",                         
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment" : "Center",
+            "Items" :[
+                {
+                    "BlockType" : "image",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberGreater, Parameter=0}",
+                    "Source" : "images/arrow_up.png",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment" : "Center",
+                    "Height" : 22                                                                
+                },
+                {
+                    "BlockType" : "image",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberLess, Parameter=0}",
+                    "Source" : "images/arrow_down.png",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment" : "Center",
+                    "Height" : 22                                                              
+                },
+                {
+                    "BlockType": "text",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberNotEquals, Parameter=0}",
+                    "Source": "{Item.PositionJump, Converter=NumberAbs}",                            
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment" : "Center",
+                    "FontName": "{FontNameDefault}",
+                    "Height" : 62,
+                    "MarginTop" : 3,
+                    "FontSize": 30,
+                    "MarginLeft" : 5,
+                    "TextOptions": {
+                        "HorizontalAlignment": "Center",
+                        "Foreground" : "#ffffff"
+                    }
+                }
+            ]                                           
+        }
+    ],
+    "Triggers" : [
+        {
+            "Condition" : "{Item.Index, Converter=NumberNotEquals, Parameter=0}",
+            "Property" : "Height",
+            "Value" : "33"
+        }
+    ]
+}

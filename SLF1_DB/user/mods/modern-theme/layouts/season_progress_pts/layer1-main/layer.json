@@ -1,0 +1,171 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "component",
+                "ComponentName": "header_block",
+                "ComponentOptions": {
+                    "Vars": {
+                        "header": "[Season progress]",
+                        "subHeader": "/ points"
+                    }
+                }
+            },
+
+            //separator
+            {
+                "Name": "separator",
+                "BlockType": "image",
+                "MarginTop": 16,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Drivers}",
+                    "RowSpacing": 16,
+                    "ColSpacing": 8,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_cell",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.Position}"
+                                    }
+                                }
+                            }
+                        },
+
+                        //driver line
+                        {
+                            "Header": "",
+                            "MarginRight" : 24,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "driver_line_cell"
+                            }
+                        },
+
+                         //points
+                        {
+                            "Header": "",
+                            "MarginLeft" : 20,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "points_cell"
+                            }
+                        },
+
+                         //position_jump
+                         {
+                            "Header": "",
+                            "PaddingLeft" : 0,
+                            "MarginLeft" : -8,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "PaddingLeft" : 0,                               
+                                "PaddingRight" : 12,
+                                "ComponentName" : "position_jump_cell"    
+                            }
+                        },
+
+                        //events
+                        {
+                            "MarginLeft" : 24,
+                            "MultiColumnHeadersSource": "{Standings.Events}",
+                            "MultiColumnItemsSource": "{Item.Events}",
+                            "MultiColumnHeaderTemplate": {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Spacing": 4,
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "images/Modern/Flags/{Item.Track.CountryName}.png",
+                                        "HorizontalAlignment": "Center",
+                                        "Height": 42
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "MarginBottom": 8,
+                                        "FontSize": 20,
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Item.Track.Nation.Code}"                                        
+                                    }
+                                ]
+                            },
+                            "Width": 72,
+                            "Template": {
+                                "Padding": "12, 0",
+                                "Background": "{BackgroundDefault}",
+                                "BlockType": "text",
+                                "Source": "{Item.PointsString}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 34,
+                                    "HorizontalAlignment": "Center",
+                                    "Foreground": "{SeasonProgressPointsForeground}"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.IsRaceMajorParticipied, Converter=BoolReverse}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": ""
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.Points, Converter=NumberEquals, Parameter=0}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPointsZeroForeground}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.Points, Converter=NumberGreater, Parameter=149}",
+                                        "Setters":
+                                        [
+                                            {
+                                                "Property": "Foreground",
+                                                "Value": "{SeasonProgressPointsTopForeground}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }                        
+                    ]
+                }
+            }
+        ]
+    }
+}

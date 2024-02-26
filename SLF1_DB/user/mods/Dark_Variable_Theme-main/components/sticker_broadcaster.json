@@ -1,0 +1,114 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Vertical",
+    "Width" : 329,
+    "Height" : 478,
+    "MarginBottom" : 150,
+    "MarginTop": 100,
+    "BackgroundImage" : "images/lineup/card_one_driver.png",
+    "Items" : [
+        {
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "FontSize" : 35,
+            "MarginTop" : 18,
+            "Foreground" : "{GoldText}",
+            "FontName" : "{FontNameBold}",
+            "HorizontalAlignment" : "Center"
+        },
+        {
+            "BlockType" : "Itemstack",
+            "Orientation" : "Horizontal",
+            
+            "ItemStackOptions" : {
+                "ItemSource" : "<header>",
+                "Template" : {
+                    "BlockType" : "dock",
+                    "Orientation" : "Vertical",
+                    "BackgroundImage" : "images/card_blank.png",
+                    "Width" : 319,
+                    "Height" : 415,
+                    "Items" : [
+                        {
+                            "BlockType" : "dock",
+                            "Orientation" : "Horizontal",
+                            "Items": [
+                                {
+                                    "BlockType" : "stack",
+                                    "Orientation" : "Vertical",
+                                    "HorizontalAlignment" : "Left",
+                                    "Items" : [
+                                        {
+                                            "BlockType" : "image",
+                                            "Source" : "images/logo.png",
+                                            "Height" : 50,
+                                            "MarginLeft" : 36,
+                                            "MarginTop" : 59
+                                        },
+                                        {
+                                            "BlockType" : "image",
+                                            "Source" : "images/logo_Twitch.png",
+                                            "Height" : 40,
+                                            "MarginLeft" : 36,
+                                            "MarginTop" : 9
+                                        },
+                                        {
+                                            "BlockType": "image",
+                                            "Height": 25,
+                                            "MarginTop" : 20,
+                                            "MarginLeft" : 35,
+                                            "VerticalAlignment": "Center",
+                                            "ImageOptions": {
+                                                "Path": "images/flags/flag_USA.png",
+                                                "VerticalAlignment": "Center"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "BlockType" : "image",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                                    "Width" : 200,
+                                    "MarginTop" : 30,
+                                    "MarginRight": 30,
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                            "Setters" : [
+                                                {
+                                                    "Property" : "Source",
+                                                    "Value" : "images/crofty.png"
+                                                }
+                                            ]
+                                           
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "{FirstCustomStickerValue}",
+                            "Foreground" : "#ffffff",
+                            "FontName" : "{FontNameBold}",
+                            "FontSize" : 30,
+                            "MarginLeft" : -10,
+                            "MarginTop" : 10,
+                            "HorizontalAlignment" : "Center"
+                        },
+                    ]
+                }
+            }
+        },
+        {
+            "BlockType" : "image",
+            "Source" : "images/cars/{Item.Team.Name}.png",
+            "Width" : 340,
+            "PaddingTop" : -20,
+            "VerticalAlignment": "Bottom",
+            "HorizontalAlignment": "Center"
+        }
+    ]
+}
+

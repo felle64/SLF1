@@ -1,0 +1,323 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,
+    "Background": "{DriverLineBG}",
+    //"ColorizeBackground": {
+       // "Enabled": true,
+        //"Color": "{Item.Team.Color}",
+        //"BlendPercentage": 75
+    //},
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+
+                //number
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 200,
+                    "MarginLeft": 8,
+                    "Source": "{Item.Driver.RaceNumber}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{F1NumbersMercedes-Bold}",
+                    "Foreground":"{Item.Team.Color}",
+                    "FontSize": 70,
+                    "Triggers":[
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P1Foreground}"
+                                //}
+                            //]
+                        //},
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P2Foreground}"
+                                //}
+                            //]
+                        //},
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P3Foreground}"
+                                //}
+                            //]
+                        //},
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                    ]
+                },
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,
+                    "MarginLeft": 12,
+                    "Source": "{Item.Driver.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "Foreground": "{WhiteText}",
+                    "FontSize": 42,
+                    "Triggers" : [ 
+                        
+                        
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P1Foreground}"
+                                //}
+                            //]
+                        //},
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=2}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P2Foreground}"
+                                //}
+                            //]
+                        //},
+                        //{
+                          //  "Condition" : "{Item.Position, Converter=NumberEquals, Parameter=3}",
+                            //"Setters" :
+                            //[
+                              //  {
+                                //    "Property" : "Foreground",
+                                  //  "Value" : "{P3Foreground}"
+                                //}
+                            //]
+                        //},
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                    ]
+
+                },
+
+                //flag
+                {
+                    "BlockType": "image",
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "MarginLeft" : 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    },
+                    "RenderIf": "{RenderDriverFlags}",
+                },
+                //platform
+                {
+                    "BlockType": "image",
+                    "MarginLeft": 1,
+                    "MarginTop": 30,
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Height": 30,
+                            "VerticalAlignment": "Top",
+                            "ImageOptions": {
+                                "Path": "images/logo_{Item.Driver.GamePlatform}.png",
+                            },
+                    "Triggers":[
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                        {
+                            "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                            "ConditionAnd": "{RenderDNFColors}",
+                            "Property": "Foreground",
+                            "Value": "{DNFText}"
+                        },
+                    ]
+
+                },
+                //icon badges
+                {
+                    "BlockType": "itemstack",
+                    "Spacing": 4,
+                    "MarginLeft": 6,
+                    "MarginTop": 4,
+                    "ItemStackOptions": {
+                        "ItemSource": "{Item.Driver.BadgeImages}",
+                        "Template": {
+                            "BlockType": "image",
+                            "Height": 40,
+                            "Source": "{Item}"
+                        }
+                    }
+                },
+
+                //text badge
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 400,
+                    "MarginLeft": 8,
+                    "MarginTop": 8,
+                    "Source": "{Item.Driver.BadgeText}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Top",
+                    "FontName": "{FontNameDefault}",
+                    "FontSize": 16
+                }
+            ]
+        },
+
+        //right part
+        {
+            "BlockType": "stack",
+            "Height": "*",
+            "MarginLeft": 82,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //teams block
+                {
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Spacing": 8,
+                    "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                    "Items": [
+                        //logo
+                        {
+                            "BlockType": "image",
+                            "Height": 50,
+                            "MarginRight": 0,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "images/logos/{Item.Team.Name}.png",
+                                "VerticalAlignment": "Center"
+                            }
+                        },
+                        //name
+                        {
+                            "BlockType": "text",
+                            "Source": "{Item.Team.FullName}",
+                            //"MarginRight": 4,
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Center",
+                            "FontName": "{FontNameDefault}",
+                            "FontSize": 36,
+                            "Foreground":"{Item.Team.Color}",
+                            "TextOptions": {
+                                "VerticalAlignment": "Center"
+                            },
+                            "Triggers":[
+                                {
+                                    "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNF}",
+                                    "ConditionAnd": "{RenderDNFColors}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                },
+                                {
+                                    "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DSQ}",
+                                    "ConditionAnd": "{RenderDNFColors}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                },
+                                {
+                                    "Condition": "{Item.IntervalRace, Converter=StringEquals, Parameter=DNS}",
+                                    "ConditionAnd": "{RenderDNFColors}",
+                                    "Property": "Foreground",
+                                    "Value": "{DNFText}"
+                                },
+                                {
+                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Property" : "Source",
+                                    "Value" : "Reserve Driver"
+                                },
+                                {
+                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Property" : "FontSize",
+                                    "Value" : 36
+                                },
+                                {
+                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Property" : "Foreground",
+                                    "Value" : "{GreyText}"
+                                },
+                            ] 
+                        },
+                        //Car
+                        {
+                            "BlockType": "image",
+                            "Height": 100,
+                            "MarginRight": 0,
+                            "VerticalAlignment": "Center",
+                            "ImageOptions": {
+                                "Path": "images/cars/{Item.Team.Name}.png",
+                                "VerticalAlignment": "Center"
+                            },
+                            "Triggers":[
+                                {
+                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Property" : "Source",
+                                    "Value" : "images/cars/Default.png"
+                                },
+                            ] 
+                        },
+                    ]
+                },
+            ]
+        }
+    ]
+}

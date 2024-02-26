@@ -1,0 +1,43 @@
+{
+    "BlockType" : "dock",
+    "Background": "{BackgroundDefault}",
+    "Items":
+    [
+        {                                
+                
+            "BlockType" : "stack",
+            "PaddingLeft" : 10,
+            "PaddingRight" : 15,                           
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment" : "Center",
+            "Spacing" : 0,            
+            "Items" :[
+                {
+                    "BlockType" : "image",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberGreater, Parameter=0}",
+                    "Source" : "arrow_up.png",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment" : "Center",
+                    "Height" : 15                                                                
+                },
+                {
+                    "BlockType" : "image",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberEquals, Parameter=0}",
+                    "Source" : "equal.png",
+                    "HorizontalAlignment": "Center",
+                    "Opacity": 0,
+                    "VerticalAlignment" : "Center",
+                    "Height" : 15                                                                
+                },
+                {
+                    "BlockType" : "image",
+                    "RenderIf" : "{Item.PositionJump, Converter=NumberLess, Parameter=0}",
+                    "Source" : "arrow_down.png",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment" : "Center",
+                    "Height" : 15                                                             
+                },
+            ]                                           
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "48,40,48,40", 
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {               
+                "BlockType": "component",
+                "ComponentName": "header_block_team_standings",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header" : "Team standings"
+                    }
+                }               
+            },
+
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin" : "{MarginTable}",
+                "MarginRight" : 0,
+                "TableOptions": {
+                    "ItemsSource": "{Standings.Teams}",
+                    "RowSpacing": 30,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 12,
+                        "TextOptionsExtern" : "tableColumnHeader"
+                    },
+                    "Columns": [
+                        //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType" : "component",                                
+                                "ComponentName" : "position_cell",
+                                "ComponentOptions" :{
+                                    "Vars" :{
+                                        "position" : "{Item.PositionString}"
+                                    }
+                                }                           
+                            }
+                        },
+                        
+                        {
+                            "Header": "",
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "ComponentName" : "position_jump_cell"    
+                            }
+                        },
+
+                        //team line
+                        {
+                            "Header": "",
+                            "WidthStretch" : true,                            
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "team_line_cell_standings"   
+                            }
+                            
+                        },                        
+
+                        //points
+                        {
+                            "Header": "[POINTS]",
+                            "MarginLeft" : 0,
+                            "Padding": "50, 0",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#ffffff",
+        "BlendPercentage": 100
+    },                                
+                                "Items": [                                    
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points}",
+                                        "FontName": "{Formula1-Italic}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Triggers": [
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "Foreground",
+            "Value": "000000",
+        }
+    ],
+                                        "Foreground" : "{ForegroundDefault}",
+                                        "TextOptionsExtern": "primaryNumber"
+                                    }
+                                ],
+                                "Triggers" :
+                                [
+                                     {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        },
+                                    {
+                                        "Condition" : "{Standings.IsPositionJumpForTeamsExists}",
+                                        "Property" : "PaddingRight",
+                                        "Value" : 4
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header" : "[GAP]",
+                            "MarginLeft" : 0,
+                            "Template":{
+                                "BlockType" : "text",
+                                "Padding": "40, 0",
+                                "FontName": "{Formula1-Italic}",
+                                "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": false,
+        "Color": "#ffffff",
+        "BlendPercentage": 100
+    },
+    "Triggers": [
+         {
+            "Condition": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+            "Property": "Source",
+            "Value": "",
+        },
+        {
+            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+            "Property": "ColorizeBackgroundOptions.Enabled",
+            "Value": true
+        }
+    ],
+                                "Source" : "+{Item.PointsToLeaderDiff}",
+                                "Foreground" : "{ForegroundDefault}",
+                                "TextOptionsExtern" : "primaryNumber"
+                            }
+                        },                        
+                    ]
+                }
+            }
+        ]
+    }
+}

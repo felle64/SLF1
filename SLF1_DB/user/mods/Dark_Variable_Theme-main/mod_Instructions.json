@@ -1,0 +1,77 @@
+//# FIA-Penalty-Render
+
+//1) Please add the fia_penalty_item.json and fia_penalty_item_Driver.json into the component file
+//2) Please copy the entire event_penalties and driver_penalties file into the layers file
+//3) Copy the following code and palce into the global_var file:
+
+    //FIA text
+    "FIAFontSize": "28",
+    "FIAText": "#000000",
+    "FIALine": "#000000",
+    "FIAGrandPrix": "#ff1801",
+    "FIAMarginDetailsArea": "50,0,50,0",
+    "FIALeftBlockWidth" : "290",
+    "FIARightBlockWidth" : "1500",
+    "FIAFont": "Formula1-Regular",
+    "FIAFontWide": "Formula1-Wide",
+    "FIAFontBold" :"Formula1-Bold",
+    "PenaltySeparator": "#000000",
+    "FIABGColor" : "#09FFFFFF",
+
+    
+//4) Copy the following code and place into the public_var file:
+
+"StewardReportType":"Report",
+"RenderPenaltySeparator": true,
+"RenderPenaltyVerdict": false,
+
+//) Copy the following lines of code place into your localization file:
+
+    "Paul Ricard Grand Prix" : "French Grand Prix",
+    "Austin Grand Prix" : "Lenovo United States Grand Prix",
+    "Montreal Grand Prix" : "Peirelli Grand Prix du Canada",
+    "Interlagos Grand Prix" : "Rolex Grande Premio de Sao Palo",
+    "Silverstone Grand Prix" : "Aramco British Grand Prix",
+    "Hungaroring Grand Prix" : "Qatar Airways Hungarian Grand Prix",
+    "Monza Grand Prix" : "Pirelli Gran Premio D'Italia",
+    "Yas Marina Grand Prix" : "Etihad Airways Abu Dhabi Grand Prix",
+    "Barcelona Grand Prix" : "AWS Gran Premio de España",
+    "Suzuka Grand Prix" : "Lenovo Japanese Grand Prix",
+    "Spielberg Grand Prix" : "Rolex Grosser Preis Von Österreich",
+    "Zandvoort Grand Prix" : "Heineken Dutch Grand Prix",
+    "Spa-Francorchamps Grand Prix" : "MSC Cruises Belgian Grand Prix",
+    "Baku Grand Prix" : "Azerbaijan Grand Prix",
+    "Jeddah Grand Prix" : "STC Saudi Arabian Grand Prix",
+    "Shanghai Grand Prix" : "China Grand Prix",
+    "Portimão Grand Prix" : "Portimão Grand Prix",
+    "Bahrain Grand Prix": "Gulf Air Bahrain Grand Prix",
+    "Melbourne Grand Prix": "Rolex Australian Grand Prix",
+    "Miami Grand Prix": "Cyrpto.com Miami Grand Prix",
+    "Imola Grand Prix": "Qatar Airways Gran Premio del Mae in Italy e Dell'Emilia-Romagna",
+    "Monaco Grand Prix": "Grand Prix De Monaco",
+    "Marina Bay Grand Prix": "Singapore Airline Singapore Grand Prix",
+    "Mexico Grand Prix": "Gran Premio de la Ciudad de México",
+    "Losail Grand Prix": "Qatar Airways Watar Grand Prix",
+    "Las Vegas Grand Prix": "Heineken Silver Las Vegas Grand Prix",
+    "FIAFrom": "From",
+    "FIADate": "Date",
+    "FIAReservist": "Reservist",
+    "FIADriver": "No / Driver",
+    "FIANumberSeparator": "-",
+    "FIACompetitor": "Competitor",
+    "FIASession": "Session",
+    "FIAOffence" : "Offence",
+    "FIAinvolvingdriver(s)": "involving driver(s)",
+    "FIAinturn": "in turn",
+    "FIAonlap": "on lap",
+    "FIADecision": "Decision",
+    "FIADetails": "Details",
+    "FIAVerdict": "Verdict",
+    "FIASignature": "The Stewards",
+    "FIATheStewards": "The Stewards"
+
+//-Steward Report Type Name can be changed via change theme-> settings -> replace "report"
+
+//-All text, penalty area and separator colors can be changed via global_var FIA section with color hex codes
+
+//-The Grand Prix Names and section headers are also customizable on the right of the ":" section of localization.

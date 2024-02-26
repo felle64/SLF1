@@ -1,0 +1,338 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "component",
+                "ComponentName": "header_block_session"
+            },
+            //separator
+            {
+                "Name": "separator",
+                "BlockType": "image",
+                "MarginTop": 16,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+            //table
+            {
+                "Name": "mainTable",
+                "BlockType": "table",
+                "Margin": "{MarginTable}",
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "RowSpacing": 12,
+                    "ColSpacing": 16,
+                    "HeaderTemplate": {
+                        "BlockType": "text",
+                        "MarginBottom": 8,
+                        "TextOptionsExtern": "tableColumnHeader"
+                    },
+                    "Columns": [
+                        // //position
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_cell",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "position": "{Item.PositionString}"
+                                    }
+                                }
+                            }
+                        },
+                        //driver line
+                        {
+                            "Header": "",
+                            "WidthStretch": true,
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "driver_line_cell"
+                            }
+                        },
+                        //position_jump
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "position_jump_cell2"
+                            }
+                        },
+                        //interval
+                        {
+                            "Header": "[Interval]",
+                            "Template": {
+                                "Padding": "12, 0",
+                                "BackgroundImage": "images/Modern/Row/rowlightmed.png",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "BackgroundImage",
+                                        "Value": "images/Modern/Row/rowdarkmed.png"
+                                    }
+                                ],
+                                "BlockType": "text",
+                                "Source": "{Item.IntervalRace}",
+                                "HorizontalAlignment": "Left",
+                                "TextOptions": {
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 28,
+                                    "Foreground": "{ForegroundDarker}",
+                                    "HorizontalAlignment": "Center"
+                                }
+                            }
+                        },
+                        //penalties
+                        {
+                            "Header": "[Pen. Time]",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Padding": "12, 0",
+                                "BackgroundImage": "images/Modern/Row/rowlightmed.png",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "BackgroundImage",
+                                        "Value": "images/Modern/Row/rowdarkmed.png"
+                                    }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.PenaltyTimeStringLeftPart}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontName": "{FontNameDefault}",
+                                                    "FontSize": 22,
+                                                    "Foreground": "{PenaltyTimeGameForeground}",
+                                                    "HorizontalAlignment": "Center"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.PenaltyTimeStringRightPart}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontName": "{FontNameDefault}",
+                                                    "FontSize": 22,
+                                                    "Foreground": "{PenaltyTimeStewardsForeground}",
+                                                    "HorizontalAlignment": "Center"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        //fastest lap
+                        {
+                            "Header": "[Fastest Lap]",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Padding": "12, 0",
+                                "BackgroundImage": "images/Modern/Row/rowlightmed.png",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "BackgroundImage",
+                                        "Value": "images/Modern/Row/rowdarkmed.png"
+                                    }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Spacing": 8,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.FastestLapTime}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontName": "{FontNameDefault}",
+                                                    "FontSize": 24,
+                                                    "Foreground": "{ForegroundDarker}",
+                                                    "HorizontalAlignment": "Center"
+                                                },
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Item.IsRaceFastestLap}",
+                                                        "Setters": [
+                                                            {
+                                                                "Property": "Foreground",
+                                                                "Value": "{FastestLapRaceSelectedForeground}"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "tyres_{Item.FastestLapTyres}.png",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Height": 28
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        //stints
+                        {
+                            "Header": "[Stints]",
+                            "Template": {
+                                "BlockType": "itemstack",
+                                "Spacing": 4,
+                                "Padding": "12, 0",
+                                "BackgroundImage": "images/Modern/Row/rowlightlong2.png",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "BackgroundImage",
+                                        "Value": "images/Modern/Row/rowdarklong2.png"
+                                    }
+                                ],
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Item.Stints}",
+                                    "Template": {
+                                        "BlockType": "stack",
+                                        "VerticalAlignment": "Center",
+                                        "MarginRight": 4,
+                                        "Spacing": 3,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Height": 36,
+                                                "VerticalAlignment": "Center",
+                                                "Source": "tyres_{Item.Tyres}.png"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.Laps}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontName": "{FontNameDefault}",
+                                                    "FontSize": 18,
+                                                    "Foreground": "{ForegroundDarker}",
+                                                    "HorizontalAlignment": "Center"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        //points
+                        {
+                            "Header": "[Pts]",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Padding": "24, 0",
+                                "BackgroundImage": "images/Modern/Row/rowlight.png",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
+                                        "Property": "BackgroundImage",
+                                        "Value": "images/Modern/Row/rowdark.png"
+                                    }
+                                ],
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.DriverPointsString}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": {
+                                            "FontName": "{FontNameDefault}",
+                                            "FontSize": 32,
+                                            "Foreground": "{ForegroundDarker}",
+                                            "HorizontalAlignment": "Center"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            //footer
+            {
+                "Name": "headerBlock",
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Background": "{HeaderDefault}",
+                "Padding": "42, 16, 42, 16",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        //"Margin": "8, 36, 8, 8",
+                        "Spacing": 32,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "RenderIf": "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                                "Height": 36,
+                                "VerticalAlignment": "Center",
+                                "Source": "images/Modern/chrono.png"
+                            },
+                            {
+                                "BlockType": "component",
+                                "Name": "stickerFastestLap",
+                                "RenderIf": "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                                "ComponentOptions": {
+                                    "ComponentName": "sticker",
+                                    "Vars": {
+                                        //"bg": "{FastestLapRaceStickerBackground}",
+                                        "header": "[FASTEST LAP]",
+                                        "main": "{Session.FastestLapDriver.RealName} {Session.FastestLapDriver.Name}",
+                                        "data": "{Session.FastestLapTime}"
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "image",
+                                "RenderIf": "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                                "Height": 36,
+                                "VerticalAlignment": "Center",
+                                "Source": "images/Modern/driver.png"
+                            },
+                            {
+                                "BlockType": "component",
+                                "RenderIf": "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                                "ComponentOptions": {
+                                    "ComponentName": "sticker",
+                                    "Vars": {
+                                        //"bg": "{DriverDayRaceStickerBackground}",
+                                        "header": "[DRIVER OF THE DAY]",
+                                        "main": "{Session.DriverDayDriver.RealName} {Session.DriverDayDriver.Name}",
+                                        "data": ""
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

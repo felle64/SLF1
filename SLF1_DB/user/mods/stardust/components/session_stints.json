@@ -1,0 +1,201 @@
+{
+    "BlockType" : "stack",
+    "Items" : [
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "Height" : 70,
+            "BackgroundImage" : "images/<type>/bg_stints.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColor}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                    "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                    "Property" : "Width",
+                    "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                },
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsOdd}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "HorizontalAlignment" : "Center",
+                    "Orientation" : "Horizontal",
+                    "Height" : 70,
+                    "BackgroundImage" : "images/<type>/bg_stints_effect.png",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                            "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                            "Property" : "Width",
+                            "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                        }
+                    ],
+                    "Items" : [
+                        {
+                            "BlockType" : "dock",
+                            "Width" : "{WidthOfRaceStintsCell}",
+                            "HorizontalAlignment" : "Center",
+                            "Orientation" : "Horizontal",
+                            "Height" : 70,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                                    "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                                    "Property" : "Width",
+                                    "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                                }
+                            ],
+                            "Items" : [
+                                {
+                                    "BlockType": "itemstack",
+                                    "HorizontalAlignment" : "Center",
+                                    "VerticalAlignment" : "Center",
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Stints}",
+                                        "ItemSpacing" : 4,
+                                        "Template": {
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Bottom",
+                                            "MarginRight" : 4,
+                                            "Spacing": 2,
+                                            "Items": [
+                                                {
+                                                    "BlockType": "image",
+                                                    "Height": 40,
+                                                    "VerticalAlignment": "Bottom",
+                                                    "PaddingBottom" : -9,
+                                                    "Source": "images/tyres/tyres_{Item.Tyres}.png"
+                                                },
+                                                {
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Laps}",
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Bottom",
+                                                    "MarginBottom" : -8,
+                                                    "FontSize": 30,
+                                                    "TextOptions": {
+                                                        "FontName": "{TW-Sb}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Foreground" : "#000000"
+                                                    }
+                                                }
+                        
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "Height" : 70,
+            "BackgroundImage" : "images/<type>/bg_stints.png",
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "{RightPartEffectColorOdd}",
+                "BlendPercentage": 100
+            },
+            "Triggers" : [
+                {
+                    "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                    "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                    "Property" : "Width",
+                    "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                },
+                {
+                    "Condition" : "{Item.Index, Converter=NumberIsEven}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ],
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "HorizontalAlignment" : "Center",
+                    "Orientation" : "Horizontal",
+                    "Height" : 70,
+                    "BackgroundImage" : "images/<type>/bg_stints_effect.png",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                            "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                            "Property" : "Width",
+                            "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                        }
+                    ],
+                    "Items" : [
+                        {
+                            "BlockType" : "dock",
+                            "Width" : "{WidthOfRaceStintsCell}",
+                            "HorizontalAlignment" : "Center",
+                            "Orientation" : "Horizontal",
+                            "Height" : 70,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Session.SessionType, Converter=StringEquals,Parameter=Qualification}",
+                                    "ConditionAnd": "{Session.TotalLaps, Converter=NumberNotEquals, Parameter=0}",
+                                    "Property" : "Width",
+                                    "Value" : "{Session.TotalLaps, Converter=NumberMultiply, Parameter=85}"
+                                }
+                            ],
+                            "Items" : [
+                                {
+                                    "BlockType": "itemstack",
+                                    "HorizontalAlignment" : "Center",
+                                    "VerticalAlignment" : "Center",
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Stints}",
+                                        "ItemSpacing" : 4,
+                                        "Template": {
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Bottom",
+                                            "MarginRight" : 4,
+                                            "Spacing": 2,
+                                            "Items": [
+                                                {
+                                                    "BlockType": "image",
+                                                    "Height": 40,
+                                                    "VerticalAlignment": "Bottom",
+                                                    "PaddingBottom" : -9,
+                                                    "Source": "images/tyres/tyres_{Item.Tyres}.png"
+                                                },
+                                                {
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Laps}",
+                                                    "HorizontalAlignment": "Center",
+                                                    "VerticalAlignment": "Bottom",
+                                                    "MarginBottom" : -8,
+                                                    "FontSize": 30,
+                                                    "TextOptions": {
+                                                        "FontName": "{TW-Sb}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Foreground" : "#000000"
+                                                    }
+                                                }
+                        
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

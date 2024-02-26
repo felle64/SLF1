@@ -1,0 +1,245 @@
+{
+    "BlockRoot" : {
+        "BlockType" : "stack",
+        "Orientation" : "Vertical",
+        "BackgroundImage" : "images/Background/bg.png",
+        "Items" : [
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Vertical",
+                "BackgroundImage" : "images/Background/bg_category.png",
+                "ColorizeBackground": {
+                    "Enabled" : true,
+                    "Color": "{Season.MainLeagueCategory.Color}",
+                    "BlendPercentage": 100
+                },
+                "Items" : [
+                    {
+                        "BlockType" : "stack",
+                        "Orientation" : "Vertical",
+                        "BackgroundImage" : "images/Background/bg_effect.png",
+                        "ColorizeBackground": {
+                            "Enabled" : false,
+                            "Color": "{Season.MainLeagueCategory.Color}",
+                            "BlendPercentage": 100
+                        },
+                        "Items" : [
+                            {
+                                "BlockType" : "component",
+                                "ComponentOptions" : {
+                                    "ComponentName" : "race_header"
+                                }
+                            },
+                            {
+                                "BlockType" : "stack",
+                                "MarginTop" : 75,
+                                "MarginBottom" : 75,
+                                "Orientation" : "Horizontal",
+                                "HorizontalAlignment" : "Center",
+                                "Items" : [
+                                    {
+                                        "BlockType" : "stack",
+                                        "Orientation" : "Vertical",
+                                        "MarginTop" : 50,
+                                        "MarginLeft" : 75,
+                                        "Items" : [
+                                            {
+                                                "BlockType" : "component",
+                                                "MarginBottom" : 50,
+                                                "ComponentOptions" : {
+                                                    "ComponentName" : "quali_info"
+                                                }
+                                            },
+                                            {
+                                                "BlockType" : "component",
+                                                "HorizontalAlignment" : "Center",
+                                                "RenderIf" : "{StreamerAndCommentary, Converter=EmptyObjectToFalse}",
+                                                "MarginBottom" : 15,
+                                                "ComponentOptions" : {
+                                                    "ComponentName" : "sticker_commentary",
+                                                    "Vars" : {
+                                                        "content" : "{StreamerAndCommentary}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType" : "table",
+                                        "HorizontalAlignment" : "Center",
+                                        "MarginRight" : 75,
+                                        "MarginLeft" : 75,
+                                        "TableOptions" : {
+                                            "ItemsSource" : "{Session.Drivers}",
+                                            "RowSpacing" : 15,
+                                            "HeaderTemplate" : {
+                                                "BlockType" : "text",
+                                                "FontName" : "{TW-Li}",
+                                                "FontSize" : 35,
+                                                "Foreground" : "#ffffff",
+                                                "HorizontalAlignment" : "Center"
+                                            },
+                                            "Columns" : [
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "position",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_position"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "driver",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_driver",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "data": "{Item.Driver.RaceNumber}"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Driver",
+                                                    "Name" : "drivername",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_drivername"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Team/Car",
+                                                    "Name" : "team",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_team"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Time",
+                                                    "Name" : "Time",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_middle_gap"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "Jump",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "position_jump"
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Sector 1",
+                                                    "Name" : "Sector",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "quali_sector",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "number" : "1"
+                                                            }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                                                                "Property" : "RenderIf",
+                                                                "Value" : "false"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Sector 2",
+                                                    "Name" : "Sector",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "quali_sector",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "number" : "2"
+                                                            }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                                                                "Property" : "RenderIf",
+                                                                "Value" : "false"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Sector 3",
+                                                    "Name" : "Sector",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "quali_sector",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "number" : "3"
+                                                            }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                                                                "Property" : "RenderIf",
+                                                                "Value" : "false"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "Stints",
+                                                    "Name" : "Stints",
+                                                    "Template" : 
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName": "session_stints",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "type" : "BgForQuali"
+                                                            }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                                                                "Property" : "RenderIf",
+                                                                "Value" : "false"
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "",
+                                                    "Name" : "quali-finish",
+                                                    "Template" : {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "quali_data_finish"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

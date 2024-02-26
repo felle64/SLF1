@@ -1,0 +1,17 @@
+/assets
+/bin
+/fonts
+/images
+/logs
+/startup_data
+/theme_default
+/updater
+app_config.json
+app_version.json
+hostfxr.dll
+hostpolicy.dll
+leagues_settings.json
+RacingLeagueTools.deps.json
+RacingLeagueTools.dll
+RacingLeagueTools.exe
+RacingLeagueTools.runtimeconfig.json

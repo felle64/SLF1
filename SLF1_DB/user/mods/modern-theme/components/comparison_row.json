@@ -1,0 +1,67 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "Width": "*",
+    "Background": "{Item.Team.Color}",
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Center",
+            //"MarginLeft" : "100",
+            "Items" : [
+                
+                {
+                    "BlockType" : "text",
+                    "Source" : "<statval>",
+                    "Width" : "{ComparisonCell}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "FontSize" : "{ComparisonNumberSize}",
+                    "HorizontalAlignment" : "Center",
+                   // "BackgroundImage" : "images/team_drv/bglight_<bg>.png",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "FontName" : "{FontNameBold}",
+                        "Foreground" : "{ComparisonColorText1}"
+                    
+                    }
+                    
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "right",
+            "Items" : [
+                {
+                    "BlockType" : "text",
+                    "Source" : "<statname>",
+                    "Width" : "{ComparisonCellWidth}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "FontSize" : "{ComparisonTitleSize}",
+                    "HorizontalAlignment" : "Center",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "FontName" : "{FontNameBold}",
+                        "Foreground" : "{ComparisonColorText2}"
+                    }
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "<statvalsec>",
+                    "Width" : "{ComparisonCell}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "FontSize" : "{ComparisonNumberSize}",
+                    "HorizontalAlignment" : "Center",
+                    "MarginRight" : "0",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "FontName" : "{FontNameBold}",
+                        "Foreground" : "{ComparisonColorText1}"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,304 @@
+{
+    "BlockType" : "stack",
+    "Height" : 1512,
+    "Width" : 958,
+    "BackgroundImage" : "images/BgForQuali/bg_info_quali.png",
+    "Orientation" : "Vertical",
+    "Items" : [
+        {
+            "BlockType" : "text",
+            "HorizontalAlignment" : "Center",
+            "Width" : 958,
+            "Height" : 120,
+            "MarginTop" : 40,
+            "Source" : "{Session.Track.CountryName} Quali",
+            "TextOptions" : {
+                "HorizontalAlignment" : "Center",
+                "FontSize" : 57,
+                "Foreground" : "#ffffff",
+                "FontName" : "{TW-Bo}"
+            }
+        },
+        {
+            "BlockType" : "image",
+            "MarginTop" : 50,
+            "Height" : 650,
+            "Source" : "images/CircuitLayout/alltrack/track_{Session.Track.CircuitName}.png",
+            "HorizontalAlignment" : "Center",
+            "ImageOptions" : {
+                "DefaultPath" : "images/CircuitLayout/alltrack/track_Monza.png"
+            }
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 30,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "{Session.Track.CircuitName} - [{Session.SessionType}Q]",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " - {Session.SessionDurationMinutes} min",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Session.SessionDurationMinutes, Converter=NumberEquals, Parameter=0}",
+                                    "Property" : "RenderIf",
+                                    "Value" : "false"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Right",
+                    "Items" : [
+                        {
+                            "BlockType" : "image",
+                            "Source" : "images/Weather/weather_{Session.WeatherType}.png",
+                            "Height" : 60
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " Air:",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Session.AirTemperatureString}",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 30,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "stack",
+                            "Orientation" : "Horizontal",
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Source" : "Lap record -",
+                                    "FontSize" : 40,
+                                    "TextOptions" : {
+                                        "Foreground" : "{ForeWhite}",
+                                        "FontName" : "{TW-Bo}"
+                                    }
+                                },
+                                {
+                                    "BlockType" : "text",
+                                    "Source" : " {Session.Track.RaceLapRecordTime}",
+                                    "FontSize" : 40,
+                                    "TextOptions" : {
+                                        "Foreground" : "{ForeWhite}",
+                                        "FontName" : "{TW-Boi}"
+                                    },
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{Session.Track.RaceLapRecordTime, Converter=StringEquals, Parameter=0.000}",
+                                            "Property" : "Source",
+                                            "Value" : " unknown"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Right",
+                    "Items" : [
+                        {
+                            "BlockType" : "image",
+                            "Source" : "images/Weather/temperature.png",
+                            "Height" : 60
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " Track:",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Session.TrackTemperature}°",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 60,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Fastest Sector 1:",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Session.FastestOverallSector1}",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "Triggers" : [
+                {
+                    "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 30,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Fastest Sector 2:",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Session.FastestOverallSector2}",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "Triggers" : [
+                {
+                    "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ]
+        },
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Horizontal",
+            "MarginLeft" : 40,
+            "MarginRight" : 40,
+            "MarginTop" : 30,
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Left",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Fastest Sector 3:",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Bo}"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : " {Session.FastestOverallSector3}",
+                            "FontSize" : 40,
+                            "TextOptions" : {
+                                "Foreground" : "{ForeWhite}",
+                                "FontName" : "{TW-Boi}"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "Triggers" : [
+                {
+                    "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                    "Property" : "RenderIf",
+                    "Value" : "false"
+                }
+            ]
+        }
+    ]
+}

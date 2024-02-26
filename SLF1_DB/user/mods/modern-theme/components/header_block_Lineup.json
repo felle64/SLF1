@@ -1,0 +1,81 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock", 
+    "Orientation": "Vertical",
+    "Padding": "22, 0, 22, 0",
+    "Background": "{HeaderDefault}",
+    "Width": "*",
+    "Items": [
+        //headerLeft
+        {
+            "BlockType": "dock",
+            "VerticalAlignment": "Center",
+            "Orientation": "Vertical",
+            
+            "Items": [
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "Orientation": "Horizontal",
+                    "Items" :
+                    [
+                        {                            
+                            "BlockType": "text",
+                            "Source": "{Season.LeagueInfo.LeagueName}",                            
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 20,
+                            "Foreground": "{Foregroundwhithe}"
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "Source": " · {Season.Name}",
+                            "VerticalAlignment" : "Center",
+                            "FontName": "{FontNameBold}",
+                            "FontSize": 16,
+                            "Foreground": "{Foregroundwhithe}"
+                        }
+                    ]
+                },       
+
+                {
+                    "BlockType": "text",    
+                    "MarginTop":10,                        
+                    "VerticalAlignment": "Center",                            
+                    "Source": "[Line-ups]",
+                    "FontName": "{FontNameBold}",
+                    "FontSize": 28,
+                    "Foreground": "{Foregroundwhithe}"
+                }
+            ]
+        },
+
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft" : 56,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Height":"*",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        
+
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "image",
+                            "Height": 82,
+                            "MarginLeft": 36,
+                            "MarginTop":40,
+                            "Source": "{Season.LeagueInfo.LeagueLogo}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

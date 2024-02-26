@@ -1,0 +1,81 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType": "component",
+                "ComponentName": "header_block",
+                "ComponentOptions": {
+                    "Vars": {
+                        "header": "[Team standings]"
+                    }
+                }
+            }, //separator
+            {
+                "BlockType": "image",
+                "Width": "*",
+                "Source": "separator-h.png"
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "MarginRight": 25,
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Teams}",
+                            "Limit": "1",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "Team_line_1_cell"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Teams}",
+                            "Limit": "2",
+                            "IndexStart": "1",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "Team_line_2_cell"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Width": "*",
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "MarginRight": 25,
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Teams}",
+                            "Limit": "17",
+                            "IndexStart": "3",
+                            "Template": {
+                                "BlockType": "component",
+                                "ComponentName": "Team_line_other_cell"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

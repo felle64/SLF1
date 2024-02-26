@@ -1,0 +1,33 @@
+{
+    "Name" : "sticker",
+    "BlockType" : "stack",
+    "Background": "<bg>",
+    "VerticalAlignment" : "Center",   
+    "Spacing" : 14,
+    "Items" :
+    [
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerHeader"
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<main>",
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerDriver"
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<data>",
+            "VerticalAlignment" : "Center",
+            "TextOptionsExtern": "stickerFLTime"       
+        }
+    ]
+}

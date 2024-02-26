@@ -1,0 +1,84 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "HorizontalAlignment" : "Center",
+    "VerticalAlginment":"Center",
+    "Height" : 70,
+    "Width" : 70,
+    "MarginRight" : 10,
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_position.png",
+            "RenderIf" : "{Item.Position, Converter=NumberEquals, Parameter=1}",
+            "Height" : 70,
+            "Width" : 70,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "#D2B200",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "Component",
+                    "ComponentName" : "session_middle_position_effect"
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_position.png",
+            "RenderIf" : "{Item.Position, Converter=NumberEquals, Parameter=2}",
+            "Height" : 70,
+            "Width" : 70,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "#AEB6BF",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "Component",
+                    "ComponentName" : "session_middle_position_effect"
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_position.png",
+            "RenderIf" : "{Item.Position, Converter=NumberEquals, Parameter=3}",
+            "Height" : 70,
+            "Width" : 70,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "#C28F34",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "Component",
+                    "ComponentName" : "session_middle_position_effect"
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "BackgroundImage" : "images/BgForRace/bg_position.png",
+            "RenderIf" : "{Item.Position, Converter=NumberGreater, Parameter=3}",
+            "Height" : 70,
+            "Width" : 70,
+            "ColorizeBackground": {
+                "Enabled" : true,
+                "Color": "#505050",
+                "BlendPercentage": 100
+            },
+            "Items" : [
+                {
+                    "BlockType" : "Component",
+                    "ComponentName" : "session_middle_position_effect"
+                }
+            ]
+        }
+    ]
+    
+}

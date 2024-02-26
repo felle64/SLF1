@@ -1,0 +1,28 @@
+{
+    "BlockType" : "dock",
+    "Background": "{BackgroundDefault}",
+    "ColorizeBackground": {
+        "Enabled": true,
+        "Color": "{DNFText}",
+        "BlendPercentage": 75
+    },                             
+    "Items": [                                    
+        {
+            "BlockType": "text",
+            "Source": "+{Item.PointsToLeaderDiff}",
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Foreground" : "{GreyText}",
+            "FontSize": 25,
+            "TextOptionsExtern": "primaryNumber",
+            "RenderForce": true, 
+            "Triggers" : [
+                {
+                    "Condition": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                    "Property" : "Source",
+                    "Value" : " "
+                },             
+            ]
+        }
+    ]
+}

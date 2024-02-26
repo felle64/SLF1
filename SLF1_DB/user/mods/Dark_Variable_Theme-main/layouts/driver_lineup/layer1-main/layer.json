@@ -1,0 +1,212 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "0, 0, 0, 12",
+
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+
+            {               
+                "BlockType": "component",
+                "ComponentName": "{lineup_block_lineup}",      
+            },
+
+            //lines
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Margin": "18, 12, 18, 24",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Teams}",
+                    "Template": {
+                        "BlockType": "stack",
+                        "Margin" : "0,0,0,36",
+                        "Orientation": "Vertical",
+                        "Background" : "{BackgroundDefault}",       
+                        "ColorizeBackground": {
+                            "Enabled": true,
+                            "Color": "{Item.Team.Color}",
+                            "BlendPercentage": 75
+                        },
+                        "Items": [
+
+                            //team
+                            {
+                                "BlockType": "stack",
+                                "Margin" :"0, 8, 0, 12",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment" : "Center",
+                                "Orientation": "Horizontal",
+                                "Spacing" : 8,
+                                "Items": [
+                                    //logo
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 65,
+                                        "MarginRight": 0,
+                                        "VerticalAlignment": "Center",
+                                        "ImageOptions": {
+                                            "Path": "{Item.Team.LogoPath}",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+
+                                    //name
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Item.Team.Name}",
+                                        "FontSize" : 50
+                                    }
+                                ]
+                            },
+                            
+
+                            //driver stack
+                            {
+                                "BlockType": "dock",
+                                "Padding" : "0,0,0,16",
+                                "Orientation": "Horizontal",                                                         
+                                "Items": [
+                                    //Car
+                                    {
+                                        "Name": "",
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Spacing": 12,
+                                        "Padding": "0, 0",
+                                        "HorizontalAlignment": "Left",
+                                        "Items": [
+                                            //Avatar
+                                            
+                                                {
+                                                "BlockType" : "image",
+                                                "Height": 150,
+                                                "VerticalAlignment": "Bottom",
+                                                "ImageOptions": {
+                                                    "Path": "images/drivers/driver_{Item.Line0.Driver.Name}"
+                                                }
+                                            }
+                                        ],
+                                    },                                    
+                                    //Teams
+                                    {
+                                        "Name": "",
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Spacing": 12,
+                                        "Padding": "0, 0",
+                                        "HorizontalAlignment": "Right",
+                                        "Width": "600",
+                                        "Items": [                   
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Margin" :"0, 8, 0, 12",
+                                                        "HorizontalAlignment": "Right",
+                                                        "VerticalAlignment" : "Center",
+                                                        "Orientation": "Horizontal",
+                                                        "Spacing" : 8,
+                                                        "Items": [
+                                                           //number
+                                                            {
+                                                                        "BlockType": "text",
+                                                                        "MarginRight": 12,
+                                                                        "Source": "# {Item.Line0.Driver.RaceNumber}",
+                                                                        "HorizontalAlignment": "Right",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "FontName": "{FontNameDefault}",
+                                                                        "FontSize": 42,
+                                                                    },
+                                                                     //flag
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Height": 48,
+                                                                "MarginLeft": 12,
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment": "Center",
+                                                                "ImageOptions": {
+                                                                    "Path": "{Item.Line0.Driver.Nationality.LogoPath}",
+                                                                    "VerticalAlignment": "Center"
+                                                                }
+                                                            },
+                                                            ]
+                                                            },
+                                                            
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Margin" :"0, 8, 0, 12",
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment" : "Center",
+                                                                "Orientation": "Horizontal",
+                                                                "Spacing" : 8,
+                                                                "Items": [
+                                                                    //name
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "MarginLeft": 8,
+                                                                        "Source": "{Item.Line0.Driver.Name}",
+                                                                        "HorizontalAlignment": "Right",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "FontName": "{FontNameDefault}",
+                                                                        "FontSize": 42,
+                                                                    },
+                                                                    {
+                                                                        "BlockType" : "image",
+                                                                        "Height" : 25,
+                                                                        "MarginLeft" : 12,
+                                                                        "VerticalAlignment": "Center",
+                                                                        "HorizontalAlignment": "Right",
+                                                                        "MarginTop" : 0,
+                                                                        "ImageOptions": {
+                                                                            "Path" : "images/logo_{Item.Line0.Driver.GamePlatform}"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            //icon badges
+                                                            {
+                                                                "BlockType": "itemstack",
+                                                                "Spacing": 4,
+                                                                "MarginLeft": 6,
+                                                                "MarginTop": 4,
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment": "Center",
+                                                                "ItemStackOptions": {
+                                                                    "ItemSource": "{Item.Line0.Driver.BadgeImages}",
+                                                                    "Template": {
+                                                                        "BlockType": "image",
+                                                                        "Height": 24,
+                                                                        "Source": "{Item}"
+                                                                    }
+                                                                }
+                                                            },
+
+                                                            //text badge
+                                                            {
+                                                                "BlockType": "text",
+                                                                "MarginLeft": 8,
+                                                                "MarginTop": 8,
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment": "Center",
+                                                                "Source": "{Item.Line0.Driver.BadgeText}",
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment": "Top",
+                                                                "FontName": "{FontNameDefault}",
+                                                                "FontSize": 16
+                                                            }
+                                                ]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }

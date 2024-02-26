@@ -1,0 +1,222 @@
+{
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "BackgroundImage": "images/Modern/Row/{Item.Team.Name}_dark.png",
+            "Triggers": [
+                {
+                    "Condition": "{Item.IsReserve}",
+                    "Property": "BackgroundImage",
+                    "Value": "images/Modern/Row/reserve_dark.png"
+                },
+                {
+                    "Condition": "{NotF1SeasonOrCustomTeams}",
+                    "Property": "BackgroundImage",
+                    "Value": "images/Modern/Row/reserve_dark.png"
+                }
+            ],
+            "Padding": "5, 25, 20, 5",
+            "Width": 1160,
+            "Height": 172,
+            "MarginTop": 0,
+            "MarginBottom": 5,
+            "Items": [
+                //left part number
+                {
+                    "BlockType": "text",
+                    "Width": 40,
+                    //"Background": "#cecece",
+                    "MarginLeft": 30,
+                    "Source": "{Item.Position}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameBold}",
+                    "Foreground": "{Foregroundwhithe}",
+                    "FontSize": 42
+                },
+                {
+                    "BlockType": "shape",
+                    "VerticalAlignment": "Center",
+                    "Width": 10,
+                    "Height": 75,
+                    "Opacity": 100,
+                    "ShapeOptions": {
+                        "Type": "Rectangle",
+                        "Fill": "{Item.Team.Color}"
+                    }
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    //"Background":"#FFFFFF",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Height": 150,
+                    "Width": "730",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //Real name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "MarginTop": 20,
+                                    "Source": "{Item.Driver.RealName}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{Foregroundwhithe}",
+                                    "FontSize": 30
+                                },
+                                //Clear
+                                {
+                                    "BlockType": "image",
+                                    "Height": 36,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/Clear.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "Items": [
+                                //name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "Source": "{Item.Driver.Name}",
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{Foregroundwhithe}",
+                                    "FontSize": 36
+                                },
+                                //flag
+                                {
+                                    "BlockType": "image",
+                                    "RenderIf":"{ShowCountryFlagsForDrivers}",
+                                    "Height": 36,
+                                    "MarginLeft": 5,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                },
+                                //icon badges
+                                {
+                                    "BlockType": "itemstack",
+                                    "MarginLeft": 6,
+                                    "MarginTop": 10,
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Driver.BadgeImages}",
+                                        "Template": {
+                                            "BlockType": "image",
+                                            "Height": 20,
+                                            "Source": "{Item}"
+                                        }
+                                    }
+                                },
+                                //text badge
+                                {
+                                    "BlockType": "text",
+                                    "MaxWidth": 400,
+                                    "MarginLeft": 8,
+                                    "MarginTop": 10,
+                                    "Source": "{Item.Driver.BadgeText}",
+                                    "HorizontalAlignment": "Left",
+                                    "VerticalAlignment": "Top",
+                                    "FontName": "{FontNameDefault}",
+                                    "FontSize": 16
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Horizontal",
+                            "MarginTop": 20,
+                            "Items": [
+                                //Team name
+                                {
+                                    "BlockType": "text",
+                                    "MarginLeft": 18,
+                                    "Source": "{Item.Team.FullName}",
+                                    "Triggers": [
+                                        {
+                                            "Condition": "{Item.IsReserve}",
+                                            "Property": "Source",
+                                            "Value": "Reserve"
+                                        }
+                                    ],
+                                    "HorizontalAlignment": "Left",
+                                    "FontName": "{FontNameBold}",
+                                    "Foreground": "{Foregroundwhithe}",
+                                    "FontSize": 15
+                                },
+                                //logo
+                                {
+                                    "BlockType": "image",
+                                    "Height": 20,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "{Item.Team.LogoPath}",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "BlockType": "Stack",
+                    "Orientation": "Horizontal",
+                    "MarginLeft":20,
+                    "MarginTop":0,
+                    "Width": "*",
+                    "Triggers": [
+                        {
+                            "Condition": "{NotF1SeasonOrCustomTeams}",
+                            "Property": "MarginLeft",
+                            "Value": "0"
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Center",
+                            "MarginTop": 110,
+                            "Orientation": "Horizontal",
+                            "Source": "{Item.Points}",
+                            "TextAlignment": "Center",
+                            "FontName": "{FontNameBold}",
+                            "Foreground": "{ForegroundBlack}",
+                            "FontSize": 35
+                        },
+                        
+                        //logo
+                        {
+                            "BlockType": "image",
+                            "RenderIf" :"{NotF1SeasonOrCustomTeams}",
+                            "Height": 180,
+                            "MarginTop":-15,
+                            "MarginLeft": 35, 
+                            "ImageOptions": {
+                                "Path": "{Item.Team.LogoPath}",
+                                "VerticalAlignment": "Center"
+                            }
+                        }
+                    ]
+                }
+                
+            ]
+        }
+    ]
+}

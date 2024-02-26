@@ -1,0 +1,128 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "24, 24, 24, 24",
+
+        "Orientation": "Vertical",
+        "Items": [
+            //driver line
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    //flag
+                    {
+                        "BlockType": "image",
+                        "Height": 48,
+                        "MarginRight": 12,
+                        "VerticalAlignment": "Center",
+                        "ImageOptions": {
+                            "Path": "{DriverInfo.Driver.Driver.Nationality.LogoPath}",
+                            "VerticalAlignment": "Center"
+                        }
+                    },
+
+                    //name
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 600,
+                        "MarginLeft": 8,
+                        "Source": "{DriverInfo.Driver.Driver.Name}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 56
+                    },
+
+                    //icon badges
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 4,
+                        "MarginLeft": 6,
+                        "MarginTop": 4,
+                        "ItemStackOptions": {
+                            "ItemSource": "{DriverInfo.Driver.Driver.BadgeImages}",
+                            "Template": {
+                                "BlockType": "image",
+                                "Height": 24,
+                                "Source": "{Item}"
+                            }
+                        }
+                    },
+
+                    //text badge
+                    {
+                        "BlockType": "text",
+                        "MaxWidth": 400,
+                        "MarginLeft": 8,
+                        "MarginTop": 8,
+                        "Source": "{DriverInfo.Driver.Driver.BadgeText}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "FontName": "{FontNameDefault}",
+                        "FontSize": 16
+                    }
+                ]
+            },
+
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Items": [
+                    //position
+                    {
+                        "BlockType": "text",
+                        "FontSize": 56,
+                        "Foreground": "#444444",
+                        "Source": "P"
+                    },
+                    {
+                        "BlockType": "text",
+                        "FontSize": 56,
+                        "Source": "{DriverInfo.Driver.PositionString}"
+                    },
+
+                    //stints
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 4,
+                        "Margin": "24,0,0,0",
+                        "Padding": "12, 0",
+                        "VerticalAlignment": "Center",
+                        "Background": "{BackgroundDefault}",
+                        "ItemStackOptions": {
+                            "ItemSource": "{DriverInfo.Driver.Stints}",
+                            "Template": {
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "MarginRight": 4,
+                                "Spacing": 3,
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Height": 48,
+                                        "VerticalAlignment": "Center",
+                                        "Source": "tyres_{Item.Tyres}.png"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Laps}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": {
+                                            "FontName": "{FontNameDefault}",
+                                            "FontSize": 36,
+                                            "HorizontalAlignment": "Center"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

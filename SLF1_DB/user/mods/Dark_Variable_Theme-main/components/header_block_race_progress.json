@@ -1,0 +1,133 @@
+//header block
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "HorizontalAlignment": "Left",
+            "Items": [
+                //league name
+                
+                        {                            
+                            "BlockType": "text",
+                            "Source": "{Season.LeagueInfo.LeagueName}",                            
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 30,
+                            "Foreground" : "{WhiteText}"
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "Source": "{Season.Name}",
+                            "VerticalAlignment" : "Center",
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 30,
+                            "Foreground" : "{WhiteText}"
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "Finishing Position by Race",
+                            "FontName": "{FontNameWide}",  
+                            "Foreground" :"{GreyText}",                                 
+                            "FontSize": 26
+                        },
+
+                //main header
+                {
+                    "Name": "headerMainContent",
+                    "BlockType": "stack",
+                    "Spacing": 8,
+                    "Items": [
+                        // {                           
+                        //     "BlockType": "image",
+                        //     "Height": 36,
+                        //     "Source": ""
+                        // },
+
+                       // {
+                       //     "BlockType": "text",                            
+                       //     "VerticalAlignment": "Center",                            
+                       //     "Source": "<header>",
+                       //     "FontName": "{FontNameWide}",
+                       //     "FontSize": 22,
+                      //      "Foreground" :"{WhiteText}"
+                      //  },
+
+                       // {                            
+                           // "BlockType": "text",                                                                         
+                           // "MarginLeft": 12,
+                           // "MarginTop": 4,
+                           // "VerticalAlignment": "Center",
+                            //"Source": "<subHeader>",
+                           // "FontName": "{FontNameWide}",
+                           // "FontSize": 22,
+                           // "Foreground" : "{WhiteText}"
+                       // }
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "headerCenterPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "Padding": "0, 0",
+            "HorizontalAlignment": "Center",
+            "Items": [
+                {
+                    "Name": "leagueLogo",
+                    "BlockType": "image",
+                    "Height": 100,
+                    "MarginLeft": 36,
+                    "Source": "{Season.LeagueInfo.LeagueLogo}"
+                }
+                ]
+            },
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "MarginLeft" : 48,
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "Spacing": 8,
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
+                                    "FontName": "{FontNameWide}",
+                                    "Foreground" : "{WhiteText}",
+                                    "FontSize": 30
+                                },
+
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Season progress] {Season.SeasonProgressPercent}%",
+                                    "FontName": "{FontNameWide}",  
+                                    "Foreground" :"{GreyText}",                                 
+                                    "FontSize": 30
+                                },
+                            ]
+                        },
+
+                    ]
+                }
+            ]
+        }
+    ]
+}

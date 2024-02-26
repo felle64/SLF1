@@ -1,0 +1,39 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Foreground" : "{ForeGroundWhite}",
+    "MarginLeft" : 0,
+    "PaddingTop" : 7,
+    "UseBackgroundCrop": true,
+    "Width" : "*",
+    "Items": [
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Horizontal",
+            "Margin" : "{HeaderLeftMargin}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment" : "Center",
+            "Items": [
+                {
+                    "BlockType" : "component",
+                    "ComponentName" : "f1_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "BlockType" : "component",
+                    "ComponentName" : "league_logo_header",
+                    "VerticalAlignment" : "Center"
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "<headerlefttext>",                            
+                    "MarginTop" : "{MarginTopHeaderText}",
+                    "TextOptionsExtern": "headerLeftTextOptions",
+                    "VerticalAlignment": "Center"
+                }
+            ]
+        }
+    ]
+}
