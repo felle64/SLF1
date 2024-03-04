@@ -1,5 +1,5 @@
 {
-  "DarkOfficialRenders": false,
+  "DarkOfficialRenders": true,
   "PlainBackground": false,
   "UseDriverAvatars": false,
   "TeamsOnDriversStandings": true,
@@ -16,7 +16,7 @@
   "RenderReserveDriver": false,
   "RenderPenaltySeparator": true,
   "RenderPenaltyVerdict": false,
-  "DriverLimit": 30,
+  "DriverLimit": 20,
   "StartPositionsFrom": 0,
   "FontSizeOnOfficialRenders": 38,
   "SecondCalendarEventsInColumn": 14,
