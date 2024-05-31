@@ -40,7 +40,7 @@
   "SwitchNameFields": false,
   "DriverNameOnLineUp": false,
   "InGameNameOnLineUps": true,
-  "ChampionColour": false,
+  "ChampionColour": true,
   "RenderReserveDriver": false,
   "RenderPenaltySeparator": true,
   "RenderPenaltyVerdict": false,
@@ -53,5 +53,5 @@
   "ReserveDriverMax": 0,
   "TheGridPositionLength": 920,
   "StewardReportType": "Report",
-  "GPName": "Saudi Arabian"
+  "GPName": "Brazilian"
 }
