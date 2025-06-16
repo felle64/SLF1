@@ -20,7 +20,7 @@ export default function DefaultLayout({
       duration: 700,
       easing: 'ease-out-cubic',
     })
-  })
+  }, [])
 
   return (
     <>
