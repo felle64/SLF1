@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 
-type AccordionpProps = {
+type AccordionProps = {
   children: React.ReactNode
   tag?: string
   title: string
@@ -14,7 +14,7 @@ export default function Accordion({
   tag = 'li',
   title,
   active = false
-}: AccordionpProps) {
+}: AccordionProps) {
 
   const [accordionOpen, setAccordionOpen] = useState<boolean>(false)
   const accordion = useRef<HTMLDivElement>(null)
