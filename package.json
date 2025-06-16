@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -21,9 +22,15 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/aos": "^3.0.7",
+    "@types/jest": "^30.0.0",
     "autoprefixer": "^10.4.16",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.6"
+    "tailwindcss": "^3.3.6",
+    "ts-jest": "^29.4.0"
   }
 }
