@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // <=== enables static exports
+  output: "standalone", // allows dynamic routes and API handlers
   reactStrictMode: true,
 };
 
