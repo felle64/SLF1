@@ -1,17 +1,15 @@
 export const metadata = {
   title: 'Race Results - SLF1',
-  description: 'Page description',
+  description: 'Upload and view race results',
 }
 
-import React from 'react';
+import ResultsClient from './results-client'
 
-const RaceResults: React.FC = () => {
-
+export default function RaceResults() {
   return (
-    <div className='flex items-center pt-32 pb-12 md:pt-40 md:pb-20'>
-      <h1 className='font-bold text-3xl pl-20'>Race Results</h1>
+    <div className='pt-32 pb-12 md:pt-40 md:pb-20 px-8'>
+      <h1 className='font-bold text-3xl mb-4'>Race Results</h1>
+      <ResultsClient />
     </div>
-  );
-};
-
-export default RaceResults;
+  )
+}
