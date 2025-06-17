@@ -16,7 +16,7 @@ Races are held Sundays at **7 PM UK / 8 PM CET**, subject to the real-world F1
 
 Results and championship standings are pulled directly from the bundled database.
 
-Join us on [Discord](https://discord.gg/EqrUdXfbHU) to secure your seat for the upcoming F1 25 season!
+Join us on [Discord](https://discord.gg/slf1) to secure your seat for the upcoming F1 25 season!
 
 ## Database Endpoints
 

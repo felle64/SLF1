@@ -41,7 +41,7 @@ export default function Newsletter() {
                 <p className="text-gray-300 text-lg mb-6">Seats are first come, first served. Click below to join our Discord and secure yours.</p>
 
                 <div className="flex justify-center lg:justify-start">
-                  <a className="btn text-white bg-discord hover:bg-gray-800" href="https://discord.gg/EqrUdXfbHU" target="_blank">Join Discord</a>
+                  <a className="btn text-white bg-discord hover:bg-gray-800" href="https://discord.gg/slf1" target="_blank">Join Discord</a>
                 </div>
               </div>
 

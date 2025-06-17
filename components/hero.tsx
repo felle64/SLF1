@@ -41,7 +41,7 @@ export default function Hero() {
                   <Link href="/standings" className="text-white hover:underline transition duration-150 ease-in-out">Standings</Link>
                 </div>
                 <div>
-                  <a className="btn text-white bg-discord hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="https://discord.gg/EqrUdXfbHU" target='_blank'>Discord</a>
+                  <a className="btn text-white bg-discord hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="https://discord.gg/slf1" target='_blank'>Discord</a>
                 </div>
               </div>
             </div>
