@@ -81,8 +81,13 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
+<<<<<<< codex/create-stylish-f1-25-league-homepage
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Results & Standings</h4>
+              <p className="text-gray-600 text-center">Upload race results and follow the championship leaderboard.</p>
+=======
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Roles For Everyone</h4>
               <p className="text-gray-600 text-center">Drivers, reserves, commentators and FIA members all welcome.</p>
+>>>>>>> main
             </div>
 
             {/* 5th item */}
