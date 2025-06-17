@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Home - SLF1',
-  description: 'Page description',
+  description: 'Sunday League F1 25 – weekly online racing and a welcoming community',
 }
 
 import Hero from '@/components/hero'

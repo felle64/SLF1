@@ -30,15 +30,15 @@ export default function Hero() {
 
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Sunday League <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-red-600">F1 WIP</span></h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Sunday League <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-red-600">F1&nbsp;25</span></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Sunday League is an F1 23 Racing League, Join our discord today!</p>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">A worldwide F1&nbsp;25 league with weekly races and a thriving community. Seats are limited &mdash; join our Discord today!</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div className="btn text-white bg-red-600 hover:bg-red-800 w-full mb-4 sm:w-auto sm:mb-0">
                 <Link href="/race-results" className="text-white hover:underline transition duration-150 ease-in-out">Race Results</Link>
                 </div>
                 <div>
-                  <a className="btn text-white bg-discord hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="https://discord.gg/W3PMnmrqVd" target='_blank'>Discord</a>
+                  <a className="btn text-white bg-discord hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="https://discord.gg/EqrUdXfbHU" target='_blank'>Discord</a>
                 </div>
               </div>
             </div>
