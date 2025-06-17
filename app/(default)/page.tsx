@@ -52,7 +52,7 @@ export default function Home() {
             ))}
           </ul>
           <div className="mt-8">
-            <a href="https://discord.gg/EqrUdXfbHU" target="_blank" className="btn text-white bg-red-600 hover:bg-red-700">Join our Discord</a>
+            <a href="https://discord.gg/slf1" target="_blank" className="btn text-white bg-red-600 hover:bg-red-700">Join our Discord</a>
           </div>
         </div>
       </section>
