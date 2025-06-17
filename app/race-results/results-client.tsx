@@ -14,20 +14,44 @@ export default function ResultsClient() {
 
   useEffect(() => {
     fetch('/api/results')
-      .then(res => res.json())
-      .then(setResults)
+      .then(res => {
+        if (!res.ok) throw new Error('api unavailable')
+        return res.json()
+      })
+      .then(data => {
+        setResults(data)
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('results', JSON.stringify(data))
+        }
+      })
+      .catch(() => {
+        if (typeof window !== 'undefined') {
+          const stored = localStorage.getItem('results')
+          if (stored) setResults(JSON.parse(stored))
+        }
+      })
   }, [])
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    await fetch('/api/results', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    })
+    const newEntry = { ...form }
+    let updated = [...results, newEntry]
+    try {
+      await fetch('/api/results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newEntry),
+      })
+      const res = await fetch('/api/results')
+      updated = await res.json()
+    } catch (_) {
+      // ignore network errors and store locally
+    }
+    setResults(updated)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('results', JSON.stringify(updated))
+    }
     setForm({ driver: '', race: '', position: '' })
-    const res = await fetch('/api/results')
-    setResults(await res.json())
   }
 
   return (
