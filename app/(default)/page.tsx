@@ -6,10 +6,11 @@ export const metadata = {
 import Image from 'next/image'
 import Link from 'next/link'
 import HeroImage from '@/public/images/hero-image.png'
-import { getTracks } from '@/lib/tracks'
+import { getTracksBySeason } from '@/lib/tracks'
+import { SEASON_ID } from '@/lib/config'
 
 export default function Home() {
-  const tracks = getTracks().slice(0, 4)
+  const tracks = getTracksBySeason(SEASON_ID).slice(0, 4)
   return (
     <>
       <section className="pt-32 pb-20 text-center">
