@@ -6,13 +6,15 @@ export interface SessionResult {
   position: number
   circuit: string
   date: string
+  trackId: number
 }
 
 const dbPath = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases', 'SLF1.db')
 
 const baseQuery =
   'SELECT d.DriverName as driver, d.Position as position, ' +
-  'COALESCE(t.CircuitFullName, t.CircuitName) as circuit, s.Date as date ' +
+  'COALESCE(t.CircuitFullName, t.CircuitName) as circuit, s.Date as date, ' +
+  't.Id as trackId ' +
   'FROM DriverSessions d ' +
   'JOIN SessionResults s ON d.SessionResultId = s.Id ' +
   'JOIN Tracks t ON s.TrackId = t.Id ' +

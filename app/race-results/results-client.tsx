@@ -12,6 +12,7 @@ interface Result {
   position: number
   circuit: string
   date: string
+  trackId: number
 }
 
 export default function ResultsClient() {
@@ -32,7 +33,7 @@ export default function ResultsClient() {
   }, [])
 
   const filtered = selected
-    ? results.filter(r => r.circuit === tracks.find(t => String(t.Id) === selected)?.CircuitName)
+    ? results.filter(r => String(r.trackId) === selected)
     : results
 
   return (
