@@ -12,14 +12,16 @@ export function getResults(sort: 'date' | 'race' | 'season' = 'date', limit = 10
   const dbPath = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases', 'SLF1.db')
 
   const baseQuery =
-    'SELECT d.DriverName as driver, d.Position as position, t.CircuitName as circuit, s.Date as date ' +
+    'SELECT d.DriverName as driver, d.Position as position, ' +
+    'COALESCE(t.CircuitFullName, t.CircuitName) as circuit, s.Date as date ' +
     'FROM DriverSessions d ' +
     'JOIN SessionResults s ON d.SessionResultId = s.Id ' +
     'JOIN Tracks t ON s.TrackId = t.Id ' +
     'LEFT JOIN Events e ON s.EventId = e.Id'
 
   let orderBy = 's.Date DESC'
-  if (sort === 'race') orderBy = 't.CircuitName ASC'
+  if (sort === 'race')
+    orderBy = 'COALESCE(t.CircuitFullName, t.CircuitName) ASC'
   if (sort === 'season') orderBy = 'e.SeasonId DESC, s.Date DESC'
 
   const query = `${baseQuery} ORDER BY ${orderBy} LIMIT ${limit};`
