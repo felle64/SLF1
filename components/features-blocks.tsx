@@ -83,6 +83,7 @@ export default function FeaturesBlocks() {
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Results & Standings</h4>
               <p className="text-gray-600 text-center">Upload race results and follow the championship leaderboard.</p>
+
             </div>
 
             {/* 5th item */}
