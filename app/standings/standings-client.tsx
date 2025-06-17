@@ -1,58 +1,44 @@
 'use client'
 
-import React, { useEffect, useState, FormEvent } from 'react'
+import React, { useEffect, useState } from 'react'
 
-interface Standing {
+interface DriverStanding {
   driver: string
-  points: string
+  points: number
+}
+
+interface ConstructorStanding {
+  team: string
+  points: number
 }
 
 export default function StandingsClient() {
-  const [standings, setStandings] = useState<Standing[]>([])
-  const [form, setForm] = useState<Standing>({ driver: '', points: '' })
+  const [drivers, setDrivers] = useState<DriverStanding[]>([])
+  const [constructors, setConstructors] = useState<ConstructorStanding[]>([])
 
   useEffect(() => {
-    fetch('/api/standings')
+    fetch('/api/driver-standings')
       .then(res => res.json())
-      .then(setStandings)
+      .then(setDrivers)
+    fetch('/api/constructor-standings')
+      .then(res => res.json())
+      .then(setConstructors)
   }, [])
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    await fetch('/api/standings', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    })
-    setForm({ driver: '', points: '' })
-    const res = await fetch('/api/standings')
-    setStandings(await res.json())
-  }
 
   return (
     <div>
+      <h2 className='font-semibold mb-2'>Driver Standings</h2>
       <ul className='mb-8'>
-        {standings.map((s, i) => (
-          <li key={i} className='mb-2'>{`${s.driver} - ${s.points} pts`}</li>
+        {drivers.map((d, i) => (
+          <li key={i} className='mb-2'>{`${d.driver} - ${d.points} pts`}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit} className='space-y-2'>
-        <input
-          className='form-input w-full text-gray-800'
-          placeholder='Driver'
-          value={form.driver}
-          onChange={e => setForm({ ...form, driver: e.target.value })}
-          required
-        />
-        <input
-          className='form-input w-full text-gray-800'
-          placeholder='Points'
-          value={form.points}
-          onChange={e => setForm({ ...form, points: e.target.value })}
-          required
-        />
-        <button type='submit' className='btn text-white bg-blue-600 hover:bg-blue-700'>Upload</button>
-      </form>
+      <h2 className='font-semibold mb-2'>Constructor Standings</h2>
+      <ul>
+        {constructors.map((c, i) => (
+          <li key={i} className='mb-2'>{`${c.team} - ${c.points} pts`}</li>
+        ))}
+      </ul>
     </div>
   )
 }

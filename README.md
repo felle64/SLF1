@@ -14,7 +14,7 @@ Welcome to **Sunday League F1 25**, an online Formula 1 league for drivers arou
 
 Races are held Sundays at **7 PM UK / 8 PM CET**, subject to the real-world F1 calendar.
 
-Results and championship standings can be uploaded directly on the site.
+Results and championship standings are pulled directly from the bundled database.
 
 Join us on [Discord](https://discord.gg/EqrUdXfbHU) to secure your seat for the upcoming F1 25 season!
 
@@ -24,5 +24,7 @@ The site exposes read‑only APIs that pull data from the bundled **Racing Leagu
 
 - `/api/drivers` – list of all registered drivers
 - `/api/db-results` – latest 20 session results with driver, position and circuit
+- `/api/driver-standings` – driver championship standings
+- `/api/constructor-standings` – constructor championship standings
 
 These endpoints run SQLite queries directly on `SLF1_DB/user/databases/SLF1.db`.

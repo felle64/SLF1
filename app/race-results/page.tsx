@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Race Results - SLF1',
-  description: 'Upload and view race results',
+  description: 'Latest race results from the database',
 }
 
 import ResultsClient from './results-client'
