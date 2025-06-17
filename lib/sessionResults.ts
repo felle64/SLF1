@@ -37,5 +37,5 @@ export function getResults(sort: 'date' | 'race' | 'season' = 'date', limit = 10
 }
 
 export function getLatestResults(limit = 10): SessionResult[] {
-  return getResults('date', limit)
+  return getResults('race', limit)
 }
