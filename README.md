@@ -17,3 +17,12 @@ Races are held Sundays at **7 PM UK / 8 PM CET**, subject to the real-world F1
 Results and championship standings can be uploaded directly on the site.
 
 Join us on [Discord](https://discord.gg/EqrUdXfbHU) to secure your seat for the upcoming F1 25 season!
+
+## Database Endpoints
+
+The site exposes read‑only APIs that pull data from the bundled **Racing League Tools** SQLite database:
+
+- `/api/drivers` – list of all registered drivers
+- `/api/db-results` – latest 20 session results with driver, position and circuit
+
+These endpoints run SQLite queries directly on `SLF1_DB/user/databases/SLF1.db`.
