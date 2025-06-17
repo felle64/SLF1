@@ -6,8 +6,10 @@ export const metadata = {
 import Image from 'next/image'
 import Link from 'next/link'
 import HeroImage from '@/public/images/hero-image.png'
+import { getTracks } from '@/lib/tracks'
 
 export default function Home() {
+  const tracks = getTracks().slice(0, 4)
   return (
     <>
       <section className="pt-32 pb-20 text-center">
@@ -45,10 +47,9 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-4">Next Races</h2>
           <ul className="list-disc list-inside text-left inline-block space-y-2">
-            <li>Bahrain - March 3</li>
-            <li>Saudi Arabia - March 10</li>
-            <li>Australia - March 17</li>
-            <li>Japan - March 24</li>
+            {tracks.map((t) => (
+              <li key={t.CircuitName}>{t.CircuitName}</li>
+            ))}
           </ul>
           <div className="mt-8">
             <a href="https://discord.gg/EqrUdXfbHU" target="_blank" className="btn text-white bg-red-600 hover:bg-red-700">Join our Discord</a>
