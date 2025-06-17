@@ -37,6 +37,9 @@ export default function Header() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center space-x-6">
               <li>
+                <Link href="/league" className="text-gray-800 hover:text-gray-600 transition duration-150 ease-in-out">League</Link>
+              </li>
+              <li>
                 <Link href="/race-results" className="text-gray-800 hover:text-gray-600 transition duration-150 ease-in-out">Results</Link>
               </li>
               <li>
