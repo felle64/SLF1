@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Standings - SLF1',
-  description: 'View and update championship standings',
+  description: 'Current driver and constructor standings',
 }
 
 import StandingsClient from './standings-client'
