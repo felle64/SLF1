@@ -3,6 +3,11 @@ export const metadata = {
   description: 'Latest race results from the database',
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 import ResultsClient from './results-client'
 
 export default function RaceResults() {

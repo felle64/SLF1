@@ -27,14 +27,17 @@ export default function ResultsClient() {
   }, [])
 
   useEffect(() => {
-    fetch('/api/db-results')
-      .then(res => res.json())
-      .then(setResults)
-  }, [])
+    const url = selected
+      ? `/api/db-results?trackId=${selected}`
+      : '/api/db-results'
 
-  const filtered = selected
-    ? results.filter(r => String(r.trackId) === selected)
-    : results
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log('Fetched results:', data)
+        setResults(data)
+      });
+  }, [selected])
 
   return (
     <div>
@@ -50,8 +53,10 @@ export default function ResultsClient() {
         ))}
       </select>
       <ul>
-        {filtered.map((r, i) => (
-          <li key={i} className='mb-2'>{`${r.circuit} - ${r.driver} - P${r.position}`}</li>
+        {results.map((r, i) => (
+          <li key={i} className='mb-2'>
+            {`${tracks.find(t => t.Id === r.trackId)?.CircuitName || 'Unknown'} - ${r.driver} - P${r.position}`}
+          </li>
         ))}
       </ul>
     </div>
