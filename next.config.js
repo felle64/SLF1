@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone", // allows dynamic routes and API handlers
+  // Generate a static `out` directory for GitHub Pages
+  output: "export",
   reactStrictMode: true,
+  // Use trailing slashes so GitHub Pages can locate index.html files
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
