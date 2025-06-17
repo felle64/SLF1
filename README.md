@@ -23,6 +23,7 @@ Join us on [Discord](https://discord.gg/slf1) to secure your seat for the upcomi
 The site exposes read‑only APIs that pull data from the bundled **Racing League Tools** SQLite database:
 
 - `/api/drivers` – list of all registered drivers
+- `/api/tracks` – list of tracks (`?season={id}` for a specific season)
 - `/api/db-results` – latest 20 session results with driver, position and circuit
 - `/api/driver-standings` – driver championship standings
 - `/api/constructor-standings` – constructor championship standings

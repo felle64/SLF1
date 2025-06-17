@@ -40,11 +40,23 @@ export function getResults(sort: 'date' | 'race' | 'season' = 'date', limit = 10
 }
 
 export function getLatestResults(limit = 10): SessionResult[] {
-  return getResults('race', limit)
+  return getResults('date', limit)
 }
 
 export function getResultsByTrack(trackId: number, limit = 20): SessionResult[] {
   const query = `${baseQuery} WHERE t.Id = ${trackId} ORDER BY s.Date DESC LIMIT ${limit};`
+  try {
+    const output = execFileSync('sqlite3', ['-json', dbPath, query], {
+      encoding: 'utf8',
+    })
+    return JSON.parse(output) as SessionResult[]
+  } catch (_) {
+    return []
+  }
+}
+
+export function getResultsBySeason(seasonId: number, limit = 20): SessionResult[] {
+  const query = `${baseQuery} WHERE e.SeasonId = ${seasonId} ORDER BY s.Date DESC LIMIT ${limit};`
   try {
     const output = execFileSync('sqlite3', ['-json', dbPath, query], {
       encoding: 'utf8',
