@@ -2,6 +2,7 @@ import { execFileSync } from 'child_process'
 import path from 'path'
 
 export interface Track {
+  Id: number
   CircuitName: string
 }
 
@@ -10,7 +11,7 @@ export function getTracks(): Track[] {
   try {
     const output = execFileSync(
       'sqlite3',
-      ['-json', dbPath, 'SELECT CircuitName FROM Tracks;'],
+      ['-json', dbPath, 'SELECT Id, CircuitName FROM Tracks ORDER BY Id;'],
       { encoding: 'utf8' }
     )
     return JSON.parse(output) as Track[]
