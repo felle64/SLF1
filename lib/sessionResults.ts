@@ -66,3 +66,25 @@ export function getResultsBySeason(seasonId: number, limit = 20): SessionResult[
     return []
   }
 }
+
+
+export interface Track {
+  Id: number
+  CircuitName: string
+}
+
+export function getTracksBySeason(seasonId: number): Track[] {
+  const query = `
+    SELECT DISTINCT t.Id, COALESCE(t.CircuitFullName, t.CircuitName) AS CircuitName
+    FROM SessionResults s
+    JOIN Tracks t ON s.TrackId = t.Id
+    JOIN Events e ON s.EventId = e.Id
+    WHERE e.SeasonId = ${seasonId}
+    ORDER BY t.Id;
+  `
+  console.log('Running getTracksBySeason query:', query.trim())
+  const output = execFileSync('sqlite3', ['-json', dbPath, query], {
+    encoding: 'utf8',
+  })
+  return JSON.parse(output) as Track[]
+}
