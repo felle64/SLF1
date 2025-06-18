@@ -4,8 +4,10 @@ import path from 'path'
 const DB_DIR     = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases')
 const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')
 const S4_DB      = path.join(DB_DIR, 'SLF1_S4.db')
+const S6_DB      = path.join(DB_DIR, 'SLF1_S6.db')
 
 function dbPathForSeason(seasonId: number): string {
+  if (seasonId === 5) return S6_DB
   return seasonId === 3 ? S4_DB : DEFAULT_DB
 }
 
