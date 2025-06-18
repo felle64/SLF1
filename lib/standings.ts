@@ -12,12 +12,14 @@ export interface ConstructorStanding {
   points: number
 }
 
-// --- DB file selection (1–3 vs. Season 4) --------
+// --- DB file selection ---------------------------------
 const DB_DIR     = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases')
 const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')    // Seasons 1–3
 const S4_DB      = path.join(DB_DIR, 'SLF1_S4.db') // Season 4 only
+const S6_DB      = path.join(DB_DIR, 'SLF1_S6.db') // Season 6 only
 
 function dbPathForSeason(seasonId: number): string {
+  if (seasonId === 5) return S6_DB
   return seasonId === 3 ? S4_DB : DEFAULT_DB
 }
 // --- Driver Standings -----------------------------

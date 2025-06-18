@@ -28,7 +28,9 @@ The site exposes read‑only APIs that pull data from the bundled **Racing Leagu
 - `/api/driver-standings` – driver championship standings (`?limit=&seasonId=`)
 - `/api/constructor-standings` – constructor championship standings (`?limit=&seasonId=`)
 
-These endpoints run SQLite queries directly on `SLF1_DB/user/databases/SLF1.db`.
+These endpoints run SQLite queries directly on the bundled databases like
+`SLF1_DB/user/databases/SLF1.db`, `SLF1_S4.db` or `SLF1_S6.db` depending on the
+selected season.
 
 ## Running with PM2
 
