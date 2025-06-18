@@ -1,2 +1,2 @@
 // Default season for API queries
-export const SEASON_ID = 2
+export const SEASON_ID = Number(process.env.SEASON_ID) || 2
