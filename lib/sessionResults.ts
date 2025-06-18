@@ -38,6 +38,7 @@ export interface SessionResult {
   date: string
   trackId: number
   seasonId: number
+  sessionType: string | number
 }
 
 const baseQuery = `
@@ -47,17 +48,23 @@ const baseQuery = `
     COALESCE(t.CircuitFullName, t.CircuitName) AS circuit,
     s.Date       AS date,
     t.Id         AS trackId,
-    e.SeasonId   AS seasonId
+    e.SeasonId   AS seasonId,
+    s.RaceType   AS sessionType
   FROM DriverSessions d
   JOIN SessionResults s ON d.SessionResultId = s.Id
   JOIN Tracks t         ON s.TrackId = t.Id
   LEFT JOIN Events e    ON s.EventId = e.Id
 `
 
+function mapRaceType(rt: number): string {
+  return rt === 0 ? 'race' : 'sprint'
+}
+
 export function getResultsByTrack(
   trackId: number,
   limit = 20,
-  seasonId?: number
+  seasonId?: number,
+  sessionType?: string
 ): SessionResult[] {
   const db = new Database(dbPathForSeason(seasonId ?? 0), { readonly: true })
   let query = `${baseQuery} WHERE t.Id = ?`
@@ -66,27 +73,36 @@ export function getResultsByTrack(
     query += ` AND e.SeasonId = ?`
     params.push(seasonId)
   }
+  if (sessionType != null) {
+    query += ` AND s.RaceType = ?`
+    params.push(sessionType === 'race' ? 0 : 1)
+  }
   query += ` ORDER BY s.Date DESC LIMIT ?`
   params.push(limit)
   const stmt = db.prepare(query)
   const rows = stmt.all(...params) as SessionResult[]
   db.close()
-  return rows
+  return rows.map(r => ({ ...r, sessionType: mapRaceType(Number(r.sessionType)) }))
 }
 
 export function getResultsBySeason(
   seasonId: number,
-  limit = 20
+  limit = 20,
+  sessionType?: string
 ): SessionResult[] {
   const db = new Database(dbPathForSeason(seasonId), { readonly: true })
-  const query = `
+  let query = `
     ${baseQuery}
-    WHERE e.SeasonId = ?
-    ORDER BY s.Date DESC
-    LIMIT ?
-  `
+    WHERE e.SeasonId = ?`
+  const params: (string | number)[] = [seasonId]
+  if (sessionType != null) {
+    query += ` AND s.RaceType = ?`
+    params.push(sessionType === 'race' ? 0 : 1)
+  }
+  query += ` ORDER BY s.Date DESC LIMIT ?`
+  params.push(limit)
   const stmt = db.prepare(query)
-  const rows = stmt.all(seasonId, limit) as SessionResult[]
+  const rows = stmt.all(...params) as SessionResult[]
   db.close()
-  return rows
+  return rows.map(r => ({ ...r, sessionType: mapRaceType(Number(r.sessionType)) }))
 }
