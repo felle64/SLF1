@@ -13,13 +13,16 @@ interface Result {
   circuit: string
   date: string
   trackId: number
+  seasonId: number
+  sessionType: string
 }
 
 export default function ResultsClient() {
-  const [season, setSeason]     = useState<string>('3')
-  const [tracks, setTracks]     = useState<Track[]>([])
-  const [selected, setSelected] = useState<string>('')
-  const [results, setResults]   = useState<Result[]>([])
+  const [season, setSeason]           = useState<string>('3')      // default to Season 4
+  const [tracks, setTracks]           = useState<Track[]>([])
+  const [selectedTrack, setSelectedTrack] = useState<string>('')
+  const [sessionType, setSessionType] = useState<string>('all')    // 'all' | 'race' | 'sprint'
+  const [results, setResults]         = useState<Result[]>([])
 
   // Fetch tracks whenever the season changes
   useEffect(() => {
@@ -35,10 +38,11 @@ export default function ResultsClient() {
       .catch(err => console.error('Error fetching tracks:', err))
   }, [season])
 
-  // Fetch results whenever the track or season changes
+  // 2) Load results when season, track or sessionType changes
   useEffect(() => {
     const params = new URLSearchParams({ seasonId: season })
-    if (selected) params.set('trackId', selected)
+    if (selectedTrack) params.set('trackId', selectedTrack)
+    if (sessionType !== 'all') params.set('sessionType', sessionType)
 
     const url = '/api/db-results?' + params.toString()
     console.log('Fetching results from:', url)
@@ -53,13 +57,14 @@ export default function ResultsClient() {
         setResults(data)
       })
       .catch(err => console.error('Error fetching results:', err))
-  }, [selected, season])
+  }, [season, selectedTrack, sessionType])
 
   return (
     <div>
       {/* Debug info */}
-      <p className="mb-2 text-sm text-gray-500">
-        Season: {season}, Track: {selected || 'all'}, Tracks loaded: {tracks.length}, Results: {results.length}
+      <p className="mb-4 text-sm text-gray-600">
+        Season: {season}, Track: {selectedTrack || 'All'}, Type: {sessionType}, 
+        Tracks: {tracks.length}, Results: {results.length}
       </p>
 
       {/* Season selector */}
@@ -76,11 +81,11 @@ export default function ResultsClient() {
       </select>
 
       {/* Track selector */}
-      <label className="block font-semibold mb-1">Choose track</label>
+      <label className="block font-semibold mb-1">Choose Track</label>
       <select
         className="form-select mb-4"
-        value={selected}
-        onChange={e => setSelected(e.target.value)}
+        value={selectedTrack}
+        onChange={e => setSelectedTrack(e.target.value)}
       >
         <option value="">All tracks</option>
         {tracks.map(t => (
@@ -88,11 +93,23 @@ export default function ResultsClient() {
         ))}
       </select>
 
-      {/* Results list */}
+      {/* Session Type selector */}
+      <label className="block font-semibold mb-1">Session Type</label>
+      <select
+        className="form-select mb-6"
+        value={sessionType}
+        onChange={e => setSessionType(e.target.value)}
+      >
+        <option value="all">All</option>
+        <option value="race">Grand Prix</option>
+        <option value="sprint">Sprint</option>
+      </select>
+
+      {/* Results List */}
       <ul>
         {results.map((r, i) => (
           <li key={i} className="mb-2">
-            {`${r.circuit} — ${r.driver} — P${r.position}`}
+            {`${r.circuit} — ${r.driver} — P${r.position} (${r.sessionType})`}
           </li>
         ))}
       </ul>

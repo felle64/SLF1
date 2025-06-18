@@ -1,15 +1,36 @@
 import { getResultsByTrack, getResultsBySeason } from '@/lib/sessionResults'
-import { SEASON_ID }                             from '@/lib/config'
+import { SEASON_ID } from '@/lib/config'
 
+// Force dynamic so we can read from SQLite at request time
+export const dynamic = 'force-dynamic'
 
-export async function GET(req: Request) {
-  const params   = new URL(req.url).searchParams
-  const trackId  = params.get('trackId')
-  const seasonId = Number(params.get('seasonId') ?? SEASON_ID)
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
 
-  const data = trackId
-    ? getResultsByTrack(Number(trackId), 100, seasonId)
-    : getResultsBySeason(seasonId, 100)
+  // Parse our three filters:
+  const trackIdParam     = searchParams.get('trackId')
+  const seasonIdParam    = searchParams.get('seasonId')
+  const sessionTypeParam = searchParams.get('sessionType')
+
+  const seasonId = seasonIdParam ? Number(seasonIdParam) : SEASON_ID
+
+  let data
+  if (trackIdParam) {
+    // track + season + (optional) sessionType
+    data = getResultsByTrack(
+      Number(trackIdParam),
+      100,
+      seasonId,
+      sessionTypeParam ?? undefined
+    )
+  } else {
+    // season + (optional) sessionType
+    data = getResultsBySeason(
+      seasonId,
+      100,
+      sessionTypeParam ?? undefined
+    )
+  }
 
   return new Response(JSON.stringify(data), {
     headers: { 'Content-Type': 'application/json' },
