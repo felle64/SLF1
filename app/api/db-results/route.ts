@@ -1,21 +1,17 @@
-import { getLatestResults, getResultsBySeason, getResultsByTrack } from '@/lib/sessionResults'
-import { SEASON_ID } from '@/lib/config'
+import { getResultsByTrack, getResultsBySeason } from '@/lib/sessionResults'
+import { SEASON_ID }                             from '@/lib/config'
 
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const trackIdParam = searchParams.get('trackId')
-  const seasonIdParam = searchParams.get('seasonId')
-  const seasonId = seasonIdParam ? Number(seasonIdParam) : SEASON_ID
+export async function GET(req: Request) {
+  const params   = new URL(req.url).searchParams
+  const trackId  = params.get('trackId')
+  const seasonId = Number(params.get('seasonId') ?? SEASON_ID)
 
-  let results
-  if (trackIdParam) {
-    results = getResultsByTrack(Number(trackIdParam), 100, seasonId)
-  } else {
-    results = getResultsBySeason(seasonId, 100)
-  }
+  const data = trackId
+    ? getResultsByTrack(Number(trackId), 100, seasonId)
+    : getResultsBySeason(seasonId, 100)
 
-  return new Response(JSON.stringify(results), {
+  return new Response(JSON.stringify(data), {
     headers: { 'Content-Type': 'application/json' },
   })
 }
