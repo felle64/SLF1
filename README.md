@@ -24,7 +24,7 @@ The site exposes read‑only APIs that pull data from the bundled **Racing Leagu
 
 - `/api/drivers` – list of all registered drivers
 - `/api/tracks` – list of tracks (`?season={id}` for a specific season)
-- `/api/db-results` – latest 20 session results with driver, position and circuit
+- `/api/db-results` – latest season results (limit 100) with driver, position and circuit
 - `/api/driver-standings` – driver championship standings
 - `/api/constructor-standings` – constructor championship standings
 
