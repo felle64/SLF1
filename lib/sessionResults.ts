@@ -1,6 +1,14 @@
 import { execFileSync } from 'child_process'
 import path from 'path'
 
+const DB_DIR     = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases')
+const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')      // Seasons 1–3
+const S4_DB      = path.join(DB_DIR, 'SLF1_S4.db')   // Season 4 only
+
+function dbPathForSeason(seasonId: number): string {
+  return seasonId === 3 ? S4_DB : DEFAULT_DB
+}
+
 export interface SessionResult {
   driver: string
   position: number
@@ -9,7 +17,6 @@ export interface SessionResult {
   trackId: number
 }
 
-const dbPath = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases', 'SLF1.db')
 
 const baseQuery =
   'SELECT d.DriverName as driver, d.Position as position, ' +
@@ -30,7 +37,7 @@ export function getResults(sort: 'date' | 'race' | 'season' = 'date', limit = 10
   const query = `${baseQuery} ORDER BY ${orderBy} LIMIT ${limit};`
 
   try {
-    const output = execFileSync('sqlite3', ['-json', dbPath, query], {
+    const output = execFileSync('sqlite3', ['-json', DEFAULT_DB, query], {
       encoding: 'utf8',
     })
     return JSON.parse(output) as SessionResult[]
@@ -43,8 +50,19 @@ export function getLatestResults(limit = 10): SessionResult[] {
   return getResults('date', limit)
 }
 
-export function getResultsByTrack(trackId: number, limit = 20): SessionResult[] {
-  const query = `${baseQuery} WHERE t.Id = ${trackId} ORDER BY s.Date DESC LIMIT ${limit};`
+export function getResultsByTrack(
+  trackId: number,
+  limit = 20,
+  seasonId?: number
+): SessionResult[] {
+  const dbPath = seasonId !== undefined
+    ? dbPathForSeason(seasonId)
+    : DEFAULT_DB
+  let where = `WHERE t.Id = ${trackId}`
+  if (seasonId !== undefined) {
+    where += ` AND e.SeasonId = ${seasonId}`
+  }
+  const query = `${baseQuery} ${where} ORDER BY s.Date DESC LIMIT ${limit};`
   try {
     const output = execFileSync('sqlite3', ['-json', dbPath, query], {
       encoding: 'utf8',
@@ -56,6 +74,7 @@ export function getResultsByTrack(trackId: number, limit = 20): SessionResult[] 
 }
 
 export function getResultsBySeason(seasonId: number, limit = 20): SessionResult[] {
+  const dbPath = dbPathForSeason(seasonId)
   const query = `${baseQuery} WHERE e.SeasonId = ${seasonId} ORDER BY s.Date DESC LIMIT ${limit};`
   try {
     const output = execFileSync('sqlite3', ['-json', dbPath, query], {
@@ -74,6 +93,7 @@ export interface Track {
 }
 
 export function getTracksBySeason(seasonId: number): Track[] {
+  const dbPath = dbPathForSeason(seasonId)
   const query = `
     SELECT DISTINCT t.Id, COALESCE(t.CircuitFullName, t.CircuitName) AS CircuitName
     FROM SessionResults s

@@ -21,26 +21,26 @@ export default function ResultsClient() {
   const [results, setResults] = useState<Result[]>([])
 
   useEffect(() => {
-    fetch('/api/tracks')
+    fetch('/api/tracks-by-season')
       .then(res => res.json())
       .then(setTracks)
+      .catch(err => console.error('Error fetching tracks:', err))
   }, [])
 
   useEffect(() => {
-    fetch('/api/db-results')
+    const url = selected ? `/api/db-results?trackId=${selected}` : '/api/db-results'
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         console.log('Fetched results:', data)
         setResults(data)
       })
-  }, [])
-
-  const filtered = selected
-    ? results.filter(r => String(r.trackId) === selected)
-    : results
+      .catch(err => console.error('Error fetching results:', err))
+  }, [selected])
 
   return (
     <div>
+      <p>Selected: {selected}, Tracks: {tracks.length}, Results: {results.length}</p>
       <label className='block font-semibold mb-2'>Choose track</label>
       <select
         className='form-select mb-4'
@@ -53,7 +53,7 @@ export default function ResultsClient() {
         ))}
       </select>
       <ul>
-        {filtered.map((r, i) => (
+        {results.map((r, i) => (
           <li key={i} className='mb-2'>
             {`${tracks.find(t => t.Id === r.trackId)?.CircuitName || 'Unknown'} - ${r.driver} - P${r.position}`}
           </li>
