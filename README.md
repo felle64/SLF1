@@ -25,8 +25,8 @@ The site exposes read‑only APIs that pull data from the bundled **Racing Leagu
 - `/api/drivers` – list of all registered drivers
 - `/api/tracks` – list of tracks (`?season={id}` for a specific season)
 - `/api/db-results` – latest season results (limit 100) with driver, position and circuit
-- `/api/driver-standings` – driver championship standings
-- `/api/constructor-standings` – constructor championship standings
+- `/api/driver-standings` – driver championship standings (`?limit=&seasonId=`)
+- `/api/constructor-standings` – constructor championship standings (`?limit=&seasonId=`)
 
 These endpoints run SQLite queries directly on `SLF1_DB/user/databases/SLF1.db`.
 

@@ -13,20 +13,38 @@ interface ConstructorStanding {
 }
 
 export default function StandingsClient() {
-  const [drivers, setDrivers] = useState<DriverStanding[]>([])
+  const [season, setSeason]           = useState<string>('3')  // default → Season 4
+  const [drivers, setDrivers]         = useState<DriverStanding[]>([])
   const [constructors, setConstructors] = useState<ConstructorStanding[]>([])
 
   useEffect(() => {
-    fetch('/api/driver-standings')
+    const urlDrivers      = `/api/driver-standings?seasonId=${season}`
+    const urlConstructors = `/api/constructor-standings?seasonId=${season}`
+
+    fetch(urlDrivers)
       .then(res => res.json())
       .then(setDrivers)
-    fetch('/api/constructor-standings')
+      .catch(console.error)
+
+    fetch(urlConstructors)
       .then(res => res.json())
       .then(setConstructors)
-  }, [])
+      .catch(console.error)
+  }, [season])
 
   return (
     <div>
+      <label className="block font-semibold mb-2">Choose Season</label>
+      <select
+        className="form-select mb-4"
+        value={season}
+        onChange={e => setSeason(e.target.value)}
+      >
+        <option value="1">Season 2</option>
+        <option value="2">Season 3</option>
+        <option value="3">Season 4</option>
+      </select>
+
       <h2 className='font-semibold mb-2'>Driver Standings</h2>
       <ul className='mb-8'>
         {drivers.map((d, i) => (
