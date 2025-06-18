@@ -1,8 +1,7 @@
-import { getTracksBySeason } from '@/lib/tracks'
-import { SEASON_ID } from '@/lib/config'
+import { getTracks } from '@/lib/tracks'
 
 export async function GET() {
-  const tracks = getTracksBySeason(SEASON_ID)
+  const tracks = getTracks()
   return new Response(JSON.stringify(tracks), {
     headers: { 'Content-Type': 'application/json' },
   })

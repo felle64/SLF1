@@ -1,1 +1,2 @@
-export const SEASON_ID = 3
+// Default season for API queries
+export const SEASON_ID = 2

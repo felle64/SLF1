@@ -27,17 +27,17 @@ export default function ResultsClient() {
   }, [])
 
   useEffect(() => {
-    const url = selected
-      ? `/api/db-results?trackId=${selected}`
-      : '/api/db-results'
-
-    fetch(url)
+    fetch('/api/db-results')
       .then(res => res.json())
       .then(data => {
         console.log('Fetched results:', data)
         setResults(data)
-      });
-  }, [selected])
+      })
+  }, [])
+
+  const filtered = selected
+    ? results.filter(r => String(r.trackId) === selected)
+    : results
 
   return (
     <div>
@@ -53,7 +53,7 @@ export default function ResultsClient() {
         ))}
       </select>
       <ul>
-        {results.map((r, i) => (
+        {filtered.map((r, i) => (
           <li key={i} className='mb-2'>
             {`${tracks.find(t => t.Id === r.trackId)?.CircuitName || 'Unknown'} - ${r.driver} - P${r.position}`}
           </li>
