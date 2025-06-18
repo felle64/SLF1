@@ -29,3 +29,19 @@ The site exposes read‑only APIs that pull data from the bundled **Racing Leagu
 - `/api/constructor-standings` – constructor championship standings
 
 These endpoints run SQLite queries directly on `SLF1_DB/user/databases/SLF1.db`.
+
+## Running with PM2
+
+For dynamic hosting environments you can keep the Next.js server running using [PM2](https://pm2.keymetrics.io/).
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+2. Start the server with PM2:
+   ```bash
+   PORT=3000 SEASON_ID=3 pm2 start ecosystem.config.js
+   ```
+   Set `PORT` to your desired port and any other environment variables (like `SEASON_ID`) before running the command. PM2 will monitor the process and restart it if needed.
+
+Use `pm2 logs` to view logs and `pm2 list` to manage running apps.
