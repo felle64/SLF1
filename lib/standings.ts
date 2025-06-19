@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3'
 import path from 'path'
+import fs from 'fs'
 import { SEASON_ID } from '@/lib/config'
 
 export interface DriverStanding {
@@ -14,13 +15,12 @@ export interface ConstructorStanding {
 
 // --- DB file selection ---------------------------------
 const DB_DIR     = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases')
-const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')    // Seasons 1–3
-const S4_DB      = path.join(DB_DIR, 'SLF1_S4.db') // Season 4 only
-const S6_DB      = path.join(DB_DIR, 'SLF1_S6.db') // Season 6 only
+const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')
 
+/** Return a season-specific DB if it exists, otherwise fallback */
 function dbPathForSeason(seasonId: number): string {
-  if (seasonId === 5) return S6_DB
-  return seasonId === 3 ? S4_DB : DEFAULT_DB
+  const custom = path.join(DB_DIR, `SLF1_S${seasonId}.db`)
+  return fs.existsSync(custom) ? custom : DEFAULT_DB
 }
 // --- Driver Standings -----------------------------
 export function getDriverStandings(
