@@ -1,8 +1,10 @@
 import { getDrivers } from '@/lib/drivers'
 
-export async function GET() {
+export const dynamic = 'force-dynamic'
+
+export async function GET(request: Request) {
   const drivers = getDrivers()
-  console.log('Tracks fetched successfully:', drivers)
+  console.log('Drivers fetched successfully:', drivers)
   return new Response(JSON.stringify(drivers), {
     headers: { 'Content-Type': 'application/json' },
   })

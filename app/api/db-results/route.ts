@@ -12,6 +12,12 @@ export async function GET(request: Request) {
   const seasonIdParam    = searchParams.get('seasonId')
   const sessionTypeParam = searchParams.get('sessionType')
 
+  console.log('db-results route called with params:', {
+    trackId: trackIdParam,
+    seasonId: seasonIdParam,
+    sessionType: sessionTypeParam,
+  })
+
   const seasonId = seasonIdParam ? Number(seasonIdParam) : SEASON_ID
 
   let data

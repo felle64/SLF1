@@ -18,7 +18,7 @@ interface Result {
 }
 
 export default function ResultsClient() {
-  const [season, setSeason]           = useState<string>('3')      // default to Season 4
+  const [season, setSeason]           = useState<string>('6')      // default to Season 6
   const [tracks, setTracks]           = useState<Track[]>([])
   const [selectedTrack, setSelectedTrack] = useState<string>('')
   const [sessionType, setSessionType] = useState<string>('all')    // 'all' | 'race' | 'sprint'
@@ -77,7 +77,9 @@ export default function ResultsClient() {
         <option value="1">Season 1</option>
         <option value="2">Season 2</option>
         <option value="3">Season 3</option>
-        {/* add more if you have more seasons */}
+        <option value="4">Season 4</option>
+        <option value="5">Season 5</option>
+        <option value="6">Season 6</option>
       </select>
 
       {/* Track selector */}

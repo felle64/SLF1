@@ -1,14 +1,16 @@
 import Database from 'better-sqlite3'
 import path from 'path'
+import fs from 'fs'
 
 const DB_DIR     = path.join(process.cwd(), 'SLF1_DB', 'user', 'databases')
 const DEFAULT_DB = path.join(DB_DIR, 'SLF1.db')
-const S4_DB      = path.join(DB_DIR, 'SLF1_S4.db')
-const S6_DB      = path.join(DB_DIR, 'SLF1_S6.db')
 
 function dbPathForSeason(seasonId: number): string {
-  if (seasonId === 5) return S6_DB
-  return seasonId === 3 ? S4_DB : DEFAULT_DB
+  const custom = path.join(DB_DIR, `SLF1_S${seasonId}.db`)
+  if (fs.existsSync(custom)) {
+    return custom
+  }
+  return DEFAULT_DB
 }
 
 export interface Track {

@@ -13,7 +13,7 @@ interface ConstructorStanding {
 }
 
 export default function StandingsClient() {
-  const [season, setSeason]           = useState<string>('3')  // default → Season 4
+  const [season, setSeason]           = useState<string>('6')  // default → Season 6
   const [drivers, setDrivers]         = useState<DriverStanding[]>([])
   const [constructors, setConstructors] = useState<ConstructorStanding[]>([])
 
@@ -40,9 +40,12 @@ export default function StandingsClient() {
         value={season}
         onChange={e => setSeason(e.target.value)}
       >
-        <option value="1">Season 2</option>
-        <option value="2">Season 3</option>
-        <option value="3">Season 4</option>
+        <option value="1">Season 1</option>
+        <option value="2">Season 2</option>
+        <option value="3">Season 3</option>
+        <option value="4">Season 4</option>
+        <option value="5">Season 5</option>
+        <option value="6">Season 6</option>
       </select>
 
       <h2 className='font-semibold mb-2'>Driver Standings</h2>

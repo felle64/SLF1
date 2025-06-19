@@ -22,6 +22,7 @@ function dbPathForSeason(seasonId: number): string {
   const custom = path.join(DB_DIR, `SLF1_S${seasonId}.db`)
   return fs.existsSync(custom) ? custom : DEFAULT_DB
 }
+
 // --- Driver Standings -----------------------------
 export function getDriverStandings(
   limit: number = 20,
@@ -30,7 +31,7 @@ export function getDriverStandings(
   const db = new Database(dbPathForSeason(seasonId), { readonly: true })
   const stmt = db.prepare(`
     SELECT
-      d.DriverName    AS driver,
+      d.DriverName         AS driver,
       SUM(d.DriverPointsRaw) AS points
     FROM DriverSessions d
     JOIN SessionResults s ON d.SessionResultId = s.Id
@@ -53,8 +54,8 @@ export function getConstructorStandings(
   const db = new Database(dbPathForSeason(seasonId), { readonly: true })
   const stmt = db.prepare(`
     SELECT
-      d.TeamName              AS team,
-      SUM(d.TeamPointsRaw)    AS points
+      d.TeamName            AS team,
+      SUM(d.TeamPointsRaw)  AS points
     FROM DriverSessions d
     JOIN SessionResults s ON d.SessionResultId = s.Id
     JOIN Events e         ON s.EventId         = e.Id
